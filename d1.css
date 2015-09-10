@@ -1,0 +1,134 @@
+body 
+{
+    margin: 0;
+    max-width: 800px;
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1em;
+    color: #FFFFFF;
+    background-color: #809A80;
+}
+
+header 
+{
+
+}
+
+footer 
+{
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 10px;
+    line-height: 1.5em;
+    color: #FFFFCC;
+    background-color: #809A80;
+    position: absolute;
+    left: 195px;
+    top: 645px;
+}
+
+a {
+    color: #FFFFFF;
+}
+
+#whatsonline
+{
+    left: 19px;
+    top: 74px;
+    position: absolute;
+    background-color: #6e816e;
+    height: 13px;
+    width: 135px;
+    padding-left: 6px;
+    padding-top: 1px;
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 10.5px;
+    color: #6e816e;
+}
+
+#sidebar
+{
+    left: 19px;
+    top: 92px;
+    position: absolute;
+    background-color: #6e816e;
+    height: 500px;
+    width: 135px;
+    padding-left: 6px;
+    padding-top: 15px;
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.5em;
+    color: #6e816e;
+}
+
+#specialexhibitions
+{
+    left: 164px;
+    top: 74px;
+    position: absolute;
+    background-color: #6e816e;
+    height: 13px;
+    width: 567px;
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 10px;
+    color: #6e816e;
+}
+
+#specialexhibitionscontent
+{
+    left: 164px;
+    top: 92px;
+    position: absolute;
+    background-color: #6e816e;
+    height: 300px;
+    width: 567px;
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+#selectedhighlights
+{
+    left: 165px;
+    top: 390px;
+    position: absolute;
+    background-color: #6e816e;
+    height: 13px;
+    width: 567px;
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 10.5px;
+    color: #FFFFFF;
+}
+
+#selectedhighlightscontent
+{
+    left: 164px;
+    top: 420px;
+    position: absolute;
+    background-color: #6e816e;
+    height: 50px;
+    width: 567px;
+    font-family: "Geneva", Geneva, Arial, sans-serif;
+    font-size: 10px;
+    color: #FFFFFF;
+}
+
+
+#refbg
+{
+    display: none;
+    left: 0px;
+    top: 0px;
+    background-image: url(referencebg.png); 
+    background-repeat: no-repeat;    
+    height: 800px; 
+    width: 100%; /* may not be necessary */
+    position: absolute;
+}
+
+#refbghandler
+{
+    left: 800px;
+    top: 0px;
+    position: absolute;
+}
