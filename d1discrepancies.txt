@@ -1,0 +1,3 @@
+Documented discrepancies for Deliverable 1
+
+# Sidebar link text does not align to text in image-based version of the original website
