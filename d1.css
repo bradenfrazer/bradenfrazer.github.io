@@ -32,12 +32,12 @@ a {
 
 p1 {
     font-size: 13px;
-    line-height: 1.5em;
+    line-height: 1.75em;
 }
 
 p2 {
     font-size: 11px;
-    line-height: 1.5em;
+    line-height: 1.75em;
 	padding-left: 10px;
 }
 
@@ -117,7 +117,44 @@ p2 {
     width: 567px;
     font-family: "Geneva", Geneva, Arial, sans-serif;
     font-size: 11px;
+    line-height: 1.5em;
     color: #FFFFCC;
+}
+
+#chuck
+{
+    position: absolute;
+    top: 215px;
+    left: 31px;
+    width: 150px;
+    height: 100px;
+}
+
+#treasures
+{
+    position: absolute;
+    top: 215px;
+    left: 210px;
+    width: 150px;
+    height: 100px;
+}
+
+#hudson
+{
+    position: absolute;
+    top: 215px;
+    left: 390px;
+    width: 150px;
+    height: 100px;
+}
+
+#more
+{
+    position: absolute;
+    top: 275px;
+    left: 425px;
+    width: 150px;
+    height: 100px;
 }
 
 #selectedhighlights
@@ -145,10 +182,64 @@ p2 {
     width: 567px;
     font-family: "Geneva", Geneva, Arial, sans-serif;
     font-size: 14px;
+    line-height: 1.5em;
     color: #FFFFCC;
 	font-weight: normal;
 }
 
+#now
+{
+    position: absolute;
+    top: 5px;
+    left: 75px;
+    width: 110px;
+    height: 110px;
+}
+
+#museum
+{
+    position: absolute;
+    top: 105px;
+    left: 75px;
+    width: 110px;
+    height: 110px;
+}
+
+#metstore
+{
+    position: absolute;
+    top: 5px;
+    left: 255px;
+    width: 110px;
+    height: 110px;
+}
+
+#collection
+{
+    position: absolute;
+    top: 105px;
+    left: 255px;
+    width: 110px;
+    height: 110px;
+}
+
+#membership
+{
+    position: absolute;
+    top: 5px;
+    left: 445px;
+    width: 110px;
+    height: 110px;
+}
+
+#mymet
+{
+    position: absolute;
+    top: 105px;
+    left: 445px;
+    width: 110px;
+    height: 110px;
+}
 
 #refbg
 {
