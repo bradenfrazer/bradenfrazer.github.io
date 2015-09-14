@@ -48,9 +48,10 @@ else { document.getElementById(d).style.display = "none"; }
             <p1><a href="about:blank">My Met Museum </a></p1> <br>
             <p1><a href="about:blank">News from the Met</a></p1> <br>
             <p1><a href="about:blank">Site Index</a></p1> <br>
-            <p1>Search</p1> <br>
-			<input type="text" name="search" size="4">
-            &nbsp; &nbsp; <img alt="Go!" src="ho_green_go.gif" name="image1" height="21" border="0" type="image" width="25">
+                <div id="search">
+                <p1>Search</p1> <br><br>
+                <input type="text" name="search" size="8">
+                <img alt="Go!" src="ho_green_go.gif" name="image1" height="21" border="0" type="image" width="25" style="position:absolute; top:26px; left:59px;"></div>
             </div>
             
             <!--Special Exhibitions-->
@@ -123,17 +124,20 @@ else { document.getElementById(d).style.display = "none"; }
  
         <!--Footer-->
         <footer>
-            © 2000-2004 The Metropolitan Museum of Art. All rights reserved.
-            <br>
+            <div id="footertext">© 2000-2004 The Metropolitan Museum of Art. All rights reserved.<br></div>
+            
+            <div id="footerlinks">
             <a href="about:blank">Terms and Conditions</a>
-            &nbsp;|&nbsp;
+             <img src="spacer.gif" height="1" width="0"></img> | <img src="spacer.gif" height="1" width="0"></img>
             <a href="about:blank">Privacy Policy</a>
-            <br><br>
+            <br>
             <a href="about:blank">Contact Information</a>
-            &nbsp;|&nbsp;
+            <img src="spacer.gif" height="1" width="0"></img> | <img src="spacer.gif" height="1" width="0"></img>
             <a href="about:blank">Career Opportunities</a>
-            <br><br>
-            <a href="about:blank">Acknowledgments</a> 
+            </div>
+            <div id="acknowledgments">
+            <a href="about:blank">Acknowledgments</a>
+            <br></div>
             </footer>
         <!--Set up background-->
         <div id="refbg"></div>
