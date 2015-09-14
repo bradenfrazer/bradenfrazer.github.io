@@ -260,25 +260,6 @@ p2 {
     height: 110px;
 }
 
-#refbg
-{
-    display: none;
-    left: 0px;
-    top: 0px;
-    background-image: url(referencebg.png); 
-    background-repeat: no-repeat;    
-    height: 800px; 
-    width: 100%; /* may not be necessary */
-    position: absolute;
-}
-
-#refbghandler
-{
-    left: 800px;
-    top: 0px;
-    position: absolute;
-}
-
 #footertext
 {
 line-height: 0.4em;
@@ -292,4 +273,23 @@ line-height: 2.4em;
 #acknowledgments
 {
 line-height: 3.5em; 
+}
+
+#refbg
+{
+    display: none;
+    left: 0px;
+    top: 0px;
+    background-image: url(referencebg.png); 
+    background-repeat: no-repeat;    
+    height: 800px; 
+    width: 100%; /* may not be necessary */
+    position: absolute;
+}
+
+#refbghandleralt
+{
+    left: 800px;
+    top: 0px;
+    position: absolute;
 }
