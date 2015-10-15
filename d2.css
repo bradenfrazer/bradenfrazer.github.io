@@ -1,40 +1,35 @@
 body 
 {
-    margin: 100px;
-    margin-top: 25px;
-    font-family: sans-serif;
+    margin-top: 250px;
+    font-family: “Century Gothic”, CenturyGothic, AppleGothic, sans-serif;
     font-size: 14px;
-    line-height: 1.5em;
-    color: #FFFFFF;
-    background-color: #000000;
+    text-align: center;
+    color: #000000;
+    background-color: #A8D1C3;
     -webkit-font-smoothing: antialiased;
     letter-spacing: .5px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 a
 {
-  color: #00FFFF;
+    font-size: 18px;
+    color: #E7485E;
 }
 
-img.header
+h1
 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 48px; 
 }
 
-#bio
+h2
 {
-    padding: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color:#202020;
+    font-size: 24px;
 }
 
-#deliverables
+#begin
 {
-    padding: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    background-color:#202020;
+    padding-top: 150px;
+    padding-left: 500px;
 }
