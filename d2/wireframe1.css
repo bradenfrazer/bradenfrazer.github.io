@@ -5,8 +5,8 @@ body
     font-family: “Century Gothic”, CenturyGothic, AppleGothic, sans-serif;
     font-size: 12px;
     text-align: center;
-    color: #000000;
-    background-color: #A8D1C3;
+    color: #FFFFFF;
+    background-color: #303030;
     -webkit-font-smoothing: antialiased;
     letter-spacing: .5px;
     margin-left: auto;
@@ -16,7 +16,7 @@ body
 a
 {
     font-size: 18px;
-    color: #E7485E;
+    color: #78FFB4;
 }
 
 h1
@@ -42,13 +42,15 @@ h2
 #content
 {
     float: left;
-    
     width: 525px;
     height: 645px;
-    background-color: #D1c3a8;
     padding-left: 20px;
     padding-right: 20px;
+    background-color: #505050;
+    border: 2px solid #FF9A0E;
 }
+
+#content a:link{ color:#FF9A0E; } 
 
 #media
 {
@@ -56,8 +58,11 @@ h2
     width: 615px;
     height: 390px;
     padding-top: 10px;
-    background-color: #D1c3a8;
+    background-color: #505050;
+    border: 2px solid #FF7766;
 }
+
+#media a:link{ color: #FF7766; } 
 
 #concept
 {
@@ -66,8 +71,11 @@ h2
     width: 575px;
     height: 180px;
     padding: 20px;
-    background-color: #D1c3a8;
+    background-color: #505050;
+    border: 2px solid #FFEF8B;
 }
+
+#concept a:link{ color: #FFEF8B; } 
 
 #navigation
 {
@@ -75,5 +83,9 @@ h2
     float: right;
     width: 100px;
     height: 50px;
-    background-color: #D1c3a8;
+    background-color: #707070;
+    border: 2px solid #78FFB4;
+    border-radius: 25px;
 }
+
+#navigation a:link{ color: #78FFB4; } 

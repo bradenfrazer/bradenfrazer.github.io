@@ -4,8 +4,8 @@ body
     font-family: “Century Gothic”, CenturyGothic, AppleGothic, sans-serif;
     font-size: 14px;
     text-align: center;
-    color: #000000;
-    background-color: #A8D1C3;
+    color: #FFFFFF;
+    background-color: #303030;
     -webkit-font-smoothing: antialiased;
     letter-spacing: .5px;
     margin-left: auto;
@@ -15,7 +15,7 @@ body
 a
 {
     font-size: 18px;
-    color: #E7485E;
+    color: #78FFB4;
 }
 
 h1
