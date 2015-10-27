@@ -1,6 +1,6 @@
 body 
 {
-    margin-top: 150px;
+    margin-top: 75px;
     font-family: “Century Gothic”, CenturyGothic, AppleGothic, sans-serif;
     font-size: 14px;
     text-align: center;
@@ -10,6 +10,8 @@ body
     letter-spacing: .5px;
     margin-left: auto;
     margin-right: auto;
+    padding-left: 150px;
+    padding-right: 150px;
 }
 
 a
@@ -21,15 +23,24 @@ a
 h1
 {
     font-size: 48px; 
+    line-height: 50%;
 }
 
 h2
 {
     font-size: 24px;
+    line-height: 50%;
+}
+
+h3
+{
+    text-align: justify;
+    font-size: 14px;
+    font-weight: normal;
 }
 
 #begin
 {
-    padding-top: 150px;
+    padding-top: 75px;
     padding-left: 500px;
 }
