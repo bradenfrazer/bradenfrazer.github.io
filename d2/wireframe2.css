@@ -120,6 +120,18 @@ h2
 #knob
 {
     z-index:200;
+    opacity: 0.9;
+}
+
+#knob:hover
+{
+    opacity: 1.0;
+}
+
+#disabledknob
+{
+    z-index:200;
+    opacity: 0.4;
 }
 
 #images
