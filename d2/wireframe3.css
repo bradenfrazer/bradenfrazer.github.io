@@ -54,35 +54,92 @@ h2
 
 #content a:link{ color: #FFEF8B; } 
 
-#directions
-{
-    position: absolute;
-    margin-left: -400px;
-    left: 50%;
-    bottom: 240px;
-    width: 800px;
-    height: 20px;
-    background-color: #707070;
-    border: 2px solid #78FFB4;
-    border-radius: 25px;
-}
-
-#directions a:link{ color: #78FFB4; } 
-
 #navigation
 {
     position: absolute;
-    margin-left: -400px;
+    margin-left: -305px;
     left: 50%;
     bottom: 20px;
-    width: 800px;
-    height: 200px;
+    width: 610px;
+    height: 225px;
     background-color: #707070;
     border: 2px solid #78FFB4;
     border-radius: 25px;
 }
 
 #navigation a:link{ color: #78FFB4; } 
+
+#slider1
+{
+    display:table-cell;
+    height:100px; 
+    left:50px;
+    top:45px;
+}
+
+#slider2
+{
+    display:table-cell;
+    height:100px; 
+    left:100px; 
+    top:45px;
+}
+
+#slider3
+{
+    display:table-cell;
+    height:100px; 
+    left:150px; 
+    top:45px;
+}
+
+#slider4
+{
+    display:table-cell;
+    height:100px; 
+    left:200px;
+    top:45px;
+}
+
+#slider5
+{
+    display:table-cell;
+    height:100px; 
+    left:250px; 
+    top:45px;
+}
+
+#slider6
+{
+    display:table-cell;
+    height:100px; 
+    left:300px; 
+    top:45px;
+}
+
+#slider7
+{
+    display:table-cell;
+    height:100px; 
+    left:350px; 
+    top:45px;
+}
+
+#slider8
+{
+    display:table-cell;
+    height:100px; 
+    left:400px; 
+    top:45px;
+}
+
+#slider9
+{
+    display:table-cell;
+    height:100px; 
+    left:450px;
+    top:45px;
+}
 
 #slider
 {
