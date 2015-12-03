@@ -107,7 +107,7 @@ function dashboard(id, fData){
 
         function click(d) {
             if (d[0]) {
-            window.open('cities/' + d[0].replace(/\s+/g, '') + '.html', '_blank');
+            window.open('cities/' + d[0].replace(/\s+/g, '').toLowerCase() + '.html');
             }
             //console.log(d[0].replace(/\s+/g, ''););
         }
