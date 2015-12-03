@@ -106,9 +106,10 @@ function dashboard(id, fData){
             .attr("text-anchor", "neutraldle");
 
         function click(d) {
-            //if (bars.State == "New York City") {
-                window.open('https://flickr.com/', '_blank');
-            //}
+            if (d[0]) {
+            window.open('cities/' + d[0].replace(/\s+/g, '') + '.html', '_blank');
+            }
+            //console.log(d[0].replace(/\s+/g, ''););
         }
         
         function mouseover(d){  // utility function to be called on mouseover.
