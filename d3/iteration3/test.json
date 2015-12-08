@@ -1,0 +1,41 @@
+{
+  "name": "Area",
+  "children": [
+    {
+          "name": "user1",
+          "children": [
+            {
+              "name": "sk",
+              "size": 794700000
+            }
+          ]
+        },
+        {
+          "name": "user2",
+          "children": [
+            {
+              "name": "Comoros",
+              "size": 837000000
+            }
+          ]
+        },
+        {
+          "name": "user3",
+          "children": [
+            {
+              "name": "Djibouti",
+              "size": 2231000000
+            }
+          ]
+        },
+        {
+          "name": "user4",
+          "children": [
+            {
+              "name": "blah",
+              "size": 223000000
+            }
+          ]
+        }
+  ]
+}

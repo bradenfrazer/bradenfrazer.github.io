@@ -16,7 +16,7 @@
 }
 
 .node--leaf {
-  fill: white;
+  fill: cyan;
 }
 
 .label {
@@ -51,7 +51,7 @@ var color = d3.scale.linear()
 var pack = d3.layout.pack()
     .padding(2)
     .size([diameter - margin, diameter - margin])
-    .value(function(d) { return d.size; })
+    .value(function(d) { return d.favorite_count; })
 
 var svg = d3.select("body").append("svg")
     .attr("width", diameter)
@@ -59,11 +59,11 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-d3.json("flare.json", function(error, root) {
+d3.json("test2.json", function(error, root) {
   if (error) throw error;
 
   var focus = root,
-      nodes = pack.nodes(root),
+      nodes = pack.nodes(root).sort(null),
       view;
 
   var circle = svg.selectAll("circle")
