@@ -10,6 +10,7 @@ var pack = d3.layout.pack()
     .padding(2)
     .size([diameter - margin, diameter - margin])
     .value(function(d) { return d.favorite_count; })
+    .sort(null);
 
 var svg = d3.select("body").append("svg")
     .attr("width", diameter)
@@ -35,39 +36,65 @@ d3.json("test2.json", function(error, root) {
   var focus = root,
       nodes = pack.nodes(root).sort(null),
       view;
+    
+     var tooltip = d3.select("body").append("div")   
+        .attr("class", "tooltip")               
+        .style("opacity", 0);
 
   var circle = svg.selectAll("circle")
       .data(nodes)
-    .enter().append("circle")
+      .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
       .style("fill", function(d) { 
           if (d.depth == 0) {
             return d.children ? color(-5) : null;
             } else {
+            //return d.children ? color(1) : null; 
             return d.children ? color(d.depth) : null; 
             }
       })
       .on("click", function(d) { 
           if (focus !== d) zoom(d), d3.event.stopPropagation(); 
           getUserImageURL(d.name);
-      });
+      })
+        /* might try tooltips later */
+     /*.on("mouseover", function(d) {
+            tooltip.transition().duration(200).style("opacity", .75);      
+            tooltip.html(d.name)  
+            .style("left", (d.x-200) + "px")     
+            .style("top", (d.y-50) + "px");    
+            //.style("left", (d3.event.pageX - 200) + "px")     
+            //.style("top", (d3.event.pageY - 50) + "px");    
+     })                  
+     .on("mouseout", function(d) {       
+            tooltip.transition().duration(500).style("opacity", 0);   
+     });*/
 
   var text = svg.selectAll("text")
       .data(nodes)
-    .enter().append("text")
+      .enter().append("text")
       .attr("class", "label")
       .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
       .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
       .text(function(d) { return d.name; });
+    
+/*var foreignObject = svg.selectAll("foreignObject")
+    .data(nodes)
+    .enter().append("foreignObject")
+    .attr("width", 480)
+    .attr("height", 500)
+    .append("xhtml:body")
+    .style("font", "14px 'Helvetica Neue'")
+    .html("<h1>An HTML Foreign Object in SVG</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu enim quam. Quisque nisi risus, sagittis quis tempor nec, aliquam eget neque. Nulla bibendum semper lorem non ullamcorper. Nulla non ligula lorem. Praesent porttitor, tellus nec suscipit aliquam, enim elit posuere lorem, at laoreet enim ligula sed tortor. Ut sodales, urna a aliquam semper, nibh diam gravida sapien, sit amet fermentum purus lacus eget massa. Donec ac arcu vel magna consequat pretium et vel ligula. Donec sit amet erat elit. Vivamus eu metus eget est hendrerit rutrum. Curabitur vitae orci et leo interdum egestas ut sit amet dui. In varius enim ut sem posuere in tristique metus ultrices.<p>Integer mollis massa at orci porta vestibulum. Pellentesque dignissim turpis ut tortor ultricies condimentum et quis nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod lorem vulputate dui pharetra luctus. Sed vulputate, nunc quis porttitor scelerisque, dui est varius ipsum, eu blandit mauris nibh pellentesque tortor. Vivamus ultricies ante eget ipsum pulvinar ac tempor turpis mollis. Morbi tortor orci, euismod vel sagittis ac, lobortis nec est. Quisque euismod venenatis felis at dapibus. Vestibulum dignissim nulla ut nisi tristique porttitor. Proin et nunc id arcu cursus dapibus non quis libero. Nunc ligula mi, bibendum non mattis nec, luctus id neque. Suspendisse ut eros lacus. Praesent eget lacus eget risus congue vestibulum. Morbi tincidunt pulvinar lacus sed faucibus. Phasellus sed vestibulum sapien.");*/
 
-  var node = svg.selectAll("circle,text");
+  var node = svg.selectAll("circle,text, foreignObject");
 
   d3.select("body")
       //.style("background", color(-1))
       .style("background", color(-5))
       .on("click", function() { zoom(root); });
 
-  zoomTo([root.x, root.y, root.r * 2 + margin]);
+  zoomTo([root.x, root.y, root.r * 2.5 + margin]);
 
   function zoom(d) {
     var focus0 = focus; focus = d;
@@ -75,7 +102,7 @@ d3.json("test2.json", function(error, root) {
     var transition = d3.transition()
         .duration(d3.event.altKey ? 7500 : 750)
         .tween("zoom", function(d) {
-          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2.5 + margin]);
           return function(t) { zoomTo(i(t)); };
         });
 
@@ -95,4 +122,3 @@ d3.json("test2.json", function(error, root) {
 });
 
 d3.select(self.frameElement).style("height", diameter + "px");
-

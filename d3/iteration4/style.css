@@ -115,7 +115,7 @@ h3 {
 }
 
 .node--leaf {
-  fill: cyan;
+  fill: lightblue;
 }
 
 .label {
@@ -134,4 +134,20 @@ body > svg {
   position: absolute;
   top: -80px;
   left: -160px;
+}
+
+div.tooltip {   
+    position: absolute;           
+    text-align: center;           
+    width: 100px;                  
+    height: 18px;                 
+    padding: 2px;             
+    font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-anchor: middle;
+    color: white;
+    --text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;       
+    background: black;   
+    border: 0px;      
+    border-radius: 10px;           
+    pointer-events: none;
 }
