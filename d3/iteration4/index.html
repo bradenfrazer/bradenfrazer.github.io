@@ -1,8 +1,42 @@
 <!DOCTYPE html>
+<meta charset="utf-8">
 <html>
-    <link rel="stylesheet" href="d3.css">
-    <title>Project 3</title>
-    <body>
-        test.                                                        
-	</body>
-</html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<body>
+    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="bubbles.js" charset="utf-8"></script>
+    <div id="sidebar">
+    <h2>
+      Twitter users<br>
+      #RiseUpOctober<br>
+    </h2>
+    <a href="/about.html">// about</a>
+        <br><br><br>
+    <input type="checkbox">
+    <label>#RiseUpOctober</label><br>
+    <input type="checkbox" checked>
+    <label>#BlackLivesMatter</label><br>
+        <input type="checkbox">
+    <label>#hashtag3</label><br>
+    <input type="checkbox" checked>
+    <label>#hashtag4</label><br>
+    <br><br>
+    <input type="checkbox" checked>
+    <label>Verified users only</label><br>
+    <br><br>
+    <input id="slider1" type="range" min="100" max="500" step="10" />
+    <br>
+        yay slider
+        
+    <br><br><br>
+    <div id="timeline">
+    <a class="twitter-timeline" href="https://twitter.com/WhiteHouse" data-widget-id="674462318747488256">Tweets by @WhiteHouse</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+    </div>
+</body>

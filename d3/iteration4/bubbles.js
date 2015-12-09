@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
-<html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-    <link type="text/css" rel="stylesheet" href="style.css"/>
-    <style type="text/css">
-
-.node {
-  cursor: pointer;
-}
-
-.node:hover {
-  stroke: #000;
-  stroke-width: 1.5px;
-}
-
-.node--leaf {
-  fill: cyan;
-}
-
-.label {
-  font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-anchor: middle;
-  text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
-}
-
-.label,
-.node--root,
-.node--leaf {
-  pointer-events: none;
-}
-
-</style>
-<body>
-    <h2>
-      Twitter users<br>
-      #RiseUpOctober
-    </h2>
-
-<script src="//d3js.org/d3.v3.min.js"></script>
-<script>
-    var margin = 20,
+var margin = 20,
     diameter = 960;
 
 var color = d3.scale.linear()
@@ -58,6 +16,18 @@ var svg = d3.select("body").append("svg")
     .attr("height", diameter)
   .append("g")
     .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+function getUserImageURL(d) {
+    var url = "https://twitter.com/" + d + "/profile_image?size=original";
+    console.log(url);
+    return url;
+}
+
+function reloadTimeline(d) {
+    var handle = d;
+    console.log(handle);
+    return url;
+}
 
 d3.json("test2.json", function(error, root) {
   if (error) throw error;
@@ -77,7 +47,10 @@ d3.json("test2.json", function(error, root) {
             return d.children ? color(d.depth) : null; 
             }
       })
-      .on("click", function(d) { if (focus !== d) zoom(d), d3.event.stopPropagation(); });
+      .on("click", function(d) { 
+          if (focus !== d) zoom(d), d3.event.stopPropagation(); 
+          getUserImageURL(d.name);
+      });
 
   var text = svg.selectAll("text")
       .data(nodes)
@@ -118,10 +91,8 @@ d3.json("test2.json", function(error, root) {
     node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
     circle.attr("r", function(d) { return d.r * k; });
   }
+
 });
 
 d3.select(self.frameElement).style("height", diameter + "px");
 
-    </script>
-    
-      </body>
