@@ -76,6 +76,7 @@ d3.json("test2.json", function(error, root) {
           getUserImageURL(d.name);
       })
         /* might try tooltips later */
+  /*
      .on("mouseover", function(d) {
             tooltip.transition().duration(200).style("opacity", .75);      
             tooltip.html("@" + d.name)  
@@ -86,14 +87,6 @@ d3.json("test2.json", function(error, root) {
      })                  
      .on("mouseout", function(d) {       
             tooltip.transition().duration(500).style("opacity", 0);   
-     });
-    /*.on("mouseover", function(d) {
-            this.text.attr('transform', 'translate(' + d.x + ',' + (d.y - 5 - (d.children ? 3.5 : Math.sqrt(d.size) / 2)) + ')')
-            .text(d.name + ": ")
-            .style('display', null);
-         })                  
-     .on("mouseout", function(d) {       
-            this.text.style('display', 'none'); 
      });*/
   
   var text = svg.selectAll("text")
@@ -102,7 +95,10 @@ d3.json("test2.json", function(error, root) {
       .attr("class", "label")
       .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
       .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
-      .text(function(d) { return d.name; });
+      .text(function(d) { 
+          if (d.depth == 1) 
+           return d.name;
+      });
     
 /*var foreignObject = svg.selectAll("foreignObject")
     .data(nodes)
