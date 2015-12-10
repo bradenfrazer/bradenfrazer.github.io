@@ -1,4 +1,4 @@
-[
+var TWEETS_3 = [
     "screen_name: WhiteHouse",
     "location: Washington, DC",
     "description: Follow for the latest from President Obama and his administration. Tweets from the President are signed –bo. Tweets may be archived: http://wh.gov/privacy.",

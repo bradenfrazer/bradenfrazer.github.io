@@ -18,8 +18,9 @@ var svg = d3.select("body").append("svg")
   .append("g")
     .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
 
-function getUserImageURL(d) {
-    var url = "https://twitter.com/" + d + "/profile_image?size=original";
+function getUserImageURL(twitterUsername)
+{
+    var url = "https://twitter.com/" + twitterUsername + "/profile_image?size=original";
     console.log(url);
     return url;
 }
@@ -41,7 +42,68 @@ d3.json("test2.json", function(error, root) {
         .attr("class", "tooltip")               
         .style("opacity", 0);
 
- /* var defs = svg.selectAll("defs")
+ 
+ // Enter any new nodes
+  var defs = svg.selectAll("defs")
+        .data(nodes)
+        .enter().append('defs')
+        .append('pattern')
+            .attr('id', function(d) { return (d.name+"-image");}) // just create a unique id (id comes from the json)
+            .attr('width', 1)
+            .attr('height', 1)
+            .attr('patternContentUnits', 'objectBoundingBox')
+            .append("svg:image")
+                .attr("xlink:xlink:href", function(d) { return "https://pbs.twimg.com/profile_images/655032843081547776/VyZJbvWW.jpg";})//getUserImageURL(d.name);}) // "icon" is my image url. It comes from json too. The double xlink:xlink is a necessary hack (first "xlink:" is lost...).
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("height", 1)
+                .attr("width", 1)
+				.attr("preserveAspectRatio", "xMinYMin slice");
+ 
+    
+  var circle = svg.selectAll("circle")
+      .data(nodes)
+      .enter().append("circle")
+      .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
+      .style("fill", function(d) {
+      		if(d.name != "Area")
+      	 		return ("url(#"+d.name+"-image)");
+      	 	else
+      	 		return "white";
+      	 })
+      
+      
+      //.style("fill", function(d) { return ("url(#"+d.name+"-icon)");})
+      .on("click", function(d) { 
+          if (focus !== d) zoom(d), d3.event.stopPropagation(); 
+          getUserImageURL(d.name);
+      })
+        /* might try tooltips later */
+      /*
+     .on("mouseover", function(d) {
+            tooltip.transition().duration(200).style("opacity", .75);      
+            tooltip.html("@" + d.name)  
+            .style("left", (d.x-200) + "px")     
+            .style("top", (d.y-50) + "px");    
+            //.style("left", (d3.event.pageX - 200) + "px")     
+            //.style("top", (d3.event.pageY - 50) + "px");   
+        
+     }) 
+        */            
+     .on("mouseout", function(d) {       
+            tooltip.transition().duration(500).style("opacity", 0);   
+     });
+    /*.on("mouseover", function(d) {
+            this.text.attr('transform', 'translate(' + d.x + ',' + (d.y - 5 - (d.children ? 3.5 : Math.sqrt(d.size) / 2)) + ')')
+            .text(d.name + ": ")
+            .style('display', null);
+         })                  
+     .on("mouseout", function(d) {       
+            this.text.style('display', 'none'); 
+     });*/
+  
+  /*
+   var defs = svg.selectAll("defs")
         .data(nodes)
         .enter().append('defs')
         .append('pattern')
@@ -50,45 +112,14 @@ d3.json("test2.json", function(error, root) {
             .attr('height', 1)
             .attr('patternContentUnits', 'objectBoundingBox')
             .append("svg:image")
-            .attr("xlink:xlink:href", function(d) { return (getUserImageURL(d.name);})
-                //.attr("xlink:xlink:href", function(d) { return (d.icon);}) // "icon" is my image url. It comes from json too. The double xlink:xlink is a necessary hack (first "xlink:" is lost...).
+            	.attr("xlink:xlink:href", function(d) { return getUserImageURL(d.name);})
                 .attr("x", 0)
                 .attr("y", 0)
                 .attr("height", 1)
                 .attr("width", 1)
-				.attr("preserveAspectRatio", "xMinYMin slice");    */
-    
-  var circle = svg.selectAll("circle")
-      .data(nodes)
-      .enter().append("circle")
-      .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
-        .style("fill", function(d) { 
-          if (d.depth == 0) {
-            return d.children ? color(-5) : null;
-            } else {
-            //return d.children ? color(1) : null; 
-            return d.children ? color(d.depth) : null; 
-            }
-      })
-      //.style("fill", function(d) { return ("url(#"+d.name+"-icon)");})
-      .on("click", function(d) { 
-          if (focus !== d) zoom(d), d3.event.stopPropagation(); 
-          getUserImageURL(d.name);
-      })
-        /* might try tooltips later */
-  /*
-     .on("mouseover", function(d) {
-            tooltip.transition().duration(200).style("opacity", .75);      
-            tooltip.html("@" + d.name)  
-            .style("left", (d.x-200) + "px")     
-            .style("top", (d.y-50) + "px");    
-            //.style("left", (d3.event.pageX - 200) + "px")     
-            //.style("top", (d3.event.pageY - 50) + "px");    
-     })                  
-     .on("mouseout", function(d) {       
-            tooltip.transition().duration(500).style("opacity", 0);   
-     });*/
-  
+				.attr("preserveAspectRatio", "xMinYMin slice");   
+  */
+ 
   var text = svg.selectAll("text")
       .data(nodes)
       .enter().append("text")
@@ -96,9 +127,9 @@ d3.json("test2.json", function(error, root) {
       .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
       .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
       .text(function(d) { 
-          if (d.depth == 1) 
-           return d.name;
-      });
+      		if(d.depth == 1 )
+      			return d.name;
+      	});
     
 /*var foreignObject = svg.selectAll("foreignObject")
     .data(nodes)
@@ -144,3 +175,51 @@ d3.json("test2.json", function(error, root) {
 });
 
 d3.select(self.frameElement).style("height", diameter + "px");
+
+/** Start of NIC CODE **/
+
+var tweeters = [];
+
+/*
+ * Setup function, called at the end of the HTML page
+ */
+function setup()
+{
+	// load init twitter data into array of tweeters
+	tweeters = getArrayOfTweetersFromData(TWITTER_USER_DATA);
+}
+
+
+/*
+ * Reads the data from the JSON file and converts it to a javascript object array
+ */
+function getArrayOfTweetersFromData(data)
+{
+	var userArray = [];
+	
+	for(var i = 0; i < data.children.length; i++)
+	{
+		userArray.push(data.children[i]);
+	}
+	
+	return userArray;
+}
+
+
+function betterFormatTweets()
+{
+    var tweetsArray = [];
+    for (var i = 0; i < TWEETS_3.length; i=i+5) {
+        var tweet = {
+            screen_name: TWEETS_3[i],
+            location: TWEETS_3[i+1],
+            description: TWEETS_3[i+2],
+            favorite_count: TWEETS_3[1+3],
+            text: TWEETS_3[i+4],
+            profile_image_url: getUserImageURL(TWEETS_3[i]);
+            }
+    tweetsArray.push(tweet);
+    }
+    
+    return tweetsArray;
+};
