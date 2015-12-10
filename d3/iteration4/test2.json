@@ -5,8 +5,10 @@
           "name": "WhiteHouse",
           "children": [
             {
-                "name": "We as a society, particularly given our history, have to take this seriously.\" —@POTUS on #BlackLivesMatter https://t.co/yC1T1q9GYm",
-                "favorite_count": 524
+                "description": "Follow for the latest from President Obama and his administration. Tweets from the President are signed –bo. Tweets may be archived: http://wh.gov/privacy",
+                "location": "Washington, D.C.",
+                "favorite_count": 1362,
+                "text": "We as a society, particularly given our history, have to take this seriously.\" —@POTUS on #BlackLivesMatter https://t.co/yC1T1q9GYm"
             }
           ]
         },
@@ -14,8 +16,10 @@
           "name": "RT_com",
           "children": [
             {
-                "name": "RT @RT_America: #RiseUpOctober protests against police killing civilians begin in New York https://t.co/YQ7rN91iPL https://t.co/V3Y0SMk6Pi",
-                "favorite_count": 114
+                "description": "RT, the global news network, broadcasts from Moscow, London and Washington studios to over 100 countries.",
+                "location": "RT_com location",
+                "favorite_count": 114,
+                "text": "RT @RT_America: #RiseUpOctober protests against police killing civilians begin in New York https://t.co/YQ7rN91iPL https://t.co/V3Y0SMk6Pi"
             }
           ]
         },
@@ -23,8 +27,10 @@
           "name": "USATODAY",
           "children": [
             {
-                "name": "The African-American community is not just making this up,\" @POTUS said of #BlackLivesMatter. https://t.co/X7nRBhyQvX",
-                "favorite_count": 1301
+                "description": "The latest news and most interesting stories from USA TODAY. News that's meant to be shared.",
+                "location": "USATODAY location",
+                "favorite_count": 1301,
+                "text": "The African-American community is not just making this up,\" @POTUS said of #BlackLivesMatter. https://t.co/X7nRBhyQvX"
             }
           ]
         },

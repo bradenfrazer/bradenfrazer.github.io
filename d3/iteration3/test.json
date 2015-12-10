@@ -1,39 +1,696 @@
 {
   "name": "Area",
   "children": [
-    {
-          "name": "user1",
+        {
+          "name": "WhiteHouse",
           "children": [
             {
-              "name": "sk",
-              "size": 794700000
+                "name": "We as a society, particularly given our history, have to take this seriously.\" —@POTUS on #BlackLivesMatter https://t.co/yC1T1q9GYm",
+                "favorite_count": 524
             }
           ]
         },
         {
-          "name": "user2",
+          "name": "RT_com",
           "children": [
             {
-              "name": "Comoros",
-              "size": 837000000
+                "name": "RT @RT_America: #RiseUpOctober protests against police killing civilians begin in New York https://t.co/YQ7rN91iPL https://t.co/V3Y0SMk6Pi",
+                "favorite_count": 114
             }
           ]
         },
         {
-          "name": "user3",
+          "name": "USATODAY",
           "children": [
             {
-              "name": "Djibouti",
-              "size": 2231000000
+                "name": "The African-American community is not just making this up,\" @POTUS said of #BlackLivesMatter. https://t.co/X7nRBhyQvX",
+                "favorite_count": 1301
             }
           ]
         },
         {
-          "name": "user4",
+          "name": "BuzzFeed",
           "children": [
             {
-              "name": "blah",
-              "size": 223000000
+                "name": "RT @BuzzFeedNews: Obama On #BlackLivesMatter: “African American Community Is Not Just Making This Up” https://t.co/k34i5EWqDF https://t.co/…",
+                "favorite_count": 2508
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1400
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 10
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 10
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 700
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 130
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1560
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 300
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 10
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 10
+            }
+          ]
+        },
+      {
+          "name": "user6",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user7",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user8",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user9",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user10",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user5",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
+            }
+          ]
+        },
+      {
+          "name": "user11",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 10
+            }
+          ]
+        },
+      {
+          "name": "user12",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 100
+            }
+          ]
+        },
+      {
+          "name": "user13",
+          "children": [
+            {
+                "name": "tweet text",
+                "favorite_count": 1000
             }
           ]
         }

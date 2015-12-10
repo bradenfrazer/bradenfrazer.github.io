@@ -37,15 +37,32 @@ d3.json("test2.json", function(error, root) {
       nodes = pack.nodes(root).sort(null),
       view;
     
-     var tooltip = d3.select("body").append("div")   
+  var tooltip = d3.select("body").append("div")   
         .attr("class", "tooltip")               
         .style("opacity", 0);
 
+  /*var defs = svg.selectAll("defs")
+        .data(nodes)
+        .enter().append('defs')
+        .append('pattern')
+            .attr('id', function(d) { return (d.name+"-icon");}) // just create a unique id (id comes from the json)
+            .attr('width', 1)
+            .attr('height', 1)
+            .attr('patternContentUnits', 'objectBoundingBox')
+            .append("svg:image")
+            .attr("xlink:xlink:href", function(d) { return (getUserImageURL(d.name);})
+                //.attr("xlink:xlink:href", function(d) { return (d.icon);}) // "icon" is my image url. It comes from json too. The double xlink:xlink is a necessary hack (first "xlink:" is lost...).
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("height", 1)
+                .attr("width", 1)
+				.attr("preserveAspectRatio", "xMinYMin slice");   */ 
+    
   var circle = svg.selectAll("circle")
       .data(nodes)
       .enter().append("circle")
       .attr("class", function(d) { return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root"; })
-      .style("fill", function(d) { 
+        .style("fill", function(d) { 
           if (d.depth == 0) {
             return d.children ? color(-5) : null;
             } else {
@@ -53,14 +70,15 @@ d3.json("test2.json", function(error, root) {
             return d.children ? color(d.depth) : null; 
             }
       })
+      //.style("fill", function(d) { return ("url(#"+d.name+"-icon)");})
       .on("click", function(d) { 
           if (focus !== d) zoom(d), d3.event.stopPropagation(); 
           getUserImageURL(d.name);
       })
         /* might try tooltips later */
-     /*.on("mouseover", function(d) {
+     .on("mouseover", function(d) {
             tooltip.transition().duration(200).style("opacity", .75);      
-            tooltip.html(d.name)  
+            tooltip.html("@" + d.name)  
             .style("left", (d.x-200) + "px")     
             .style("top", (d.y-50) + "px");    
             //.style("left", (d3.event.pageX - 200) + "px")     
@@ -68,8 +86,16 @@ d3.json("test2.json", function(error, root) {
      })                  
      .on("mouseout", function(d) {       
             tooltip.transition().duration(500).style("opacity", 0);   
+     });
+    /*.on("mouseover", function(d) {
+            this.text.attr('transform', 'translate(' + d.x + ',' + (d.y - 5 - (d.children ? 3.5 : Math.sqrt(d.size) / 2)) + ')')
+            .text(d.name + ": ")
+            .style('display', null);
+         })                  
+     .on("mouseout", function(d) {       
+            this.text.style('display', 'none'); 
      });*/
-
+  
   var text = svg.selectAll("text")
       .data(nodes)
       .enter().append("text")
@@ -87,7 +113,7 @@ d3.json("test2.json", function(error, root) {
     .style("font", "14px 'Helvetica Neue'")
     .html("<h1>An HTML Foreign Object in SVG</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu enim quam. Quisque nisi risus, sagittis quis tempor nec, aliquam eget neque. Nulla bibendum semper lorem non ullamcorper. Nulla non ligula lorem. Praesent porttitor, tellus nec suscipit aliquam, enim elit posuere lorem, at laoreet enim ligula sed tortor. Ut sodales, urna a aliquam semper, nibh diam gravida sapien, sit amet fermentum purus lacus eget massa. Donec ac arcu vel magna consequat pretium et vel ligula. Donec sit amet erat elit. Vivamus eu metus eget est hendrerit rutrum. Curabitur vitae orci et leo interdum egestas ut sit amet dui. In varius enim ut sem posuere in tristique metus ultrices.<p>Integer mollis massa at orci porta vestibulum. Pellentesque dignissim turpis ut tortor ultricies condimentum et quis nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod lorem vulputate dui pharetra luctus. Sed vulputate, nunc quis porttitor scelerisque, dui est varius ipsum, eu blandit mauris nibh pellentesque tortor. Vivamus ultricies ante eget ipsum pulvinar ac tempor turpis mollis. Morbi tortor orci, euismod vel sagittis ac, lobortis nec est. Quisque euismod venenatis felis at dapibus. Vestibulum dignissim nulla ut nisi tristique porttitor. Proin et nunc id arcu cursus dapibus non quis libero. Nunc ligula mi, bibendum non mattis nec, luctus id neque. Suspendisse ut eros lacus. Praesent eget lacus eget risus congue vestibulum. Morbi tincidunt pulvinar lacus sed faucibus. Phasellus sed vestibulum sapien.");*/
 
-  var node = svg.selectAll("circle,text, foreignObject");
+  var node = svg.selectAll("defs,circle,text,foreignObject");
 
   d3.select("body")
       //.style("background", color(-1))
