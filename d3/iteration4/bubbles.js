@@ -41,7 +41,7 @@ d3.json("test2.json", function(error, root) {
         .attr("class", "tooltip")               
         .style("opacity", 0);
 
-  /*var defs = svg.selectAll("defs")
+ /* var defs = svg.selectAll("defs")
         .data(nodes)
         .enter().append('defs')
         .append('pattern')
@@ -56,7 +56,7 @@ d3.json("test2.json", function(error, root) {
                 .attr("y", 0)
                 .attr("height", 1)
                 .attr("width", 1)
-				.attr("preserveAspectRatio", "xMinYMin slice");   */ 
+				.attr("preserveAspectRatio", "xMinYMin slice");    */
     
   var circle = svg.selectAll("circle")
       .data(nodes)
