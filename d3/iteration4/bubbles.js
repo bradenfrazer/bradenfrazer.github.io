@@ -1,27 +1,7 @@
-var margin = 20,
-    diameter = 960;
-
-var color = d3.scale.linear()
-    .domain([-1, 5])
-    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
-    .interpolate(d3.interpolateHcl);
-
-var pack = d3.layout.pack()
-    .padding(2)
-    .size([diameter - margin, diameter - margin])
-    .value(function(d) { return d.favorite_count; })
-    .sort(null);
-
-var svg = d3.select("body").append("svg")
-    .attr("width", diameter)
-    .attr("height", diameter)
-  .append("g")
-    .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
-
 function getUserImageURL(twitterUsername)
 {
     var url = "https://twitter.com/" + twitterUsername + "/profile_image?size=original";
-    console.log(url);
+    //console.log(url);
     return url;
 }
 
@@ -31,6 +11,7 @@ function reloadTimeline(d) {
     return url;
 }
 
+/*
 d3.json("test2.json", function(error, root) {
   if (error) throw error;
 
@@ -89,7 +70,7 @@ d3.json("test2.json", function(error, root) {
             //.style("top", (d3.event.pageY - 50) + "px");   
         
      }) 
-        */            
+                   
      .on("mouseout", function(d) {       
             tooltip.transition().duration(500).style("opacity", 0);   
      });
@@ -118,7 +99,7 @@ d3.json("test2.json", function(error, root) {
                 .attr("height", 1)
                 .attr("width", 1)
 				.attr("preserveAspectRatio", "xMinYMin slice");   
-  */
+  
  
   var text = svg.selectAll("text")
       .data(nodes)
@@ -131,14 +112,6 @@ d3.json("test2.json", function(error, root) {
       			return d.name;
       	});
     
-/*var foreignObject = svg.selectAll("foreignObject")
-    .data(nodes)
-    .enter().append("foreignObject")
-    .attr("width", 480)
-    .attr("height", 500)
-    .append("xhtml:body")
-    .style("font", "14px 'Helvetica Neue'")
-    .html("<h1>An HTML Foreign Object in SVG</h1><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eu enim quam. Quisque nisi risus, sagittis quis tempor nec, aliquam eget neque. Nulla bibendum semper lorem non ullamcorper. Nulla non ligula lorem. Praesent porttitor, tellus nec suscipit aliquam, enim elit posuere lorem, at laoreet enim ligula sed tortor. Ut sodales, urna a aliquam semper, nibh diam gravida sapien, sit amet fermentum purus lacus eget massa. Donec ac arcu vel magna consequat pretium et vel ligula. Donec sit amet erat elit. Vivamus eu metus eget est hendrerit rutrum. Curabitur vitae orci et leo interdum egestas ut sit amet dui. In varius enim ut sem posuere in tristique metus ultrices.<p>Integer mollis massa at orci porta vestibulum. Pellentesque dignissim turpis ut tortor ultricies condimentum et quis nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer euismod lorem vulputate dui pharetra luctus. Sed vulputate, nunc quis porttitor scelerisque, dui est varius ipsum, eu blandit mauris nibh pellentesque tortor. Vivamus ultricies ante eget ipsum pulvinar ac tempor turpis mollis. Morbi tortor orci, euismod vel sagittis ac, lobortis nec est. Quisque euismod venenatis felis at dapibus. Vestibulum dignissim nulla ut nisi tristique porttitor. Proin et nunc id arcu cursus dapibus non quis libero. Nunc ligula mi, bibendum non mattis nec, luctus id neque. Suspendisse ut eros lacus. Praesent eget lacus eget risus congue vestibulum. Morbi tincidunt pulvinar lacus sed faucibus. Phasellus sed vestibulum sapien.");*/
 
   var node = svg.selectAll("defs,circle,text,foreignObject");
 
@@ -173,8 +146,146 @@ d3.json("test2.json", function(error, root) {
   }
 
 });
+*/
 
-d3.select(self.frameElement).style("height", diameter + "px");
+
+
+function bubbleTweetsBubbleBubbleBubbleTweets(data)
+{
+	d3.select("svg").remove();
+	
+	var margin = 20,
+    diameter = document.body.clientWidth > document.body.clientHeight ? document.body.clientHeight : document.body.clientWidth;
+
+var color = d3.scale.linear()
+    .domain([-1, 5])
+    .range(["hsl(152,80%,80%)", "hsl(228,30%,40%)"])
+    .interpolate(d3.interpolateHcl);
+
+var pack = d3.layout.pack()
+    .padding(2)
+    .size([diameter - margin, diameter - margin])
+    // TODO come up with an equation to normalize the favorite counts into a reasonable range
+    .value(function(d) { return 1 + d.favorite_count; })
+    .sort(null);
+
+var svg = d3.select("body").append("svg")
+    .attr("width", diameter)
+    .attr("height", diameter)
+  .append("g")
+    .attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+	
+	var tooltip = d3.select("body").append("div")   
+        .attr("class", "tooltip")               
+        .style("opacity", 0);
+	
+	
+	var root = { screen_name:"root_bubble", children: data};
+ 
+  var focus = root,
+      nodes = pack.nodes(root).sort(null),
+      view;
+ 
+  var defs = svg.selectAll("defs")
+        .data(nodes)
+        .enter().append('defs')
+        .append('pattern')
+            .attr('id', function(d) { return (d.screen_name+"-image");}) // just create a unique id (id comes from the json)
+            .attr('width', 1)
+            .attr('height', 1)
+            .attr('patternContentUnits', 'objectBoundingBox')
+            .append("svg:image")
+                .attr("xlink:xlink:href", function(d) { return d.profile_image_url;}) // "icon" is my image url. It comes from json too. The double xlink:xlink is a necessary hack (first "xlink:" is lost...).
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("height", 1)
+                .attr("width", 1)
+				.attr("preserveAspectRatio", "xMinYMin slice");
+ 
+    
+  var circle = svg.selectAll("circle")
+      .data(nodes)
+      .enter().append("circle")
+      .attr("class", function(d) { return d.parent ? d.text ? "node" : "node node--leaf" : "node node--root"; })
+      .style("fill", function(d) {
+      		if(d.screen_name != "root_bubble")
+      	 		return ("url(#"+d.screen_name+"-image)");
+      	 	else
+      	 		return "white";
+      	 })
+      
+  
+      .on("click", function(d) { 
+          if (focus != d)
+          {
+          	zoom(d);
+          	 showTweeterInfo(d);
+          	 d3.event.stopPropagation(); 
+          }
+          else
+          {
+          	
+          }
+      })
+           
+     .on("mouseout", function(d) {       
+            tooltip.transition().duration(500).style("opacity", 0);   
+     });
+     
+   	// TODO re-add on hover showing on screen name in middle of bubble
+   	// dont show if the user is zoomed into 1 bubble view
+
+ 
+  var text = svg.selectAll("text")
+      .data(nodes)
+      .enter().append("text")
+      .attr("class", "label")
+      .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
+      .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
+      .text(function(d) { 
+      		if(d.depth == 1 )
+      			return d.name;
+      	});
+
+  var node = svg.selectAll("defs,circle,text,foreignObject");
+
+  d3.select("body")
+      //.style("background", color(-1))
+      .style("background", color(-5))
+      .on("click", function() { zoom(root); hideTweeterInfo()});
+
+  zoomTo([root.x, root.y, root.r * 2.5 + margin]);
+
+  function zoom(d) {
+    var focus0 = focus; focus = d;
+
+    var transition = d3.transition()
+        .duration(d3.event.altKey ? 7500 : 750)
+        .tween("zoom", function(d) {
+          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2.5 + margin]);
+          return function(t) { zoomTo(i(t)); };
+        });
+
+    transition.selectAll("text")
+      .filter(function(d) { return d.parent === focus || this.style.display === "inline"; })
+        .style("fill-opacity", function(d) { return d.parent === focus ? 1 : 0; })
+        .each("start", function(d) { if (d.parent === focus) this.style.display = "inline"; })
+        .each("end", function(d) { if (d.parent !== focus) this.style.display = "none"; });
+  }
+
+  function zoomTo(v) {
+    var k = diameter / v[2]; view = v;
+    node.attr("transform", function(d) { return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")"; });
+    circle.attr("r", function(d) { return d.r * k; });
+  }
+  
+  d3.select(self.frameElement).style("height", diameter + "px");
+  
+  
+}
+
+
+
 
 /** Start of NIC CODE **/
 
@@ -186,40 +297,87 @@ var tweeters = [];
 function setup()
 {
 	// load init twitter data into array of tweeters
-	tweeters = getArrayOfTweetersFromData(TWITTER_USER_DATA);
+	tweeters = betterFormatTweets(TWEETS_3);
+	
+	// put all tweets in the bubbles
+	bubbleTweetsBubbleBubbleBubbleTweets(tweeters);
+	
+	
+}
+
+function filterTweeters()
+{
+	// document.getElementbyId("")
+
+
+	// TODO correctly filter temp tweet array based on user selections	
+	var tempArray = [];
+
+	for (var i = 0; i < 10; i++)
+	{
+	    tempArray.push(tweeters[i]);
+	}
+	
+	
+	bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
 }
 
 
 /*
  * Reads the data from the JSON file and converts it to a javascript object array
  */
-function getArrayOfTweetersFromData(data)
-{
-	var userArray = [];
-	
-	for(var i = 0; i < data.children.length; i++)
-	{
-		userArray.push(data.children[i]);
-	}
-	
-	return userArray;
-}
 
-
-function betterFormatTweets()
+function betterFormatTweets(data)
 {
     var tweetsArray = [];
-    for (var i = 0; i < TWEETS_3.length; i=i+5) {
-        var tweet = {
-            screen_name: TWEETS_3[i],
-            location: TWEETS_3[i+1],
-            description: TWEETS_3[i+2],
-            favorite_count: TWEETS_3[1+3],
-            text: TWEETS_3[i+4],
-            profile_image_url: getUserImageURL(TWEETS_3[i]);
-            }
-    tweetsArray.push(tweet);
+    for (var i = 0; i < data.length; i = i+5)
+    {
+    	var tweet = {
+            screen_name: data[i].replace('screen_name: ',''),
+            location: data[i+1].replace('location: ',''),
+            description: data[i+2].replace('description: ',''),
+            favorite_count: data[i+3].replace('favorite_count: ',''),
+            text: data[i+4].replace('text: ',''),
+            profile_image_url: getUserImageURL(data[i].replace('screen_name: ','').replace('profile_image_url: ',''))
+     	};
+            
+        // dont add duplicate tweeters
+        var isDup = false;
+     	for (var j = 0; j < tweetsArray.length; j++)
+    	{
+    		if(tweet.screen_name == tweetsArray[j].screen_name)
+    		{
+    			isDup = true;
+    			break;
+    		}
+    	}            
+                        
+      	//console.log(tweet);
+   		if(!isDup)
+   			tweetsArray.push(tweet);
     }
     
     return tweetsArray;
 };
+
+function showTweeterInfo(d)
+{
+	hideTweeterInfo();
+	console.log("showing tweeter info: " + d.screen_name);
+	
+	var tweeterName = document.getElementById("tweeter-name");
+		tweeterName.innerHTML = d.screen_name;
+	
+	
+	var tweeterInfoBox = document.getElementById("tweeter-info-box");
+		tweeterInfoBox.style.opacity = '0.82';		
+	
+}
+
+function hideTweeterInfo()
+{
+	console.log("hiding tweeter info");
+	
+	var tweeterInfoBox = document.getElementById("tweeter-info-box");
+		tweeterInfoBox.style.opacity = '0';	
+}

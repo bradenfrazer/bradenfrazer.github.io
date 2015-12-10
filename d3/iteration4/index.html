@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <meta charset="utf-8">
 <html>
@@ -11,7 +12,7 @@
     <script src="//code.jquery.com/jquery-1.10.2.js"></script>
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="bubbles.js" charset="utf-8"></script>
-    <script src="test2.js" charset="utf-8"></script>
+    <script src="tweets3.js" charset="utf-8"></script>
    
 
 	<div id="sidebar">
@@ -19,7 +20,7 @@
       Twitter users<br>
       #RiseUpOctober<br>
     </h2>
-    <a href="/about.html">// about</a>
+    <a href="about.html">// about</a>
         <br><br><br>
     <input type="checkbox">
     <label>#RiseUpOctober</label><br>
@@ -27,7 +28,7 @@
     <label>#BlackLivesMatter</label><br>
         <input type="checkbox">
     <label>#hashtag3</label><br>
-    <input type="checkbox" checked>
+    <input type="checkbox" checked onchange="filterTweeters();">
     <label>#hashtag4</label><br>
     <br><br>
     <input type="checkbox" checked>
@@ -40,10 +41,30 @@
     <br><br><br><br><br><br>
     
     <div id="timeline">
-    <a class="twitter-timeline" href="https://twitter.com/alliemart7/lists/rise-up-october" data-widget-id="675070569075769344" height="300" width="700">Tweets from https://twitter.com/alliemart7/lists/rise-up-october</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    <a class="twitter-timeline" href="https://twitter.com/WhiteHouse" data-widget-id="674462318747488256">Tweets by @WhiteHouse</a>
 
+	<script>
+	!function(d,s,id)
+	{
+		var js,
+			fjs = d.getElementsByTagName(s)[0],
+			p = /^http:/.test(d.location)?'http':'https';
+		
+		if(!d.getElementById(id))
+		{
+			js = d.createElement(s);
+			js.id = id;
+			js.src = p + "://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+	</script>
         </div>
 
+    </div>
+    
+    <div id="tweeter-info-box">
+    
+    	<h1 id="tweeter-name">DEFAULT</h1>
+    	
+    	<!-- TODO add html placeholders for all tweeter info fields -->
     </div>
     
     <script>
