@@ -151,3 +151,5 @@ div.tooltip {
     border-radius: 10px;           
     pointer-events: none;
 }
+
+#twitter-timeline {width:980px !important;}
