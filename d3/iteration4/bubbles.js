@@ -1,6 +1,6 @@
 function getUserImageURL(twitterUsername)
 {
-    var url = "https://twitter.com/" + twitterUsername + "/profile_image?size=original";
+    var url = "https://twitter.com/" + twitterUsername + "/profile_image?size=bigger";
     //console.log(url);
     return url;
 }
@@ -166,7 +166,7 @@ var pack = d3.layout.pack()
     .padding(2)
     .size([diameter - margin, diameter - margin])
     // TODO come up with an equation to normalize the favorite counts into a reasonable range
-    .value(function(d) { return 1 + d.favorite_count; })
+    .value(function(d) { return 500 + (d.favorite_count/10); })
     .sort(null);
 
 var svg = d3.select("body").append("svg")
@@ -254,7 +254,7 @@ var svg = d3.select("body").append("svg")
       .style("background", color(-5))
       .on("click", function() { zoom(root); hideTweeterInfo()});
 
-  zoomTo([root.x, root.y, root.r * 2.5 + margin]);
+  zoomTo([root.x, root.y, root.r * 2 + margin]);
 
   function zoom(d) {
     var focus0 = focus; focus = d;
@@ -262,7 +262,7 @@ var svg = d3.select("body").append("svg")
     var transition = d3.transition()
         .duration(d3.event.altKey ? 7500 : 750)
         .tween("zoom", function(d) {
-          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2.5 + margin]);
+          var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
           return function(t) { zoomTo(i(t)); };
         });
 
@@ -367,8 +367,20 @@ function showTweeterInfo(d)
 	hideTweeterInfo();
 	console.log("showing tweeter info: " + d.screen_name);
 	
+    var tweeterImage = document.getElementById("tweeter-image");
+		tweeterImage.innerHTML = d.profile_image_url;
 	var tweeterName = document.getElementById("tweeter-name");
 		tweeterName.innerHTML = d.screen_name;
+    var tweeterVerifiedStatus = document.getElementById("tweeter-verified");
+		tweeterVerifiedStatus.innerHTML = d.verified;
+    var tweeterDescription = document.getElementById("tweeter-description");
+		tweeterDescription.innerHTML = d.description;
+    var tweeterFavoriteCount = document.getElementById("tweeter-favorites");
+		tweeterFavoriteCount.innerHTML = d.favorite_count;
+    var tweeterLocation = document.getElementById("tweeter-location");
+		tweeterLocation.innerHTML = d.location;
+    var tweeterText = document.getElementById("tweeter-text");
+		tweeterText.innerHTML = d.text;
 	
 	
 	var tweeterInfoBox = document.getElementById("tweeter-info-box");
