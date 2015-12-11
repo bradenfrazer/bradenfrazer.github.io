@@ -330,14 +330,16 @@ function filterTweeters()
 function betterFormatTweets(data)
 {
     var tweetsArray = [];
-    for (var i = 0; i < data.length; i = i+5)
+    for (var i = 0; i < data.length; i = i+6)
     {
     	var tweet = {
             screen_name: data[i].replace('screen_name: ',''),
-            location: data[i+1].replace('location: ',''),
-            description: data[i+2].replace('description: ',''),
-            favorite_count: data[i+3].replace('favorite_count: ',''),
-            text: data[i+4].replace('text: ',''),
+            verified: data[i+1].replace('verified: ',''),
+            location: data[i+2].replace('location: ',''),
+            description: data[i+3].replace('description: ',''),
+            favorite_count: data[i+4].replace('favorite_count: ',''),
+            text: data[i+5].replace('text: ',''),
+            //verified: data[i+5].replace('verified: ',''),
             profile_image_url: getUserImageURL(data[i].replace('screen_name: ','').replace('profile_image_url: ',''))
      	};
             
