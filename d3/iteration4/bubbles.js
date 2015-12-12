@@ -305,21 +305,47 @@ function setup()
 	
 }
 
-function filterTweeters()
+// TODO correctly filter temp tweet array based on user selections	
+function filterTweeters(filter)
 {
 	// document.getElementbyId("")
-
-
-	// TODO correctly filter temp tweet array based on user selections	
-	var tempArray = [];
-
-	for (var i = 0; i < 10; i++)
-	{
-	    tempArray.push(tweeters[i]);
-	}
+     var tempArray = [];
+    
+    if (filter == 1)    // first hashtag
+    {
+        for (var i = 0; i < 10; i++)
+        {
+            tempArray.push(tweeters[i]);
+        }
 	
+    }
+    else if (filter == 2)       //second hashtag
+    {
+         for (var i = 0; i < 10; i++)
+            {
+                tempArray.push(tweeters[i]);
+            }   
+    }
+    else if (filter == 5)      // verified check
+    {
+            for (var i = 0; i < tweeters.length; i++)
+            {
+                if(tweeters[i].verified == "true")
+                {
+                    tempArray.push(tweeters[i]);
+                }
+            }  
+    }
+    else {
+            for (var i = 0; i < 10; i++)
+            {
+                tempArray.push(tweeters[i]);
+            }
+    }
 	
+    //redraw bubbles with new temp array
 	bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+    
 }
 
 
