@@ -22,23 +22,27 @@
     </h2>
     <a href="about.html">// about</a>
         <br><br><br>
-    <input type="checkbox">
+    <input type="checkbox" checked>
     <label>#RiseUpOctober</label><br>
     <input type="checkbox" checked>
     <label>#BlackLivesMatter</label><br>
-        <input type="checkbox">
+        <input type="checkbox" checked>
     <label>#hashtag3</label><br>
     <input type="checkbox" checked onchange="filterTweeters();">
     <label>#hashtag4</label><br>
     <br><br>
-    <input type="checkbox" checked>
+    <input type="checkbox">
     <label>Verified users only</label><br>
     <br><br>
     <input id="slider1" type="range" min="100" max="500" step="10" />
     <br>
-        yay slider
+        minimum favorites shown
+        <br><br>
+    <input id="slider2" type="range" min="100" max="500" step="10" />
+    <br>
+        maximum favorites shown
         
-    <br><br><br><br><br><br>
+    <br><br><br><br><br>
     
     <div id="timeline">
     <a class="twitter-timeline" href="https://twitter.com/alliemart7/lists/rise-up-october" data-widget-id="675070569075769344">Tweets from https://twitter.com/alliemart7/lists/rise-up-october</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -47,13 +51,15 @@
     </div>
     
     <div id="tweeter-info-box">
-        <img id="tweeter-image">DEFAULTIMAGE</img><br>
-    	<h1 id="tweeter-name">DEFAULT</h1><br>
-        <h1 id="tweeter-verified">DEFAULT2</h1><br>
-        <p id="tweeter-description">DEFAULT3</p><br>
-        <h1 id="tweeter-favorites">DEFAULT4</h1><br>
-        <p id="tweeter-location">DEFAULT5</p><br>
-    <p id="tweeter-text">DEFAULT6</p><br>
+        <a id="tweeter-image">DEFAULTIMAGE</a><h1 id="tweeter-name">DEFAULT</h1>
+        <a id="tweeter-verified">DEFAULT2</a><br>
+        <br><br>
+    <p id="tweeter-description">DEFAULT3</p><br>
+        <p># favorites: </p> <p id="tweeter-favorites">DEFAULT4</h1><br>
+    <br><br>
+        <p>Location:</p> <p id="tweeter-location">DEFAULT5</p><br>
+    <h3 id="tweeter-text">DEFAULT6</h3>
+    <a id="tweeter-url" href="http://twitter.com">visit profile</a>
     	
     	<!-- TODO add html placeholders for all tweeter info fields -->
     </div>

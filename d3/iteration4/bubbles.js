@@ -243,11 +243,11 @@ var svg = d3.select("body").append("svg")
       .style("fill-opacity", function(d) { return d.parent === root ? 1 : 0; })
       .style("display", function(d) { return d.parent === root ? "inline" : "none"; })
       .text(function(d) { 
-      		if(d.depth == 1 )
+      		if(d.depth == 0 )
       			return d.name;
       	});
 
-  var node = svg.selectAll("defs,circle,text,foreignObject");
+  var node = svg.selectAll("defs,circle,text");
 
   d3.select("body")
       //.style("background", color(-1))
@@ -367,12 +367,18 @@ function showTweeterInfo(d)
 	hideTweeterInfo();
 	console.log("showing tweeter info: " + d.screen_name);
 	
+    
+    //document.getElementById('imageHolder1').innerHTML="<a href='#'><img src='photos/picture.jpg' border=0/></a>";
+    
     var tweeterImage = document.getElementById("tweeter-image");
-		tweeterImage.innerHTML = d.profile_image_url;
+		tweeterImage.innerHTML = "<img src='" + d.profile_image_url + "' border=0/>";
 	var tweeterName = document.getElementById("tweeter-name");
 		tweeterName.innerHTML = d.screen_name;
     var tweeterVerifiedStatus = document.getElementById("tweeter-verified");
-		tweeterVerifiedStatus.innerHTML = d.verified;
+        if (d.verified == "true") {
+		  tweeterVerifiedStatus.innerHTML = "<img src='/d3/iteration4/verified.png' border=0 height=30/>";
+        }
+        else tweeterVerifiedStatus.innerHTML = "";
     var tweeterDescription = document.getElementById("tweeter-description");
 		tweeterDescription.innerHTML = d.description;
     var tweeterFavoriteCount = document.getElementById("tweeter-favorites");
@@ -381,6 +387,8 @@ function showTweeterInfo(d)
 		tweeterLocation.innerHTML = d.location;
     var tweeterText = document.getElementById("tweeter-text");
 		tweeterText.innerHTML = d.text;
+    var tweeterURL = document.getElementById("tweeter-url");
+		tweeterURL.href = "http://www.twitter.com/" + d.screen_name;
 	
 	
 	var tweeterInfoBox = document.getElementById("tweeter-info-box");
