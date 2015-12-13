@@ -5,7 +5,7 @@
 }
 
 body {
-  font: 300 14px "Helvetica Neue";
+  font: 300 12px "Helvetica Neue";
   overflow: hidden;
   position: relative;
 	height: 100%;
@@ -16,7 +16,7 @@ html {
 }
 
 a {
-  font-size: 18px;
+  font-size: 14px;
   --text-align: right;
   pointer-events: all;
 }
@@ -51,19 +51,19 @@ body > ul {
 }
 
 h1 {
-  font: 300 32px "Helvetica Neue";
+  font: 300 24px "Helvetica Neue";
 }
 
 h2 {
-  font: 100 32px "Helvetica Neue";
+  font: 100 24px "Helvetica Neue";
 }
 
 h3 {
-  font: 500 18px "Helvetica Neue";
+  font: 500 14px "Helvetica Neue";
 }
 
 p {
-  font: 200 18px "Helvetica Neue";
+  font: 200 14px "Helvetica Neue";
 }
 table {
     border-collapse: separate;
