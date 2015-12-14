@@ -333,16 +333,12 @@ function filterTweeters()
                 }
             }
     
-    for (var i = 0; i < tweeters.length; i++){
-                if(tweeters[i].verified == "true"){
-                    tempArray4.push(tweeters[i]);
-                }
-            }
- 
+    
     
     var check1 = document.getElementById("check1");
     var check2 = document.getElementById("check2");
-    var ver = document.getElementById("verified");
+    
+    
     
     //RiseUpOctober
     if(check1.checked){
@@ -373,15 +369,83 @@ function filterTweeters()
         bubbleTweetsBubbleBubbleBubbleTweets(tempArray2);
     }
     
-    //Verified don't know why this doesn't work with other checkboxes
-    /*if(ver.checked){
+}
+
+function filterVerified(){
+    var tempArray = [];
+    var tempArray4 = [];
+
+	for (var i = 0; i < 200; i++)
+	{
+	    tempArray.push(tweeters[i]);
+	}
+    for (var i = 0; i < tweeters.length; i++){
+                if(tweeters[i].verified == "true"){
+                    tempArray4.push(tweeters[i]);
+                }
+            }
+    var ver = document.getElementById("verified");
+    if(ver.checked){
         bubbleTweetsBubbleBubbleBubbleTweets(tempArray4);
     }
     else{
         bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
-    }*/
+    }
+}
+
+function filterMin(){
+    var tempArray = [];
+    var tempArray4 = [];
+    var tempArray5 = [];
+    var tempArray6 = [];
+    for (var i = 0; i < 200; i++)
+	{
+	    tempArray.push(tweeters[i]);
+	}
+    for (var i = 0; i < tweeters.length; i++){
+                if(tweeters[i].favorite_count < 100){
+                    tempArray4.push(tweeters[i]);
+                }
+            }
     
-   
+    
+    var minslide = document.getElementById("slider1");
+    
+    if(minslide.min){
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray4);
+    }
+    else{
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+    }
+      
+    
+    
+}
+
+function filterMax(){
+    
+    var tempArray = [];
+    var tempArray6 = [];
+    for (var i = 0; i < 200; i++)
+	{
+	    tempArray.push(tweeters[i]);
+	}
+    
+    
+     for (var i = 0; i < tweeters.length; i++){
+                if(tweeters[i].favorite_count > 700){
+                    tempArray6.push(tweeters[i]);
+                }
+            }
+    
+    var maxslide = document.getElementById("slider2");
+    
+    if(maxslide.min){
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray6);
+    }
+    else{
+        bubbleTweetsBubbleBubbleBubbleTweets(tem)
+    }
 }
 
 
