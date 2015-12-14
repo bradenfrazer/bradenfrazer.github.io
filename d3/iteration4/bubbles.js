@@ -306,47 +306,84 @@ function setup()
 }
 
 // TODO correctly filter temp tweet array based on user selections	
-function filterTweeters(filter)
+function filterTweeters()
 {
-	// document.getElementbyId("")
-     var tempArray = [];
+	//document.getElementbyId("check1");
+
+
+	// TODO correctly filter temp tweet array based on user selections	
+	var tempArray = [];
+    var tempArray2 = [];
+    var tempArray3 = [];
+    var tempArray4 = [];
+
+	for (var i = 0; i < 200; i++)
+	{
+	    tempArray.push(tweeters[i]);
+	}
     
-    if (filter == 1)    // first hashtag
-    {
-        for (var i = 0; i < 10; i++)
-        {
-            tempArray.push(tweeters[i]);
-        }
-	
-    }
-    else if (filter == 2)       //second hashtag
-    {
-         for (var i = 0; i < 10; i++)
-            {
-                tempArray.push(tweeters[i]);
-            }   
-    }
-    else if (filter == 5)      // verified check
-    {
-            for (var i = 0; i < tweeters.length; i++)
-            {
-                if(tweeters[i].verified == "true")
-                {
-                    tempArray.push(tweeters[i]);
-                }
-            }  
-    }
-    else {
-            for (var i = 0; i < 10; i++)
-            {
-                tempArray.push(tweeters[i]);
+    for (var i = 0; i < tempArray.length; i++){
+            if(tweeters[i].text.indexOf('RiseUpOctober')>0){
+                tempArray2.push(tweeters[i]);
             }
-    }
-	
-    //redraw bubbles with new temp array
-	bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+        }
+    for (var i = 0; i < tempArray.length; i++){
+                if(tweeters[i].text.indexOf('BlackLivesMatter')>0){
+                    tempArray3.push(tweeters[i]);
+                }
+            }
     
+    for (var i = 0; i < tweeters.length; i++){
+                if(tweeters[i].verified == "true"){
+                    tempArray4.push(tweeters[i]);
+                }
+            }
+ 
+    
+    var check1 = document.getElementById("check1");
+    var check2 = document.getElementById("check2");
+    var ver = document.getElementById("verified");
+    
+    //RiseUpOctober
+    if(check1.checked){
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+        if(check2.checked){
+            bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+        }
+        else{
+            bubbleTweetsBubbleBubbleBubbleTweets(tempArray2);
+        }
+    }
+    else{
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray3);
+    }
+    
+    
+    //BlackLivesMatter
+    if(check2.checked){
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+        if(check1.checked){
+            bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+        }
+        else{
+            bubbleTweetsBubbleBubbleBubbleTweets(tempArray3);
+        }
+    }
+    else{
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray2);
+    }
+    
+    //Verified don't know why this doesn't work with other checkboxes
+    /*if(ver.checked){
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray4);
+    }
+    else{
+        bubbleTweetsBubbleBubbleBubbleTweets(tempArray);
+    }*/
+    
+   
 }
+
 
 
 /*
