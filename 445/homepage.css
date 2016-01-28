@@ -3,7 +3,7 @@ body
     margin: 100px;
     margin-top: 25px;
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5em;
     color: #FFFFFF;
     background-color: #000000;
@@ -14,6 +14,11 @@ body
 a
 {
   color: #00FFFF;
+}
+
+h2
+{
+  text-align: center;
 }
 
 img.header
@@ -31,7 +36,15 @@ img.header
     background-color:#202020;
 }
 
-#deliverables
+#media
+{
+    padding: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:#202020;
+}
+
+#links
 {
     padding: 25px;
     margin-left: auto;
