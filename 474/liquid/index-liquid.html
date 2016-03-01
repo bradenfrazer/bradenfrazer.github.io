@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<title>Untitled Document</title>
+	<style type="text/css">
+        * {margin:0; padding: 0;}
+    
+    #wrapper {
+        --border:
+        --width:
+        --height:
+        margin: 0 auto;
+        margin-top: 3em;
+       
+    }
+        
+    body {
+        font-family: sans-serif;
+        color: #666;
+        font-size: 14px;
+        background-color: #222222;
+        --position: absolute;
+        background-image: url(bg.jpeg);
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        --background-attachment: fixed;
+    }
+    
+    header#main-head {
+        --background-color: #f3f3f3;
+        color: black;
+        --position: relative;
+        margin-top: 5%;
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        --font-family: "Impact";
+        font-size: 32px;
+        text-transform: uppercase;
+    }
+        
+        header#main-head img {
+            height:200px;
+        }
+    
+    
+    nav {
+        position: relative;
+        left: 12.5%;
+        margin-top: 1%;
+        --padding: 2em;
+        width:75%;
+        --background-color:white;
+        --border: 2px;
+        --border-style: solid;
+        --border-color: #69D2E7;
+    }
+        
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+       -- padding:;
+        overflow: hidden;
+        --border: 1px solid #e7e7e7;
+        background-color:rgba(255, 255, 255, 0.8);
+        --background-color: #f3f3f3;
+        border-radius: 15px;
+    }
+
+    nav li {
+        float: left;
+        margin-left:0.5%
+    }
+        
+    nav li:first-child {
+        margin-left: 2%;
+    }    
+        
+    nav li:last-child {
+        margin-right: 2%;
+        float:right;
+    }
+
+    nav li a {
+        display: block;
+        color: #666;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav li a:hover:not(.active) {
+        ---background-color: #ddd;
+        background-color:rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    nav li a.active {
+        color: white;
+        background-color:rgba(71, 103, 79, 0.7);
+    }
+    
+    
+    
+    a {
+        --display:block;
+        --color: #69D2E7;
+    }
+    
+    /* link characteristics */
+    
+			
+    a:link	{
+        --text-decoration: none;
+    }
+			
+    a:visited	{
+        --text-decoration: none;
+    }
+
+    a:hover	{   
+        --text-decoration: underline;
+        --color: #A7DBD8;
+        --text-transform: uppercase;
+        --font-size: 90%;
+        --margin-left:0.5em;
+    }
+    
+    h3 {
+        color: rgba(71, 103, 79, 1);
+        margin-top: 0.5em;
+        border-bottom: 2px;
+        border-bottom-color: rgba(71, 103, 79, 1);
+        border-bottom-style: solid;
+        font-size: 16px;
+        padding-bottom:0.25em;
+        margin: 3% 5%;
+        text-align:center;
+    }
+    
+    
+    section#content {
+        border-radius: 15px;
+        font-size: 1em;
+        position: relative;
+        margin: 3% 10%;
+        margin-bottom: 95%;
+        padding: 1% 2%;
+        --background-color:rgba(255, 255, 255, 0.8);
+        --border: 2px;
+        --border-style: solid;
+        --border-color: #f3f3f3;
+    }
+        
+    section article {
+        background-color:rgba(255, 255, 255, 0.8);
+        color:#666; 
+        padding:1%;
+        float:left;
+        border-radius: 15px;
+    }    
+    section	article#column1	{
+        width:24%;
+        margin-left: 1%;
+        }
+							
+	section article#column2	{
+        width: 40%;
+        margin-left: 2%;
+        margin-bottom: 5%;
+        }
+							
+	section article#column3	{
+        width: 24%;
+        margin-left: 2%;
+        }
+    
+    section article#ad	{
+        width: 24%;
+        margin-left: 2%;
+        margin-top: 2%;
+        }
+        
+     #ad {
+        width: 26%;
+        float:left;
+        margin-left: 2%;
+        margin-top: 2%;
+        --background-color:aqua;
+        border-radius: 15px;
+        --max-width:100%;
+        --max-height:100%;
+        }
+        #ad img {
+            opacity: 0.9;
+            border-radius: 15px;
+            max-width:100%;
+            max-height:100%;
+        }
+        
+    p {
+        --font-size: 1em;
+        --position: absolute;
+        --top:120px;
+        --left:200px;
+        --right:230px;
+        padding: 1em;
+        --background-color: white;
+    }
+    
+    table  {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    td {
+        font-weight:700;
+        font-size: 14px;
+        padding: 0.25em 1em;
+        --padding-right: 1em;
+    }
+    
+    footer {
+        position: relative;
+        font-style: italic;
+        font-size: 12px;
+        background-color:rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        color: #999;
+        text-align: center;
+        position: relative;
+        left: 25%;
+        margin-bottom:2%;
+        width:50%;
+    }
+    
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+        <header id="main-head">
+            <img src="spokes-logo-white.png" />
+        </header>  <! main-head ->
+
+        <nav>
+            <ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#hours">Hours</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>  <! main ->
+
+        <section id="content">
+
+    <article id="column1">
+		<h3>News</h3><p>Ut tempor ultricies dolor. Fusce sed mauris. Duis sollicitudin lacinia tellus. Sed condimentum, dui ut tristique viverra, nulla quam fringilla orci, eget tincidunt lectus ligula quis sapien. Aenean convallis auctor turpis. Fusce quis nibh. Suspendisse dictum. Sed commodo volutpat est. Mauris vel magna vel ligula sodales posuere. Proin eros. </p>
+		<p>Ut tempor ultricies dolor. Fusce sed mauris. Duis sollicitudin lacinia tellus. Sed condimentum, dui ut tristique viverra, nulla quam fringilla orci, eget tincidunt lectus ligula quis sapien. Aenean convallis auctor turpis. Fusce quis nibh. Suspendisse dictum. Sed commodo volutpat est. Mauris vel magna vel ligula sodales posuere. Proin eros. </p>
+	</article>  <! column1 ->        
+            
+	<article id="column2">
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc suscipit gravida tellus. Etiam venenatis aliquam sem. Nam dolor lorem, placerat sed, condimentum in, volutpat in, nibh. Maecenas consequat augue in urna. Proin porttitor. Aenean ac erat. Cras a massa id ligula lacinia tempor. Etiam posuere. Nam dictum sapien a ligula. Aliquam erat volutpat. In mattis luctus odio. Ut hendrerit imperdiet nulla. Fusce convallis purus nec sapien. Proin bibendum. Sed consectetuer sollicitudin est. Morbi porttitor, dui in accumsan vestibulum, est tellus convallis dui, vel vestibulum turpis neque quis mi. </p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc suscipit gravida tellus. Etiam venenatis aliquam sem. Nam dolor lorem, placerat sed, condimentum in, volutpat in, nibh. Maecenas consequat augue in urna. Proin porttitor. Aenean ac erat. Cras a massa id ligula lacinia tempor. Etiam posuere. Nam dictum sapien a ligula. Aliquam erat volutpat. In mattis luctus odio. Ut hendrerit imperdiet nulla. Fusce convallis purus nec sapien. Proin bibendum. Sed consectetuer sollicitudin est. Morbi porttitor, dui in accumsan vestibulum, est tellus convallis dui, vel vestibulum turpis neque quis mi. </p>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc suscipit gravida tellus. Etiam venenatis aliquam sem. Nam dolor lorem, placerat sed, condimentum in, volutpat in, nibh. Maecenas consequat augue in urna. Proin porttitor. Aenean ac erat. Cras a massa id ligula lacinia tempor. Etiam posuere. Nam dictum sapien a ligula. Aliquam erat volutpat. In mattis luctus odio. Ut hendrerit imperdiet nulla. Fusce convallis purus nec sapien. Proin bibendum. Sed consectetuer sollicitudin est. Morbi porttitor, dui in accumsan vestibulum, est tellus convallis dui, vel vestibulum turpis neque quis mi. </p>
+	</article>  <! column2 ->
+
+	<article id="column3">
+		<h3>Hours</h3>
+        <table>
+			<tr> 
+				<td>Monday</td>
+				<td>9am-5pm</td>
+			</tr>
+			<tr> 
+				<td>Tuesday</td>
+				<td>9am-5pm</td>
+            </tr>
+            <tr> 
+				<td>Wednesday</td>
+				<td>9am-5pm</td>
+			</tr>
+			<tr> 
+				<td>Thursday</td>
+				<td>9am-6pm</td>
+			</tr>
+			<tr> 
+				<td>Friday</td>
+				<td>9am-6pm</td>
+			</tr>
+			<tr> 
+				<td>Saturday</td>
+				<td>8am-8pm</td>
+			</tr>
+			<tr> 
+				<td>Sunday</td>
+				<td>closed</td>
+			</tr>
+        </table>
+	</article>  <! column3 ->
+            
+      
+    <div id="ad">
+		<a href="#shop"><img src="sale.jpg" /></a>
+	</div>  <! ad ->
+</section>  <! content ->
+
+
+        <footer>
+            <p>© 2016 Spokes Bicycle Shop Inc. &nbsp; &nbsp; Last updated 2/22/16. </p>
+        </footer>
+
+	</div>   <! wrapper ->
+</body>
+
+</html>

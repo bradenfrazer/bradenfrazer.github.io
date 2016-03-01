@@ -1,0 +1,3 @@
+Frazer-Fixed-AP-Design
+
+I wished to design a pretty minimal page with the focus on the main content at the center. Navigation is clean and simple both on the left and right sides of the webpage, and as the browser is resized they stay at a fixed size while the main content gets larger. I think not using a lot of images as background elements helps keep the page clean, hence why I only choose to use one image and float it in the main content. My least favorite part about the webpage is probably the footer, which I thought was too much to add a background color too but I couldn’t really find a way to make it stand out as it is.

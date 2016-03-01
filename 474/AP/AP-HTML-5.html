@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
+<title>AP layout</title>
+<style type="text/css">
+    
+    --colors:
+    --blue: #69D2E7
+    --green/blue: #A7DBD8
+    --offwhite: #E0E4CC
+    --light orange: #F38630
+    --dark orange: #FA6900
+    
+    
+    * {margin:0; padding: 0;}
+    
+    body {
+        font-family: "Century Gothic";
+        background-color: #A7DBD8;
+        --position: absolute;
+    }
+    
+    #wrapper {
+        --border:
+        --width:
+        --height:
+        margin: 0 auto;
+        margin-top: 1em;
+    }
+    
+    nav#people {
+        position: absolute;
+        left: 20px;
+        top:225px;
+        padding: 2em;
+        width:160px;
+        background-color:white;
+        border: 2px;
+        border-style: solid;
+        border-color: #69D2E7;
+    }
+    
+    header#main-head {
+        background-color: #F38630;
+        border: 5px;
+        border-style: solid;
+        border-color: #FA6900;
+        color: white;
+        position: absolute;
+        left:20px;
+        right:20px;
+        text-align: center;
+        font-family: "Impact";
+        font-size: 32px;
+        text-transform: uppercase;
+    }
+    
+    nav#dates {
+        position: absolute;
+        top:225px;
+        right:20px;
+        width:160px;
+        padding: 2em;
+        background-color: white;
+        border: 2px;
+        border-style: solid;
+        border-color: #69D2E7;
+    }
+    
+    a {
+        display:block;
+        color: #69D2E7;
+    }
+    
+    /* link characteristics */
+    
+			
+    a:link	{
+        text-decoration: none;
+    }
+			
+    a:visited	{
+        text-decoration: none;
+    }
+
+    a:hover	{   
+        text-decoration: underline;
+        color: #A7DBD8;
+        --text-transform: uppercase;
+        --font-size: 90%;
+        margin-left:0.5em;
+    }
+    
+    h3 {
+        color: #FA6900;
+        margin-top: 1em;
+        border-bottom: 2px;
+        border-bottom-color: #F38630;
+        border-bottom-style: solid;
+        font-size: 24px;
+        padding-bottom:0.25em;
+    }
+    
+    h4 {
+        color: #FA6900;
+        margin-top: 0;
+        font-size: 20px;
+        --text-decoration: underline;
+        font-weight: 00;
+        
+    }
+    
+    section#content {
+        font-size: 1em;
+        position: absolute;
+        top:225px;
+        left:265px;
+        right:265px;
+        padding: 1em 2em;
+        background-color: white;
+        border: 2px;
+        border-style: solid;
+        border-color: #69D2E7;
+    }
+    
+    p {
+        --font-size: 1em;
+        --position: absolute;
+        --top:120px;
+        --left:200px;
+        --right:230px;
+        --padding: ;
+        --background-color: white;
+    }
+    
+    p#p1{
+        --background-color:black;
+
+    
+        
+    }
+    
+    p#p2{
+        --background-color:black;
+        
+    }
+    
+    p#p3{
+        color:black;
+        
+    }
+    
+    p#p4{
+        color:black;
+       
+    }
+    
+    footer {
+        color: white;
+        position: absolute;
+        font-style: italic;
+        bottom: 20px;
+        padding: 0 1em;
+        --background-color: white;
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px;
+        border-color: white;
+        border-top-style: dashed;
+        left:25%;
+    }
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+	<nav id="people">
+		<h4>People's pages</h4>
+		<a href="#">Site Home</a>
+		<a href="#">Mary</a>
+		<a href="#">Jim</a>
+		<a href="#">Nathan</a>
+		<a href="#">Suzy</a>
+		<a href="#">Michele</a>
+		<a href="#">Lynley</a>
+	</nav>  <! people ->
+
+	<header id="main-head">
+		<h1>Eilers Web Discussion</h1>
+	</header>  <! main-head ->
+
+	<nav id="dates">
+		<h4>Web entries</h4>
+		<a href="#">12 November 2009</a>
+		<a href="#">24 December 2009</a>
+		<a href="#">15 February 2010</a>
+		<a href="#">22 August 2010</a>
+		<a href="#">15 January 2010</a>
+		<a href="#">14 May 2010</a>
+		<a href="#">21 October 2009</a>
+	</nav>  <! dates ->
+
+	<section id="content">
+		<header id="section-head">
+			<h3>23 September 2009</h3>
+		</header>  <! section-head ->
+	
+        <img src="images/2007-1000.jpg" width="400" style="display:block; margin: 0 auto;"/>  <! added html, img ->
+        
+		<p id="p1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc suscipit gravida tellus. Etiam venenatis aliquam sem. Nam dolor lorem, placerat sed, condimentum in, volutpat in, nibh. Maecenas consequat augue in urna. Proin porttitor. Aenean ac erat. Cras a massa id ligula lacinia tempor. Etiam posuere. </p>  <! p1 ->
+
+		<p id="p2">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus laoreet lorem sed tellus. Integer porttitor, mi sed vestibulum accumsan, erat urna tincidunt velit, eget aliquet velit eros sit amet purus. Sed non sem in neque semper gravida. Ut luctus tellus non erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam eu sem eu odio faucibus feugiat. Aenean turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque tristique purus sit amet mi. Nullam velit odio, congue vitae, adipiscing ut, vehicula vitae, elit. Fusce cursus, ligula in posuere imperdiet, eros tortor tempus enim, et rutrum ligula tellus ac elit. </p>  <! p2 ->
+
+		<p id="p3">Ut tempor ultricies dolor. Fusce sed mauris. Duis sollicitudin lacinia tellus. Sed condimentum, dui ut tristique viverra, nulla quam fringilla orci, eget tincidunt lectus ligula quis sapien. Aenean convallis auctor turpis. Fusce quis nibh. Suspendisse dictum. Sed commodo volutpat est. Mauris vel magna vel ligula sodales posuere. Proin eros.  </p>  <! p3 ->
+
+		<p id="p4">Fusce sit amet erat. Maecenas eu ipsum in pede sodales hendrerit. Donec adipiscing. Ut porttitor. Fusce tincidunt lorem vel nisl. Ut mattis nisi sit amet nisi. Vestibulum nec tortor et erat sollicitudin bibendum. Duis scelerisque dui ut mi.  </p>  <! p4 ->
+
+</section>  <! content ->
+
+	<footer>
+		<p>Web content designed by Howard Eilers, Architecture, TAMU, h-eilers@tamu.edu</p>
+	</footer>
+
+</div>  <! wrapper ->
+
+</body>
+</html>

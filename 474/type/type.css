@@ -1,0 +1,188 @@
+/* type.css */
+
+/* zero browsers, set content margin and set font */
+body	
+{          
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    font-family: Arial Narrow;
+    font-size: 18px;
+    width: 720px;
+}
+	
+/* use downloaded font */
+@font-face  
+{          
+    font-family: "Hand of Sean";
+    src: url('Hand_Of_Sean_Demo.ttf') format('truetype');
+}
+
+header img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* set section headlines */
+section h1	
+{
+    font-family: Arial Black;
+    color: #674942;
+    text-align: center;
+    padding-top: 1em;
+    border-top: 3px solid #674942;
+}
+
+section aside
+{
+    margin-left: 3em;
+    padding-top: 0.5em;
+    padding-left: 1em;
+    padding-bottom: 1em;
+    padding-right: 0.5em;
+    border: 3px solid #674942;
+    color: white;
+    background-color: #BFA686;
+    font-style: italic;
+}
+
+p 
+{
+    color: #674942;
+}
+
+p.first:first-line 
+{
+    font-variant: small-caps;
+    font-weight: bold;
+    font-family: Arial;
+}
+
+p.first:first-letter
+{
+    float:left;
+    font-family: Arial Black;
+    color: black;
+    font-size: 4em;
+    padding: 0.1em 0.1em 0.01em 0;
+    margin-top: -0.4em;
+}
+
+//ul { list-style: none outside none; margin: 0; padding: 0; text-align: center; }
+//li { margin: 0 10px; display: inline; }
+
+
+ul  
+{
+    --list-style-type: none;
+    list-style: none outside none;
+    margin: 0;
+    padding-left: 0;
+    overflow: hidden;
+    background-color: #BFA686;
+    text-align: center;
+    
+    --height: 2em;
+    --padding-top: 1em;
+}
+
+li  
+{
+    border-right: 3px solid white;
+    display: inline;
+    
+}
+
+li:last-child   
+{
+    border-right: none;
+}
+
+li a    
+{
+    color: white;
+    --text-align: center;
+    padding: 14px;
+
+}
+
+li a:hover {
+    background-color: #674942;
+}
+
+/* link characteristics */
+a			
+{
+    color: #674942;
+}
+			
+a:link		
+{
+    text-decoration: none;
+}
+			
+a:visited	
+{
+    text-decoration: none;
+}
+			
+a:hover		
+{
+    text-decoration: underline;
+    --color: #BFA686;
+    --text-transform: uppercase;
+    --font-size: 90%;
+}
+			
+/* menu positioning and characteristics */
+nav     	
+{
+    font-family: "Arial Narrow";
+    font-style: bold;
+    width: 100%;
+    font-size: 22px;
+    padding: 0.15 em 0.75em;
+}
+			
+/* section - main content */
+section	
+{
+
+}
+
+
+
+table  
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td 
+{
+    font-family: "Hand of Sean";
+    font-size: 16px;
+    padding: 0.5em;
+    padding-right: 1em;
+}
+
+tr:nth-of-type(odd)		
+{ 
+    color:#674942; 
+}
+
+tr:nth-of-type(even)	
+{ 
+    color:#BFA686; 
+}
+
+footer
+{
+    font-family: Arial;
+    font-size: 11pt;
+    --font-style:oblique;
+    letter-spacing: 1.5px;
+    text-align:center;
+}
