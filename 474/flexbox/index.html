@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width; initial-scale=1.0">
+	<title>Meadow Hills Golf Resort</title>
+<style type="text/css">
+	body {
+		font-family: 'Playfair Display', serif;
+        color: white;
+		background-color: #333;
+        background-image: url(images/background.jpeg);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        min-width: 900px;
+	}
+	
+	#wrapper {
+        --outline: 1px solid black;
+		margin:0 3%;
+		--padding: 1%;
+		max-width:1300px;
+		min-width:600px;
+	}
+	
+	header, footer { 
+        color: black;
+		margin: 1%;
+		padding: 0.5%;
+		border-radius: .5em;
+	}
+    
+    header {
+        text-align:center;
+        margin-top:10%;
+        background-color:none;
+    }
+    
+    header img {
+        width:40%
+    }
+    
+    footer { 
+        --margin: 0;
+        padding: 1%;
+        background-color: rgba(218,231,141, 0.65);
+    }
+    
+    #contact {
+        --background-color: aquamarine;
+        margin: 0;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0.3em 0;
+        padding-left: 5%;
+        -webkit-column-count: 3; /* Chrome, Safari, Opera */
+        -moz-column-count: 3; /* Firefox */
+        column-count: 3;
+        text-align:center;
+    }
+    
+	h1 {
+		text-align: center;
+	}
+    
+    h2 {
+        margin:0;
+        padding: 0;
+        --background-color: maroon;
+        margin-left:3%;
+        float: left;
+        padding-right: 0.75em;
+        border-right: 2px solid black;
+        font-size: 1.25em;
+        font-weight: bold;
+	}
+    
+    h3 {
+		text-align: center;
+        padding-bottom: 0.25em;
+        border-bottom: 3px solid white;
+        font-size: 1.5em;
+        font-weight: bold;
+	}
+    
+    p {
+        padding: 0 5%;
+    }
+	
+    nav ul {
+        list-style-type: none;
+        margin: inherit 0;
+        padding: 0;
+        --background-color: #f1f1f1;
+    }
+
+    nav li a {
+        text-align:right;
+        font-weight: bold;
+        display: block;
+        color: white;
+        padding: 8px 0 8px 16px;
+        text-decoration: none;
+        padding: 10%;
+    }
+
+    nav li a.active {
+        background-color: rgba(77,92,16, 0.5);
+        font-style: oblique;
+    }
+
+    nav li a:hover:not(.active) {
+       background-color: rgba(154,185,82, 0.5);
+        color: white;
+    }
+    
+	#main {
+		display: flex;
+	}
+	
+	#main > article {
+		--background-color: rgba(218,231,141, 0.95);
+        background-color: rgba(154,185,32, 0.75);
+		flex: 4;
+		order: 2;
+		margin: 1%;
+		--padding:0.5%;
+		border-right: 0.5em;
+	}
+    
+    #main > article > img {
+		width:100%
+	}
+    
+    #VIPS {
+        -webkit-column-count: 2; /* Chrome, Safari, Opera */
+        -moz-column-count: 2; /* Firefox */
+        column-count: 2;
+        -webkit-column-gap: 1px; /* Chrome, Safari, Opera */
+        -moz-column-gap: 1px; /* Firefox */
+        column-gap: 1px;
+	}
+    
+    #VIPS figure {
+        text-align: center;
+        --background-color: rgba(255,0,0,0.25);
+        font-style: italic;
+         --border: 1px solid black;
+         --width:25%;
+         padding: 2%;
+	}
+    
+     #main > aside > img {
+		width:100%;
+	}
+	
+	#main > nav {
+		background-color: rgba(67,151,115, 0.75);
+		flex:1;
+		order:3;
+		margin: 1%;
+        padding: 0;
+		--padding:0.5%;
+	}
+	
+	#main > aside {
+		background-color: rgba(67,151,115, 0.75);
+		flex: 2;
+		order: 1;
+		margin: 1%;
+		--padding:0.5%;
+	}
+    
+    #main > aside > img {
+		width:100%;
+	}
+	
+</style>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<header>
+		<img src="images/logowhite.png" alt="Meadow Hills Golf Resort" />
+	</header>
+
+	<div id="main">
+		<article>
+			<h3>Location</h3>
+            <img src="images/location.jpeg" />
+			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc suscipit gravida tellus. Etiam venenatis aliquam sem. Nam dolor lorem, placerat sed, condimentum in, volutpat in, nibh. Maecenas consequat augue in urna. Proin porttitor. Aenean ac erat. Cras a massa id ligula lacinia tempor. Etiam posuere. Nam dictum sapien a ligula. Aliquam erat volutpat. In mattis luctus odio. Ut hendrerit imperdiet nulla. Fusce convallis purus nec sapien. Proin bibendum. Sed consectetuer sollicitudin est. Morbi porttitor, dui in accumsan vestibulum, est tellus convallis dui, vel vestibulum turpis neque quis mi.</p>
+
+			<h3>Amenities</h3>
+			<p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vivamus laoreet lorem sed tellus. Integer porttitor, mi sed vestibulum accumsan, erat urna tincidunt velit, eget aliquet velit eros sit amet purus. Sed non sem in neque semper gravida. Ut luctus tellus non erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Etiam eu sem eu odio faucibus feugiat. Aenean turpis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque tristique purus sit amet mi. Nullam velit odio, congue vitae, adipiscing ut, vehicula vitae, elit. Fusce cursus, ligula in posuere imperdiet, eros tortor tempus enim, et rutrum ligula tellus ac elit. </p>
+
+			<h3>VIPs</h3>
+			
+                <p>Ut tempor ultricies dolor. Fusce sed mauris. Duis sollicitudin lacinia tellus. Sed condimentum, dui ut tristique viverra, nulla quam fringilla orci, eget tincidunt lectus ligula quis sapien. Aenean convallis auctor turpis. </p>
+
+                <div id="VIPS">
+                    <figure>
+                        <img src="images/tiger.jpg" />
+                        <figcaption>Tiger Woods</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/phil.jpg" />
+                        <figcaption>Phil Mickelson</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/tom.jpg" />
+                        <figcaption>Tom Watson</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="images/daniel.jpg" />
+                        <figcaption>Daniel Morrison</figcaption>
+                    </figure>
+     
+                </div>
+		</article>
+
+		<nav>
+
+			
+			<ul>
+                <li><a class="active" href="#home">Home</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#courses">Our Courses</a></li>
+                <li><a href="#rates">Rates</a></li>
+                <li><a href="#equipment">Equipment</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+		</nav>
+
+		<aside>
+			<h3>Equipment</h3>
+            <img src="images/equipment.jpg" />
+			<p>Fusce sit amet erat. Maecenas eu ipsum in pede sodales hendrerit. Donec adipiscing. Ut porttitor. Fusce tincidunt lorem vel nisl. Ut mattis nisi sit amet nisi. Vestibulum nec tortor et erat sollicitudin bibendum. Duis scelerisque dui ut mi. Quisque vel risus quis metus laoreet pellentesque. Vestibulum nisi. Aenean rhoncus, ligula ut pharetra gravida, ligula orci egestas ante, vel ullamcorper dolor ante quis leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum id felis. Sed ante turpis, tincidunt vitae, imperdiet id, interdum id, erat. Fusce mollis, felis ac cursus porta, tellus sapien commodo lectus, ac aliquet libero ante eu metus. Proin porttitor lorem non tellus. Curabitur sed tellus vel massa pharetra volutpat. </p>
+		</aside>
+	</div>  <! main ->
+
+	<footer>
+		<h2>Contact Us</h2>
+        <div id="contact">
+        6403 North Avenue, Snellville, GA 30039<br>
+        555-373-4574<br>
+         contact@meadowhills.com
+        </div>
+	</footer>
+
+</div>  <! wrapper ->
+
+</body>
+</html>
