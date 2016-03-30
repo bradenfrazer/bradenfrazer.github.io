@@ -1,0 +1,822 @@
+/* dropdown.css */
+
+body	
+{          
+    margin: 20px 45px;
+    padding: 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    background-image: url(images/wood.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    
+}
+
+#hide {
+    display: none;
+}
+
+header {
+    height: 300px;
+    text-align: center;
+}
+
+
+header img {
+    width:300px;
+    --float: left;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    -webkit-column-count: 2; 
+    -moz-column-count: 2; 
+    column-count: 2;
+}
+
+#searchbox {
+	position: absolute;
+	top: 25px;
+	right: 50px;
+}
+
+/* search box styling */
+input[type=text] {
+	padding: .2em;
+	border: 1px dashed #674942;
+	background: hsla(0,0%,100%,.7);
+}
+input[type=text]:focus {
+	background: hsla(0,0%,100%,.9);
+	outline: none;
+}
+input[type=submit] {
+	padding: .1em .2em;
+	border: 1px solid hsla(0,0%,0%,.3);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: #674942;
+	background-image: -moz-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.3));
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,.3)));
+	color: #fff;
+	text-shadow: 0 -1px 0 hsla(0,0%,0%,.8);
+}
+
+/* menu positioning and characteristics */
+
+#nav {
+    font-weight: bold;
+    z-index: 900;
+    position: relative;
+}
+
+/* We apply background color */
+#nav ul li {
+    background-color:#4DB7F9;
+}
+
+/* We apply the background hover color when user hover the mouse over of the li component */
+#nav ul li:hover {
+    background-color:#1A84C6;
+}
+
+/* We apply the link style */
+#nav ul li a {
+    color:#ECEDED;
+}
+
+/* we apply different background color to 2nd level menu items*/
+#nav ul li ul li {
+    background-color:#86d3fa;
+}
+
+/* We change the background color for the level 2 submenu when hovering the menu */
+#nav ul li:hover ul li:hover {
+    background-color:#53A0C7;
+}
+
+/* We style the color of level 2 links */
+#nav ul li ul li a {
+    color:#2B1C0A;
+}
+
+/* We change the background color for the level 3 submenu*/
+#nav ul li:hover ul li:hover ul li {
+    background-color:#CCF6F9;
+}
+
+/* We change the background color for the level 3 submenu when hovering the menu */
+
+#nav ul li:hover ul li:hover ul li:hover {
+    background:#99C3C6;
+}
+
+/* We change the level 3 link color */
+#nav ul li:hover ul li:hover ul li a {
+    color:#2B1C0A;
+}
+
+/* Clear float */
+.clear {
+    clear:both;
+}
+
+
+#column1 {
+    flex: 2;
+    order: 2;
+    padding-top: 0.5em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    background-color: #ECEDED;
+    border: 5px #2B1C0A solid;
+}
+
+#column2 {
+    flex: 1;
+    order: 3;
+    padding-top: 0.5em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+    padding-right: 2em;
+    background-color: #ECEDED;
+    border: 5px #2B1C0A solid;
+}
+
+#gallery {
+    background-color: #ECEDED;
+    padding: 2em 2em;
+    margin: 2em 0;
+    border: 5px #2B1C0A solid;
+    overflow:hidden;
+}
+
+#gallery div.img {
+    border: 2px solid #ccc;
+    transition: transform 0.1s ease-in-out 0s;
+}
+
+/* images get stuck inside of div when they zoom on hover */
+/* can't find fix other than using javascript */
+#gallery div.img:hover {
+    border: 2px solid #777;
+    background-color:white;
+    padding:10px;
+    -webkit-transform:scale(1.5);
+    -moz-transform:scale(1.5);
+    -ms-transform:scale(1.5);
+    transform::scale(1.5);
+}
+
+#gallery div.img img {
+    width: 100%;
+    height: auto;
+    background-color: #ECEDED;
+}
+
+#gallery * {
+    box-sizing: border-box;
+}
+
+#gallery .responsive {
+    padding: 0 6px;
+    float: left;
+    width: 24.99999%;
+    background-color: #ECEDED;
+}
+
+/* set section headlines */
+section h1	
+{
+    font-family: 'Lobster', cursive;
+    font-size: 200%;
+    color: #2B1C0A;
+    text-align: center;
+    border-bottom: 1px solid #2B1C0A;
+}
+
+section img {
+    width: 100%;
+}
+
+p 
+{
+    color: #2B1C0A;
+}
+	
+
+footer
+{
+    margin-top: 3em;
+    font-family: Arial;
+    font-size: 10pt;
+    --font-style:oblique;
+    letter-spacing: 1.5px;
+    text-align:center;
+    overflow:hidden;
+    background-color: #ECEDED;
+    border: 5px #2B1C0A solid;
+    padding: 1em 2em;
+    margin: 1em 0;
+} 
+
+footer p {
+	margin: 0;
+	font-size: 88%;
+	line-height: 1.2;
+}
+
+footer a {
+	color: #4DB7F9; 
+}
+
+h2 {
+    font-family: 'Lobster', cursive;
+    font-size: 120%;
+}
+
+h3 {
+    margin:0;
+    margin-bottom:0.5em;
+    color: #2B1C0A
+    font-weight: bold;
+}
+
+#contact {
+	float: left;
+	width: 50%;
+}
+
+#credits {
+	float: right;
+	width: 50%;
+}
+
+/* ///////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////// */
+/* ////////////////PHONE */
+@media screen and (max-Width: 480px) {
+    body {
+        background-color: yellow;
+        margin: 20px 15px;
+    }
+    
+    header {
+        margin-left: auto;
+        margin-right: auto;
+        --width: 150px;
+    }
+    
+    #searchbox {
+        position: static;
+        width: 205px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+    }
+    
+    #nav {
+       margin-top: 2em;
+        margin-left:5px;
+        margin-right:5px;
+    }
+    
+    #nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: static;
+		--display: none;
+    }
+
+    /*Create vertical spacing*/
+    #nav li {
+		margin-bottom: 1px;
+    }
+    
+    #nav li a {
+        display: block;
+        padding: 0.5em;
+        text-align:center;
+        margin-top:5px;
+        text-decoration: none;
+        border-bottom: 5px solid #2B1C0A;
+
+     }
+    
+	#nav ul li, li a {
+		width: 100%;
+	}
+    
+    /*Hide dropdown links until they are needed*/
+    #nav li ul {
+        display: none;
+    }
+
+    /*Make dropdown links vertical*/
+    #nav li ul li {
+        display: block;
+        float: none;
+    }
+
+    /*Prevent text wrapping*/
+    #nav li ul li a {
+        width: auto;
+        min-width: 100px;
+        padding: 0 20px;
+        margin: 0;
+        border: 0;
+    }
+
+    /*Display the dropdown on hover*/
+    #nav ul li:hover ul {
+        display: block;
+    }
+    
+    /**** THIRD LEVEL MENU ****/
+    /* We need to hide the 3rd menu, when hovering the first level menu */
+    #nav ul li:hover ul li ul {
+        position:absolute;
+        display:none;
+        left:25%;
+        width:50%;
+    }
+
+    /* We show the third level menu only when they hover the second level menu parent */
+    #nav ul li:hover ul li:hover ul {
+        display:block;
+        --left:200px;
+        --top:0;
+    }
+    
+    
+    #container {
+        flex-direction: column;
+        margin-top: 2em;
+    }
+    
+    section h1	
+    {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    p {
+        font-size:85%;
+    }
+    
+    section h2 {
+        font-size: 120%;
+    }
+    
+    h3 {
+        font-size: 100%;
+    }
+    
+    #column2 {
+        margin-top: 2em;
+    }
+    
+    #gallery .responsive {
+        width: 100%;
+    }
+    
+    #contact {
+        float: none;
+        width: 100%;
+        
+    }
+    
+    #credits {
+        margin-top: 2em;
+        width: 100%;
+        float:none; 
+    }
+}
+
+
+/* ////////////////TABLET */
+@media screen and (min-Width: 481px) and (max-Width: 974px) {
+    body {
+        background-color: aqua;
+    }
+    
+    #container {
+        flex-direction: column;
+        margin-top: 2em;
+    }
+    
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    header {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:50px;
+    }
+    
+    #nav {
+       margin-top: -2em;
+        margin-left:5px;
+        margin-right:5px;
+        margin-bottom:2em;
+    }
+    
+    #nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: static;
+		--display: none;
+    }
+
+    /*Create vertical spacing*/
+    #nav li {
+		margin-bottom: 1px;
+    }
+    
+    #nav li a {
+        display: block;
+        padding: 0.5em;
+        text-align:center;
+        margin-top:5px;
+        text-decoration: none;
+        border-bottom: 5px solid #2B1C0A;
+
+     }
+    
+	#nav ul li, li a {
+		width: 100%;
+	}
+    
+    /*Hide dropdown links until they are needed*/
+    #nav li ul {
+        display: none;
+    }
+
+    /*Make dropdown links vertical*/
+    #nav li ul li {
+        display: block;
+        float: none;
+    }
+
+    /*Prevent text wrapping*/
+    #nav li ul li a {
+        width: auto;
+        min-width: 100px;
+        padding: 0 20px;
+        margin: 0;
+        border: 0;
+    }
+
+    /*Display the dropdown on hover*/
+    #nav ul li:hover ul {
+        display: block;
+    }
+    
+    /**** THIRD LEVEL MENU ****/
+    /* We need to hide the 3rd menu, when hovering the first level menu */
+    #nav ul li:hover ul li ul {
+        position:absolute;
+        display:none;
+        left:25%;
+        width:50%;
+    }
+
+    /* We show the third level menu only when they hover the second level menu parent */
+    #nav ul li:hover ul li:hover ul {
+        display:block;
+        --left:200px;
+        --top:0;
+    }
+    
+    #gallery .responsive {
+        width: 49.99999%;
+        margin: 6px 0;
+    }
+    
+    p {
+        font-size:90%;
+    }
+    
+    #column1 section h1 {
+        z-index:100;
+        position: relative;
+        top: 20px;
+        font-size:250%;
+        color: white;
+        text-shadow: 2px 2px 2px black, 5px 5px 25px #CCF6F9, 5px 5px 15px #4DB7F9;
+        border-bottom: none;
+    }
+    
+    #column1 section img {
+        margin-top: -75px;
+        z-index: 200;
+    }
+    
+    section h2 {
+        font-size: 110%;
+    }
+    section h3 {
+        font-size: 100%;
+    }
+    
+    #column2 {
+        margin-top: 2em;
+    }
+}
+
+/* ///////////////DESKTOP */
+@media screen and (min-Width: 975px) and  (max-Width: 1440px) {
+    body {
+        background-color: red;
+    }
+    
+    #container {
+        margin-top: 1em;
+    }
+    
+    header {
+        margin-left: 25px;
+    }
+    
+
+    /* Clear float */
+    .clear {
+        clear:both;
+    }
+    
+    #nav {
+        height:80px;
+        margin-left:-1em;
+        margin-right:-2em;
+    }
+
+    #nav ul, #nav ul li {
+        margin-bottom:0;
+        padding:5px 0;
+        list-style:none;
+    }
+    
+    /*Strip the ul of padding and list styling*/
+    #nav ul {
+        position: absolute;
+    }
+
+    /*Create a horizontal list with spacing*/
+    #nav li {
+        display:inline-block;
+        float: left;
+        margin-right: 0.25em;
+    }
+    
+    /* We apply background color and border bottom white and width to 150px */
+    #nav ul li {
+        border-bottom:solid 3px #2B1C0A;
+        width:150px;
+        cursor:pointer;
+        text-align:center;
+    }
+    
+    /* We apply the link style */
+    #nav ul li a {
+        padding:5px 15px;
+        display:inline-block;
+        text-decoration:none;
+    }
+    
+    /*Hide dropdown links until they are needed*/
+    #nav li ul {
+        display: none;
+    }
+
+     /*Make dropdown links vertical*/
+    #nav li ul li {
+        display: block;
+        float: none;
+    }
+    
+    /*Prevent text wrapping*/
+    #nav li ul li a {
+        width: auto;
+        min-width: 100px;
+        padding: 0 20px;
+    }
+    
+    #nav ul li ul li {
+        border-left:1px solid #2B1C0A;
+        border-right:1px solid #2B1C0A;
+        border-top:1px solid #2B1C0A;
+        
+    }
+    
+    /*Display the dropdown on hover*/
+    #nav ul li:hover ul {
+        display: block;
+    }
+    
+    /**** THIRD LEVEL MENU ****/
+    /* We need to hide the 3rd menu, when hovering the first level menu */
+    #nav ul li:hover ul li ul {
+        position:absolute;
+        display:none;
+    }
+
+    /* We show the third level menu only when they hover the second level menu parent */
+    #nav ul li:hover ul li:hover ul {
+        display:block;
+        left:150px;
+        top:0;
+    }
+
+    p.first:first-line 
+    {
+        font-variant: small-caps;
+        font-weight: bold;
+        font-family: Arial;
+    }
+
+    p.first:first-letter
+    {
+        float:left;
+        font-family: "Arial Black";
+        color: black;
+        font-size: 4em;
+        padding: 0.1em 0.1em 0.01em 0;
+        margin-top: -0.4em;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        color: #BFA686;
+    }
+
+    #column2 {
+        margin-left: 2em;
+    }
+    
+    #column1 section h1 {
+        z-index:100;
+        position: relative;
+        top: 20px;
+        font-size:300%;
+        color: white;
+        text-shadow: 2px 2px 2px black, 5px 5px 25px #CCF6F9, 5px 5px 15px #4DB7F9;
+        border-bottom: none;
+    }
+    
+    #column1 section img {
+        margin-top: -75px;
+        z-index: 200;
+    }
+    
+}
+
+/* /////////////WIDE */
+@media screen and (min-Width: 1441px) {
+    header {
+        margin-left: 25px;
+    }
+    
+    #nav {
+        float:right;
+    }
+
+    /* We remove the margin, padding, and list style of UL and LI components */
+    #nav ul, #nav ul li {
+        margin-bottom:0;
+        padding:5px 0;
+        list-style:none;
+    }
+
+    /* We apply background color and border bottom white and width to 150px */
+    #nav ul li {
+        border-bottom:solid 3px #2B1C0A;
+        width:200px;
+        cursor:pointer;
+    }
+
+    /* We apply the background hover color when user hover the mouse over of the li component */
+    #nav ul li:hover {
+        position:relative;
+    }
+
+    /* We apply the link style */
+    #nav ul li a {
+        padding:5px 15px;
+        display:inline-block;
+        text-decoration:none;
+    }
+
+    /**** SECOND LEVEL MENU ****/
+    /* We make the position to absolute for flyout menu and hidden the ul until the user hover the parent li item */
+    #nav ul li ul {
+        position:absolute;
+        display:none;
+    }
+    
+    #nav ul li ul li {
+        border-left:1px solid #2B1C0A;
+        border-right:1px solid #2B1C0A;
+        border-top:1px solid #2B1C0A;
+        
+    }
+
+    /* When user has hovered the li item, we show the ul list by applying display:block, note: 150px is the individual menu width.  */
+    #nav ul li:hover ul {
+        right:200px;
+        top:0px;
+        display:block;
+    }
+
+    /* We style the color of level 2 links */
+    #nav ul li ul li a {
+        display:inline-block;
+        width:150px;
+    }
+
+    /**** THIRD LEVEL MENU ****/
+    /* We need to hide the 3rd menu, when hovering the first level menu */
+    #nav ul li:hover ul li ul {
+        position:absolute;
+        display:none;
+    }
+
+    /* We show the third level menu only when they hover the second level menu parent */
+    #nav ul li:hover ul li:hover ul {
+        display:block;
+        right:200px;
+        top:0;
+    }
+
+    /* Clear float */
+    .clear {
+        clear:both;
+    }
+    
+    p.first:first-line 
+    {
+        font-variant: small-caps;
+        font-weight: bold;
+        font-family: Arial;
+    }
+
+    p.first:first-letter
+    {
+        float:left;
+        font-family: "Open Sans";
+        font-weight: 800;
+        color: black;
+        font-size: 4em;
+        padding: 0.1em 0.1em 0.01em 0;
+        margin-top: -0.4em;
+    }
+
+    #column1 {
+        margin-right: 2em;
+    }
+
+    #column2 {
+        margin-right: 2em;
+    }
+    
+    #column1 section h1 {
+        z-index:100;
+        position: relative;
+        top: 20px;
+        font-size:300%;
+        color: white;
+        text-shadow: 2px 2px 2px black, 5px 5px 25px #CCF6F9, 5px 5px 15px #4DB7F9;
+        border-bottom: none;
+    }
+    
+    #column1 section img {
+        margin-top: -75px;
+        z-index: 200;
+    }
+    
+    #column1 #section1 {
+        float: left;
+        width:49%;
+    }
+    
+    #column1 #section2 {
+        float: right;
+        width: 49%;
+    }
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
