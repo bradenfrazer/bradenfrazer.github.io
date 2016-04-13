@@ -8,9 +8,6 @@ dark: #232323;
 blue: #63A69F;
 */
 
-@import url(http://fonts.googleapis.com/css?family=roboto);
-
-
 
 body {
   background: #f4f4f4;
@@ -27,9 +24,10 @@ body {
 --------------------------------------------- */
 
 nav {
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    --position: fixed;
 }
 
 #logo {
@@ -139,29 +137,39 @@ li > a:only-child:after { content: ''; }
 --------------------------------------------- */
 
 h1 {
-  font-size: 60px;
-  text-align: center;
-  color: #000;
+    text-align: center;
+    font-size: 24px;
+    line-height: 70px;
+    font-family: 'PT Mono', sans-serif;
 }
 
-h3 {
-    font-size: 18px;
-    line-height: 34px;
-    text-align: center;
+h2, h3, h4 {
+    font-size: 20px;
+    --line-height: 34px;
     color: #000;
+    padding-top: 1em;
     border-top: 4px #000 double;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h3, h4 {
+    font-size: 16px;
+    text-align: center;
+}
+
+h4 {
+    border-top: none;
+    text-transform: none;
 }
 
 h3 a { color: #000; }
 
-a { color: #000; }
-
-h1 {
-  margin-top: 50px;
-  text-align: center;
-  font-size: 24px;
-  line-height: 70px;
-  font-family: 'PT Mono', sans-serif;
+a { 
+    color: #63A69F; 
+    text-decoration: none;
+    font-family: "Open Sans";
 }
 
 #container {
@@ -169,7 +177,12 @@ h1 {
   max-width: 890px;
 }
 
-p { text-align: left; }
+p { 
+    text-align: left; 
+    font-family: "Open Sans";
+    color: #707070;
+}
+
  .toggle, [id^=drop] {
  display: none;
 }
@@ -183,6 +196,51 @@ p { text-align: left; }
 
 #content img {
     width: 100%;
+}
+
+#flexcontainer {
+    display: flex;
+    margin-top: 1em;
+}
+
+#column1, #column2, #column3 {
+    flex: 1;
+    margin: 0 1em;
+}
+
+#flexcontainer img {
+    padding-top: 1em;
+}
+
+
+#column3 table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 15px;
+}
+
+#column3 td {
+    padding: 2px 12px;
+    border: 1px solid #cccccc;
+    display:table-cell;
+    
+    vertical-align: middle;
+    transition: 0.5s linear;
+}
+
+#column3 td:hover {
+    border: 1px solid #232323;
+    box-shadow: 0px 0px 10px #888888;
+}
+
+#column3 a {
+   text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+#column3 img {
+    width:20px;
 }
 
 
