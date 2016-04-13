@@ -34,6 +34,7 @@ nav {
     display:flex;
     justify-content:center;
     align-items:center;
+    margin-left: 20px;
     padding: 0 30px;
     float: left;
     font-size: 20px;
@@ -71,6 +72,7 @@ nav ul li {
     --float: left;
     background-color: #ffffff;
     text-transform: uppercase;
+    
 }
 
 nav a {
@@ -80,6 +82,7 @@ nav a {
   font-size: 16px;
   line-height: 60px;
   text-decoration: none;
+  font-family: 'PT Mono', sans-serif;
 }
 
 nav ul li ul li:hover { color: #000000; }
@@ -249,79 +252,101 @@ p {
 
 @media all and (max-width : 480px) {
 
-#logo {
-  display: block;
-  padding: 0;
-  width: 100%;
-  text-align: center;
-  float: none;
-}
+    #logo {
+        float: none;
+    }
 
-nav { margin: 0; }
+    nav { 
+        margin: 0; 
+    }
 
-.toggle + a,
- .menu { display: none; }
+    .toggle + a, .menu { 
+         display: none; 
+        visibility: none;
+    }
 
-.toggle {
-    display: block;
-    background-color: #63A69F;
-    padding: 0 20px;
-    color: #FFF;
-    font-size: 20px;
-    line-height: 60px;
-    text-decoration: none;
-    border: none;
-    text-align: center;
-    font-family: sans-serif;
-}
+    .toggle {
+        display: block;
+        background-color: #63A69F;
+        padding: 0 20px;
+        color: #FFF;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+        border: none;
+        text-align: center;
+        font-family: "Open Sans";
+        width: 20px;
+        --height: 20px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        transition: all 0.25s ease-out;
+    }
 
-.toggle:hover { background-color: #000000; }
+    .toggle:hover { 
+        background-color: #000000; 
+        transition: all 0.25s ease-in;
+    }
 
-[id^=drop]:checked + ul { display: block; }
+    [id^=drop]:checked + ul { 
+        display: block; 
+    }
 
-nav ul li {
-  display: block;
-  width: 100%;
-}
-
-nav ul ul .toggle,
- nav ul ul a { padding: 0 40px; }
-
-nav ul ul ul a { padding: 0 80px; }
-
-nav a:hover,
- nav ul ul ul a { background-color: #000000; }
-
-nav ul li ul li .toggle,
- nav ul ul a { background-color: #212121; }
-
-nav ul ul {
-  float: none;
-  position: static;
-  color: #ffffff;
-}
-
-nav ul ul li:hover > ul,
-nav ul li:hover > ul { display: none; }
-
-nav ul ul li {
-  display: block;
-  width: 100%;
-}
-
-nav ul ul ul li { position: static;
-
-}
-}
-
-@media screen and  (max-Width: 480px) {
+    nav ul {
+        margin: 0;
+        padding: 0;
+    }
     
     nav ul li {
-      display: block;
-      width: 94%;
+        display: block;
+        background: #63A69F;
+        margin: 0 20px;
+        padding: 0;
     }
+    
+    nav ul a {
+        color: #fff;
+        font-family: 'PT Mono', sans-serif;
+    }
+    
+    nav ul a:hover {
+        color: #fff;
+    }
+    
+    nav ul li ul {
+        position: static;
+        margin-top: -25px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        
+    }
+    
+    nav ul li ul li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: block;
+        float: none;
+    }
+    
+    #flexcontainer {
+        flex-direction: column;
+    }
+    
 }
 
 @media screen and (min-Width: 481px) and  (max-Width: 768px) {
+    #logo {
+        float: none;
+    }
     
+    nav ul {
+        margin-left: 0;
+    }
+    
+    #flexcontainer {
+        flex-direction: column;
+    }
 }
