@@ -4,10 +4,16 @@
 
 /* colors: 
 white: #fff;
+grey: #707070;
 dark: #232323;
 blue: #63A69F;
 */
 
+
+@font-face {
+  font-family: "Kimberley";
+  src: url(https://github.com/sixrevisions/free-programming-fonts/blob/master/fonts/web/pt-mono-regular.ttf?raw=true) format("truetype");
+}
 
 body {
   background: #f4f4f4;
@@ -45,6 +51,11 @@ nav {
     color: #fff;
 }
 
+nav a.brand {
+    margin:0;
+    padding:0;
+}
+
 nav:after {
   content: "";
   display: table;
@@ -66,23 +77,26 @@ nav ul a:hover {
 }
 
 nav ul li {
+    padding: 1em;
     margin: 0px;
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 25px;
     --float: left;
     background-color: #ffffff;
     text-transform: uppercase;
-    
 }
 
 nav a {
   display: block;
-  padding: 0 20px;
+  padding: 0px 20px;
   color: #000;
   font-size: 16px;
-  line-height: 60px;
   text-decoration: none;
   font-family: 'PT Mono', sans-serif;
+}
+
+nav a.active {
+  border: 1px solid #000;
 }
 
 nav ul li ul li:hover { color: #000000; }
@@ -201,6 +215,23 @@ p {
     width: 100%;
 }
 
+/*resume embedded pdf*/
+#pdf {
+    position:relative;
+    margin: 0 auto;
+    width: 75%;
+    height: 0px;
+    padding-bottom: 90%; /* proportional scaling */
+    --padding-top: 50px; /* add constant */
+}
+
+#pdf object {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
 #flexcontainer {
     display: flex;
     margin-top: 1em;
@@ -246,6 +277,116 @@ p {
     width:20px;
 }
 
+/* Gallery
+--------------------------------------------- */
+#gallery {
+    max-width: 975px;
+    margin: 2em auto;
+}
+
+
+#gallery h2 {
+    text-align: center;
+    border: none;
+    margin:0;
+    text-transform: none;
+    font-weight:500;
+    font-family: "Open Sans";
+}
+
+#gallery p {
+    margin: 0;
+    padding: 1em 2em;
+    text-align: center;
+    font-weight: 100;
+    font-style:italic;
+}
+
+#gallery table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 20px;
+}
+
+#card {
+    --border: 1px solid #888888;
+    background: #fff;
+    transition: 0.5s ease;
+}
+
+#card:hover {
+    box-shadow: 0px 0px 10px #888888;
+    transition: 0.5s ease;
+}
+
+#card img {
+    width: 100%;
+}
+
+/* youtube embed fixes */
+#card #videocontainer {
+    position:relative;
+    width: 100%;
+    height: 0px;
+    padding-bottom: 56%; /* proportional scaling */
+}
+
+#card #videocontainer iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+
+
+/* Download Button
+--------------------------------------------- */
+
+.button {
+    margin: 1em auto;
+    background-color: #eeeeee;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
+    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: linear-gradient(top, #eeeeee, #cccccc);
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #bbb;
+    border-radius: 3px;
+    color: #333;
+    font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    padding: 8px 0;
+    text-align: center;
+    text-shadow: 0 1px 0 #eee;
+    width: 150px; 
+}
+.button:hover {
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(top, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; 
+}
+.button:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+      box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+}
+.button a {
+    color: #232323;
+    font-family: "Open Sans";
+    font-size: 125%;
+}
+
 
 /* Media Queries
 --------------------------------------------- */
@@ -254,10 +395,6 @@ p {
 
     #logo {
         float: none;
-    }
-
-    nav { 
-        margin: 0; 
     }
 
     .toggle + a, .menu { 
@@ -293,6 +430,18 @@ p {
         display: block; 
     }
 
+    nav { 
+        margin: 0; 
+    }
+    
+    nav a { 
+        padding: 20px; 
+    }
+    
+    nav a.active { 
+        border:none;
+    }
+    
     nav ul {
         margin: 0;
         padding: 0;
@@ -334,6 +483,10 @@ p {
     #flexcontainer {
         flex-direction: column;
     }
+    
+    #gallery td {
+        float:left;
+}
     
 }
 
