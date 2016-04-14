@@ -12,7 +12,7 @@ blue: #63A69F;
 
 @font-face {
   font-family: "Kimberley";
-  src: url(https://github.com/sixrevisions/free-programming-fonts/blob/master/fonts/web/pt-mono-regular.ttf?raw=true) format("truetype");
+  src: url(https://github.com/sixrevisions/free-programming-fonts/blob/master/fonts/web/pt-mono-regular.ttf) format("truetype");
 }
 
 body {
