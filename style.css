@@ -9,12 +9,6 @@ dark: #232323;
 blue: #63A69F;
 */
 
-
-@font-face {
-  font-family: "PT Mono";
-  src: url(embed/pt-mono-regular.ttf) format("truetype");
-}
-
 body {
   background: #f4f4f4;
   font-size: 14px;
