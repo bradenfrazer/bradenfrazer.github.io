@@ -55,6 +55,15 @@ nav {
 nav a.brand {
     margin:0;
     padding:0;
+    
+}
+
+nav a.brand:hover {
+    margin:0;
+    padding:0;
+    -moz-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
 }
 
 nav:after {
@@ -223,6 +232,11 @@ p {
 
 #content img {
     width: 100%;
+}
+
+#content .round {
+    border-radius: 50%;
+ 
 }
 
 /*resume embedded pdf*/
@@ -407,7 +421,69 @@ p {
     height: 100%;
     top: 0;
 }
+    
+/* Animated about image
+--------------------------------------------- */
+.profile {
+    --border: 10px solid #fff;
+    border-radius: 50%;
 
+    -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+    
+    -moz-animation-name: fuzzfadein;
+    -moz-animation-iteration-count: 1;
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-duration: 3s;
+
+    -webkit-animation-name: fuzzfadein;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-timing-function: ease-out;
+    -webkit-animation-duration: 3s;
+
+    animation-name: fuzzfadein;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
+    animation-duration: 3s;
+}
+
+.profile:hover {
+   -webkit-transform:rotate(-15deg);
+    -moz-transform:rotate(-15deg);
+    transform:rotate(-15deg);
+    --border-radius: 0%;
+}
+
+
+    
+
+@-moz-keyframes fuzzfadein {
+    0% {
+        -webkit-filter: blur(5px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+    }
+}
+@-webkit-keyframes fuzzfadein {
+    0% {
+        -webkit-filter: blur(5px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+    }
+}
+@keyframes fuzzfadein {
+    0% {
+        -webkit-filter: blur(5px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+    }
+}
 
 
 /* Download Button
@@ -505,7 +581,7 @@ p {
 #contact-form select:focus, 
 #contact-form textarea:focus {
     border: 1px solid #AFCDD8;
-    --background-color: #96D9D2;
+    background-color: #FCFFFF;
 }
 
 #contact-form input, #contact-form textarea {
@@ -539,7 +615,7 @@ p {
 }
  
 #contact-form #submit-button:hover {
-    background-color: #A6CFDD;
+    background-color: #30736C;
 }
  
 #contact-form #submit-button:active {
