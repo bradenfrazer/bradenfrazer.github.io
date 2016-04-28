@@ -708,6 +708,8 @@ input.placeholder-text, textarea.placeholder-text  {
 /* Media Queries
 --------------------------------------------- */
 
+/* PHONES
+///////////////*/
 @media all and (max-width : 480px) {
 
     #logo {
@@ -848,6 +850,7 @@ input.placeholder-text, textarea.placeholder-text  {
 
     #gallery td {
         width: 100%;
+        margin-bottom: 1em;
     }
     
     #contact-form {
@@ -862,6 +865,8 @@ input.placeholder-text, textarea.placeholder-text  {
     
 }
 
+/* TABLETS
+///////////////*/
 @media screen and (min-Width: 481px) and  (max-Width: 768px) {
     #logo {
         float: none;
@@ -876,7 +881,7 @@ input.placeholder-text, textarea.placeholder-text  {
     }
     
     #gallery td {
-        width: 100%;
+        width: 33%;
     }
     
 }
