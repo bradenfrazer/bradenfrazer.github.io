@@ -34,7 +34,6 @@ nav {
     margin: 0;
     padding: 0;
     background-color: #ffffff;
-    --position: fixed;
 }
 
 #logo {
@@ -47,15 +46,28 @@ nav {
     font-size: 20px;
     background-color: #232323;
     height: 100px;
-    width: 85px;
+    width: 50px;
     text-align: center;
     color: #fff;
+}
+
+#logo img {
+  --border-radius: 50%;
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+          transition:         transform .8s ease-in-out;
+}
+
+#logo img:hover {
+    ---moz-transform: translateY(10px);
+    ---webkit-transform: translateY(10px);
+    --transform: translateY(10px);
+    -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 nav a.brand {
     margin:0;
     padding:0;
-    
 }
 
 nav a.brand:hover {
@@ -79,7 +91,9 @@ nav ul {
     position: relative;
     margin-left:160px;
     text-align: center;
-    
+}
+nav ul a {
+    transition: 0.25s linear;
 }
 
 nav ul a:hover {
@@ -172,7 +186,6 @@ h1, h2, h3, h4 {
     padding-top: 1em;
     border-top: 4px #000 double;
     font-weight: 300;
-    text-transform: uppercase;
     letter-spacing: 2px;
 }
 
@@ -181,11 +194,20 @@ h1 {
     font-size: 21px;
     --line-height: 70px;
     font-family: 'PT Mono', sans-serif;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-transform: uppercase;
 }
 
 h3, h4 {
     font-size: 16px;
     text-align: center;
+}
+
+h3 {
+    text-transform: none;
 }
 
 h4 {
@@ -438,17 +460,17 @@ p {
     -moz-animation-name: fuzzfadein;
     -moz-animation-iteration-count: 1;
     -moz-animation-timing-function: ease-out;
-    -moz-animation-duration: 3s;
+    -moz-animation-duration: 1s;
 
     -webkit-animation-name: fuzzfadein;
     -webkit-animation-iteration-count: 1;
     -webkit-animation-timing-function: ease-out;
-    -webkit-animation-duration: 3s;
+    -webkit-animation-duration: 1s;
 
     animation-name: fuzzfadein;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
-    animation-duration: 3s;
+    animation-duration: 1s;
 }
 
 .profile:hover {
