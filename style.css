@@ -44,7 +44,7 @@ nav {
     padding: 0 30px;
     float: left;
     font-size: 20px;
-    background-color: #232323;
+    --background-color: #232323;
     height: 100px;
     width: 50px;
     text-align: center;
@@ -55,6 +55,7 @@ nav {
   --border-radius: 50%;
   -webkit-transition: -webkit-transform .8s ease-in-out;
           transition:         transform .8s ease-in-out;
+    width: 100px;
 }
 
 #logo img:hover {
@@ -215,10 +216,56 @@ h4 {
     text-transform: none;
 }
 
-.hometext {
+#spotlight {
+    height: 350px;
+    background-image: 
+    linear-gradient(
+        to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url(images/me.jpg);
+    background-size: cover;
+    overflow: hidden;
+}
+
+#spotlight img { 
+   position: relative; 
+   width: 100%; /* for IE 6 */
+    
+}
+
+#spotlighttext {
+    border: 1px white solid;
+    position: relative; 
+    top: 75px; 
+    left: 53%; 
+    width: 40%;
+    padding: 10px;
+}
+
+#spotlight h1 { 
+    border-top: none;
+    color: #fff;
+    text-shadow: 0 1px 0 black;
+}
+
+.title {
     font-family: "Open Sans";
-    font-size: 16px;
+    font-size: 32px;
     text-align: center;
+    text-transform: none;
+    font-weight: 800;
+    padding-top: 0;
+}
+
+.subtext {
+    font-family: "Open Sans";
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    padding-top: 0;
     
 }
 
@@ -313,10 +360,11 @@ p {
     box-shadow: 0px 0px 10px #888888;
 }
 
-#column3 a {
+#column1 a {
    text-align: center;
     display: block;
     margin: 0 auto;
+    font-size: 11pt;
 }
 
 #column3 .social {
@@ -822,6 +870,50 @@ input.placeholder-text, textarea.placeholder-text  {
         float: none;
     }
     
+    #spotlight {
+    background-image: 
+    linear-gradient(
+        to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url(images/me.jpg);
+    }
+
+    #spotlighttext {
+        border: none;
+        position: relative; 
+        top: 65%; 
+        left: 0%; 
+        width: 100%;
+        padding: 0px;
+    }
+
+    #spotlight h1 { 
+        border-top: none;
+        color: #fff;
+        text-shadow: 0 1px 0 black;
+    }
+
+    .title {
+        font-family: "Open Sans";
+        font-size: 20px;
+        text-align: center;
+        text-transform: none;
+        font-weight: 800;
+        padding-top: 0;
+    }
+
+    .subtext {
+        font-family: "Open Sans";
+        font-size: 14px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: none;
+        padding-top: 0;
+
+    }
+    
     #flexcontainer {
         flex-direction: column;
     }
@@ -906,5 +998,13 @@ input.placeholder-text, textarea.placeholder-text  {
     #gallery td {
         width: 33%;
     }
-    
+
+    .title {
+        font-size: 24px;
+    }
+
+    .subtext {
+        font-size: 16px;
+
+    }
 }
