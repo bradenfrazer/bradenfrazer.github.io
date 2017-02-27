@@ -1,7 +1,0 @@
-Documented discrepancies for Deliverable 1
-
-# Sidebar link text does not align to text in image-based version of the original website
-# "What's Online", "Special Exhibitions", and "Selected Highlights" text do not align to image-based versions
-# "More special exhibitions" link appears to be antialiased or rendered differently and doesn't quite match up
-# Text inside "Selected Highlights" appears to be antialiased or rendered differently and doesn't quite match up
-# Hyphen ( - ) between 2000 and 2004 is rendered slightly longer on the original webpage
