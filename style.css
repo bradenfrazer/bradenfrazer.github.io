@@ -224,15 +224,16 @@ h4 {
 }
 
 #spotlight {
-    height: 350px;
+    height: 450px;
     background-image: 
     linear-gradient(
         to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.75)
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0)
     ),
-    url(images/me.jpg);
+    url(images/banner.jpg);
     background-size: cover;
+    background-position: 100%;
     overflow: hidden;
 }
 
@@ -246,7 +247,7 @@ h4 {
     border: 1px white solid;
     position: relative; 
     top: 75px; 
-    left: 53%; 
+    left: 5%; 
     width: 40%;
     padding: 10px;
 }
@@ -884,7 +885,6 @@ input.placeholder-text, textarea.placeholder-text  {
       rgba(0, 0, 0, 0),
       rgba(0, 0, 0, 0.75)
     ),
-    url(images/me.jpg);
     }
 
     #spotlighttext {
