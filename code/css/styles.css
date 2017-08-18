@@ -1,0 +1,714 @@
+/* ----------------------------------------------------
+Stylesheet for Old Main Brewery
+
+Updated: 08/15/2017
+Author: Braden Frazer
+------------------------------------------------------- 
+: CSS Selectors & Attributes : 
+font-family: 'Rubik Mono One', sans-serif;  --- heading font 
+font-family: 'Raleway', sans-serif;  --- body text font 
+font-family: 'Yellowtail', cursive;  --- chalkboard title font 
+font-family: 'Permanent Marker', cursive;  --- chalkboard heading font 
+
+color: #7f0000; rgba(255,255,255,1)  --- white
+color: #dad6c5; rgba(218,214,197,1) --- offwhite
+color: #c3ac7c; rgba(195,172,124,1) --- yellow
+color: #225167; rgba(34,81,103,1) --- blue
+color: #7f0000; rgba(127,0,0,1) --- maroon
+
+: Table Of Contents :
+Resets
+Defaults
+Typography
+Forms
+Layout
+Links
+Menus
+Global Classes
+Media Queries
+---------------------------------------------------- */
+
+/* -------------------- Resets --------------------- */
+body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
+    margin:0;
+    padding:0;
+}
+
+img {
+    border:0; /* kills Gecko bug when img's are placed inside links */
+    vertical-align:bottom; /* set vertical align to bottom for IE */
+}
+/* ------------------- Defaults ------------------- */
+html {
+    height:100%; 
+    overflow:auto; /* triggers 100% height in Opera 9.5 */
+    overflow-y:scroll; /* creates a horizontal scrollbar, for a more consistent look & feel */
+}
+
+body {
+    height:100%; /* helps make height 100% */
+    font:100%/1.5 Raleway, Helvetica, sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
+    background:#FDFDFD;
+    color:#333;
+}
+/* ------------------ Typography ------------------- */
+h1, h2, h3, h4, h5, h6, p {
+    margin:0 0 1em;
+}
+
+p, ul, ol {
+    font-size:1em;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding: 0;
+    margin:0 0 1em 25px;
+    list-style:none;
+}
+
+h1 {
+    font-size:1.6em;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+h2 {
+    font-size:1.25em;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+
+}
+
+h3 {
+    font-size:2em;
+    font-family: 'Yellowtail', cursive;
+    letter-spacing: 0.2em;
+    font-weight: 100;
+}
+
+h4 {
+    font-size:2em;
+    font-family: 'Rubik Mono One', sans-serif;
+    letter-spacing: 0.2em;
+    margin: 0;
+    padding: 0;
+}
+
+h5 {
+    font-size: 1.75em;
+    font-family: 'Permanent Marker', cursive;
+    text-transform: uppercase;
+    text-decoration: underline;
+
+     
+}
+
+h6 {
+    font-family: 'Rubik Mono One', sans-serif;
+    --outline: 1px solid #fff;
+    font-size: 1.25em;
+    letter-spacing: 0.2em;
+}
+
+.hilite {
+    color: #c3ac7c;
+    outline-color: #c3ac7c;
+}
+
+/* -------------------- Forms ---------------------- */
+fieldset {
+    border:none;
+}
+form :focus {
+    outline:0; /* removes Safari's blue border */
+}  
+input, select, textarea {
+    font-size:1em;
+    font-family:Raleway, Helvetica, sans-serif;
+}
+
+label {
+    cursor:pointer;
+    vertical-align:middle;
+}
+
+input {
+    vertical-align:middle;
+}
+
+textarea { 
+    overflow:auto; /* removes scrollbar from IE when none is needed */
+}
+
+/* -------------------- Layout --------------------- */
+#content {
+    margin: 0px auto;
+    margin-top:80px; /* brings content down for sticky nav layout */
+    min-height:100%; /* height 100% in all modern browsers */
+}
+
+#flexwrapper {
+    display: flex;  /* sets flex display */
+}
+
+/* ---------------Social
+--------------------- */
+#social {
+    display:none;
+}
+
+#social li {
+    display: inline-block;
+}
+
+#social li img {
+    width: 50px;
+}
+
+/* ---------Spotlight
+--------------------- */
+#spotlight {
+    text-align: center;
+    padding: 3em 0em;
+}
+
+#spotlight img {
+    width: 100%;
+}
+
+#spotlight li {
+    display: inline-block;
+}
+
+#spotlight a {
+    border: 3px solid #7f0000;
+    color: #7f0000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    margin: 1em;
+    background-color: #fff;
+    margin-top: 10em;
+}
+
+#spotlight a:hover {
+    background-color: #7f0000;
+    color: white;
+}
+
+/* ------------Events
+--------------------- */
+#events {
+    text-align: center;
+    min-height:100%;
+    background:linear-gradient(0deg,rgba(0,0,0,0.85),rgba(0,0,0,0.85)),url("/images/coloredpaisleyBG.png");
+    background-size: 400px;
+    padding: 3em;
+    color: #fff;
+}
+
+#events h2 {
+    text-transform: uppercase;
+    font-weight: 700;
+    outline: 1px solid #fff;
+    letter-spacing: 0.2em;
+}
+
+#events .hilite {
+    color: #c3ac7c;
+    outline-color: #c3ac7c;
+}
+
+#events a {
+    border: 3px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    margin: 1em;
+    background-color: #225167;
+}
+
+#events a:hover {
+    background-color: #7f0000;
+}
+
+#schedule {
+    display: flex;
+}
+
+#day {
+    width: 33%;
+    margin: 0 2em;
+    margin-bottom: 2em;
+}
+
+/* -------------About
+--------------------- */
+#about {
+    text-align: center;
+    min-height:100%;
+    background:linear-gradient(0deg,rgba(195,172,124,0.6),rgba(195,172,124,0.6)),url("/images/buildings/OMphoto.jpg");
+    background-size:cover;
+    padding: 3em;
+    color: #fff;
+}
+
+#about p {
+    background-color:rgba(34,81,103,0.5);
+    padding: 1em;
+    text-align:left;
+}
+
+#about p:first-child {
+    margin-left: 10em;
+}
+
+#about p:last-child {
+    margin-right: 10em;
+}
+
+/* --------------Info
+--------------------- */
+#info {
+    display: flex;
+    text-align: center;
+    min-height:100%;
+    background:linear-gradient(0deg,rgba(34,81,103,0.6),rgba(34,81,103,0.6)),url("/images/paisleyBG.png");
+    background-size: 700px;
+    padding: 3em;
+    color: #fff;
+}
+
+#info h1 {
+    margin: 0;
+}
+
+#info a {
+    color: #dad6c5;
+    font-weight: 600;
+}
+
+#info a:hover {
+    color: #fff;
+}
+
+#section {
+    width: 50%;
+}
+
+/* -------Brewsletter
+--------------------- */
+#brewsletter {
+    text-align: center;
+    min-height:100%;
+    background:linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url("/images/buildings/OMfire.jpg");
+    background-size:cover;
+    padding: 3em;
+    color: #225167;
+}
+
+#brewsletter h1 {
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+#email {
+    outline-color: white;
+    margin-bottom: 1em;
+    color: #999;
+    border: 0;
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
+#submit {
+    border: 0;
+    color: #fff;
+    background-color: #225167;
+    font-weight: 600;
+
+}
+
+#submit:focus { outline:0 !important; }
+
+/* ------------Footer
+--------------------- */
+#footer {
+    clear:both;
+}
+
+#left {
+    float:left;
+}
+
+/* ------------------- Links ---------------------- */
+a {
+    text-decoration:none;
+    color:#7f0000;
+    outline:0; /* removes dotted border */
+    transition: 0.25s linear;
+}
+
+a:visited {
+    --color:#999;
+}
+
+a:hover, a:focus, a:active {
+    text-decoration:none;
+    color: #c3ac7c;
+    /* add-custom:outline-rule-here; */
+}
+
+/* --------------------- Menus -------------------- */
+/* Main Menu */
+nav {
+    border-bottom: 3px solid #7f0000;
+    background-color: #fff;
+    background-image: url("/images/paisleyBG.png");
+    background-size: 500px;
+    padding-left: 2em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+}
+
+#logo img {
+    width: 150px;
+    float: left;
+}
+
+.toggle, [id^=drop] {
+    display: none;
+}
+
+nav ul {
+    margin-top: 30px;
+    
+}
+
+nav li {
+    line-height: 40px;
+    text-align:left;
+    display: inline-block;
+    border-right: 1px solid #7f0000;
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav > ul > li {
+    text-align: center;
+}
+
+nav > ul > li > a {
+    padding-left: 0;
+}
+
+nav li ul {
+    position: absolute;
+    display: none;
+    background-color: rgba(255,255,255,0.9);
+    margin: 0 1em;
+}
+
+nav li:hover ul {
+    display: block;
+}
+
+nav li ul li {
+    display: block;
+    border-right: none;
+}
+
+nav li ul li a {
+    padding: 0.5em 1em;
+    width: inherit;
+    transition: 0.25s linear;  
+}
+
+nav li ul li a:hover {
+    color: #7f0000;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    width: 7em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+nav a:hover, #nav a:focus, #nav a:active {
+}
+
+/* Footer Menu */
+#footer {
+    border-top: 3px solid #7f0000;
+    padding: 1em;
+    background-image: url("/images/paisleyBG.png");
+    background-size: 500px;
+}
+
+#footer ul {
+    text-align: center;
+    margin-bottom: 0.25em;
+    line-height: normal;
+}
+
+#footer li {
+    border-right: 1px solid #7f0000;
+    display: inline-block;
+}
+
+#footer li:last-child {
+    border-right: none;
+}
+
+#footer a {
+    text-decoration:none;
+    font-size: 14px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: 500;
+}
+
+#footer a:hover, #foot a:focus, #foot a:active {
+    
+}
+
+#footer p {
+    margin-top: 2em;
+    text-align:center;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* ---------------- Global Classes --------------- */
+.clear {
+clear:both;
+line-height:0;
+height:0;
+font-size:0;
+}
+.clearfix:after {
+content:" "; 
+display:block; 
+height:0;
+font-size:0; 
+clear:both; 
+visibility:hidden;
+}
+.clearfix {display:inline-block;}
+/* mac hide \*/
+* html .clearfix {height:1%;}
+.clearfix {display:block;}
+/* End hide */
+/* ------------------- Media Queries ------------------- */
+
+
+/* -----------Tablets
+--------------------- */
+@media screen and (min-Width: 501px) and  (max-Width: 768px) {
+    nav li {
+        --display: block;
+    }
+    
+    #flexwrapper, #schedule, #info {
+        display: inherit;       /* turns off flex display */
+    }
+    
+    #day {
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #day, #section {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #section:first-child {
+        margin-bottom: 2em;
+    }
+}
+
+/* -----------Phones
+--------------------- */
+@media all and (max-width : 500px) {
+    
+    /* mobile navigation */
+
+    .toggle + a, .menu { 
+        display: none; 
+        visibility: none;
+    }
+
+    .toggle {
+        display: block;
+        background-color: #7f0000;
+        padding: 0 20px;
+        color: #FFF;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+        border: none;
+        width: 20px;
+        margin: 20px;
+        transition: all 0.25s ease-out;
+    }
+
+    .toggle:hover { 
+        background-color: #c3ac7c; 
+        transition: all 0.25s ease-in;
+    }
+
+    [id^=drop]:checked + ul { 
+        display: block; 
+    }
+
+    nav { 
+        margin: 0;
+        padding: 0;
+        height: auto;
+        position: relative;
+        padding-top: 1px;
+        --overflow: auto;
+
+    }
+    
+    #logo {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #logo img {
+        float: none;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 10;
+    }
+    
+    
+    nav a.active { 
+        border:none;
+    }
+    
+    nav ul {
+        margin: 0;
+        margin-top: 5.5em;
+        margin-bottom: 1em;
+        padding: 0;
+    }
+    
+    nav ul li {
+        display: block;
+        background: #7f0000;
+        margin: 0 20px;
+        padding: 1em 0em;
+    }
+    
+    nav ul a {
+        color: #fff;
+    }
+    
+    nav ul a:hover {
+        color: #fff;
+    }
+    
+    nav ul li ul {
+        position: static;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        
+    }
+
+    nav ul li ul li {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: block;
+        float: none;
+        text-align: right;
+    }
+    
+    /* brings content back up for nonsticky nav */
+    #content {
+        margin-top: 0px; 
+    }
+    
+    /* turn off flex display */
+    #flexwrapper, #schedule, #info {
+        display: inherit;       
+    }
+    
+    /* reduce spotlight size */
+    #spotlight {
+        padding-bottom: 0em;
+    }
+    
+    /* make spotlight links vertical */
+    #spotlight li {
+        display: block;
+        padding: 1.5em;
+    }
+    
+    /* stretch elements across the page */
+    #day, #section, #about p {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #about p:first-child {
+        margin: 0;
+    }
+    
+    /* fix spacing in info section */
+    #section:first-child {
+        margin-bottom: 2em;
+    }
+    
+    /* reduce font sizes */
+    p { font-size:0.85em; }
+
+    h1 { font-size:1.25em; }
+
+    h2 { font-size:1em; }
+
+    h3 { font-size:1.75em; }
+
+    h4 { font-size:1.75em; }
+
+    h5 { font-size: 1.5em; }
+
+    h6 { font-size: 0.9em; }
+    
+    /* make footer links vertical */
+    #footer li {
+        display: block;
+        border-right: none;
+    }
+    
+}
