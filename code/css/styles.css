@@ -30,34 +30,34 @@ Media Queries
 
 /* -------------------- Resets --------------------- */
 body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
 }
 
 img {
-    border:0; /* kills Gecko bug when img's are placed inside links */
-    vertical-align:bottom; /* set vertical align to bottom for IE */
+    border: 0; /* kills Gecko bug when img's are placed inside links */
+    vertical-align: bottom; /* set vertical align to bottom for IE */
 }
 /* ------------------- Defaults ------------------- */
 html {
-    height:100%; 
-    overflow:auto; /* triggers 100% height in Opera 9.5 */
-    overflow-y:scroll; /* creates a horizontal scrollbar, for a more consistent look & feel */
+    height: 100%; 
+    overflow: auto; /* triggers 100% height in Opera 9.5 */
+    overflow-y: scroll; /* creates a horizontal scrollbar, for a more consistent look & feel */
 }
 
 body {
-    height:100%; /* helps make height 100% */
-    font:100%/1.5 Raleway, Helvetica, sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
-    background:#FDFDFD;
-    color:#333;
+    height: 100%; /* helps make height 100% */
+    font: 100%/1.5 Raleway, Helvetica, sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
+    background: #FDFDFD;
+    color: #333;
 }
 /* ------------------ Typography ------------------- */
 h1, h2, h3, h4, h5, h6, p {
-    margin:0 0 1em;
+    margin: 0 0 1em;
 }
 
 p, ul, ol {
-    font-size:1em;
+    font-size: 1em;
     font-weight: 200;
     margin: 0;
     padding: 0;
@@ -65,7 +65,7 @@ p, ul, ol {
 
 ul {
     padding: 0;
-    margin:0 0 1em 25px;
+    margin: 0;
     list-style:none;
 }
 
@@ -115,11 +115,6 @@ h6 {
     letter-spacing: 0.2em;
 }
 
-.hilite {
-    color: #c3ac7c;
-    outline-color: #c3ac7c;
-}
-
 /* -------------------- Forms ---------------------- */
 fieldset {
     border:none;
@@ -158,16 +153,29 @@ textarea {
 
 /* ---------------Social
 --------------------- */
-#social {
-    display:none;
+.social {
+    margin: 0;
+    padding: 0;
 }
 
-#social li {
-    display: inline-block;
+.social ul {
+    margin: 0 0;
+    padding: 0 0;
 }
 
-#social li img {
-    width: 50px;
+.social ul li {
+    display: inline-block; 
+    border-right: none !important;
+    width: auto;
+    padding: 0em 0.25em;
+}
+
+.social ul li a {
+    width: auto;
+}
+
+.social ul li a img {
+    width: 32px;
 }
 
 /* ---------Spotlight
@@ -182,6 +190,8 @@ textarea {
 }
 
 #spotlight li {
+    padding: 0;
+    margin: 0;
     display: inline-block;
 }
 
@@ -206,7 +216,7 @@ textarea {
 #events {
     text-align: center;
     min-height:100%;
-    background:linear-gradient(0deg,rgba(0,0,0,0.85),rgba(0,0,0,0.85)),url("/images/coloredpaisleyBG.png");
+    background:linear-gradient(0deg,rgba(0,0,0,0.85),rgba(0,0,0,0.85)),url("../images/coloredpaisleyBG.png");
     background-size: 400px;
     padding: 3em;
     color: #fff;
@@ -217,11 +227,6 @@ textarea {
     font-weight: 700;
     outline: 1px solid #fff;
     letter-spacing: 0.2em;
-}
-
-#events .hilite {
-    color: #c3ac7c;
-    outline-color: #c3ac7c;
 }
 
 #events a {
@@ -248,12 +253,18 @@ textarea {
     margin-bottom: 2em;
 }
 
+.today h2, .today h5, .today h6, .today p  {
+    color: #c3ac7c;
+    outline-color: #c3ac7c !important;
+}
+
+
 /* -------------About
 --------------------- */
 #about {
     text-align: center;
     min-height:100%;
-    background:linear-gradient(0deg,rgba(195,172,124,0.6),rgba(195,172,124,0.6)),url("/images/buildings/OMphoto.jpg");
+    background:linear-gradient(0deg,rgba(195,172,124,0.6),rgba(195,172,124,0.6)),url("../images/buildings/OMphoto.jpg");
     background-size:cover;
     padding: 3em;
     color: #fff;
@@ -279,7 +290,7 @@ textarea {
     display: flex;
     text-align: center;
     min-height:100%;
-    background:linear-gradient(0deg,rgba(34,81,103,0.6),rgba(34,81,103,0.6)),url("/images/paisleyBG.png");
+    background:linear-gradient(0deg,rgba(34,81,103,0.6),rgba(34,81,103,0.6)),url("../images/paisleyBG.png");
     background-size: 700px;
     padding: 3em;
     color: #fff;
@@ -307,9 +318,9 @@ textarea {
 #brewsletter {
     text-align: center;
     min-height:100%;
-    background:linear-gradient(0deg,rgba(255,255,255,0.4),rgba(255,255,255,0.4)),url("/images/buildings/OMfire.jpg");
+    background:linear-gradient(0deg,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),url("../images/buildings/OMfire.jpg");
     background-size:cover;
-    padding: 3em;
+    padding: 3em 0em;
     color: #225167;
 }
 
@@ -319,13 +330,39 @@ textarea {
 }
 
 #email {
-    outline-color: white;
     margin-bottom: 1em;
-    color: #999;
+    color: #000;
+    font-weight: 300;
     border: 0;
     padding: 0.5em 1em;
     text-align: center;
+    transition: 0.25s ease;
 }
+
+#email:focus {  
+    outline: 3px solid #225167;
+    font-weight: 600;
+    
+}
+
+#email ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #909;
+}
+#email :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    #909;
+    opacity:  1;
+}
+#email ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    #909;
+    opacity:  1;
+}
+#email :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    #909;
+}
+#email ::-ms-input-placeholder { /* Microsoft Edge */
+    color:    #909;
+}
+
 
 #submit {
     border: 0;
@@ -352,7 +389,7 @@ a {
     text-decoration:none;
     color:#7f0000;
     outline:0; /* removes dotted border */
-    transition: 0.25s linear;
+    transition: 0.25s ease;
 }
 
 a:visited {
@@ -370,18 +407,29 @@ a:hover, a:focus, a:active {
 nav {
     border-bottom: 3px solid #7f0000;
     background-color: #fff;
-    background-image: url("/images/paisleyBG.png");
+    background-image: url("../images/paisleyBG.png");
     background-size: 500px;
-    padding-left: 2em;
+    padding: 0em 2em;
     position: fixed;
     top: 0;
     width: 100%;
     height: 80px;
+    transition: 0.25s;
+    
 }
 
 #logo img {
     width: 150px;
     float: left;
+    transition: 0.25s;
+}
+
+#logo img .largebrand{
+	content:url("../images/OMB_logo.png");
+}
+
+#logo img .smallbrand{
+	content:url("../images/houseIcon.png");
 }
 
 .toggle, [id^=drop] {
@@ -390,7 +438,6 @@ nav {
 
 nav ul {
     margin-top: 30px;
-    
 }
 
 nav li {
@@ -431,7 +478,7 @@ nav li ul li {
 nav li ul li a {
     padding: 0.5em 1em;
     width: inherit;
-    transition: 0.25s linear;  
+    transition: 0.25s ease;  
 }
 
 nav li ul li a:hover {
@@ -439,7 +486,6 @@ nav li ul li a:hover {
     margin-left: 10px;
     font-weight: 700;
 }
-
 
 nav a {
     text-decoration: none;
@@ -451,14 +497,18 @@ nav a {
     line-height: 1.5em;
 }
 
-nav a:hover, #nav a:focus, #nav a:active {
+nav .social {
+    position: absolute;
+    top: 1.25em;
+    right: 6em;
+    margin-bottom: 1em;
 }
 
 /* Footer Menu */
 #footer {
     border-top: 3px solid #7f0000;
     padding: 1em;
-    background-image: url("/images/paisleyBG.png");
+    background-image: url("../images/paisleyBG.png");
     background-size: 500px;
 }
 
@@ -485,10 +535,6 @@ nav a:hover, #nav a:focus, #nav a:active {
     font-weight: 500;
 }
 
-#footer a:hover, #foot a:focus, #foot a:active {
-    
-}
-
 #footer p {
     margin-top: 2em;
     text-align:center;
@@ -496,26 +542,11 @@ nav a:hover, #nav a:focus, #nav a:active {
     font-weight: 400;
 }
 
-/* ---------------- Global Classes --------------- */
-.clear {
-clear:both;
-line-height:0;
-height:0;
-font-size:0;
+/* hide social in footer on desktop view */
+#footer .social {
+    display: none;
 }
-.clearfix:after {
-content:" "; 
-display:block; 
-height:0;
-font-size:0; 
-clear:both; 
-visibility:hidden;
-}
-.clearfix {display:inline-block;}
-/* mac hide \*/
-* html .clearfix {height:1%;}
-.clearfix {display:block;}
-/* End hide */
+
 /* ------------------- Media Queries ------------------- */
 
 
@@ -526,20 +557,56 @@ visibility:hidden;
         --display: block;
     }
     
+    /* move social links to footer */
+    nav .social {
+        display: none;
+    }
+    
+    #footer .social {
+        display: inherit;
+        margin-bottom: 1.5em;
+    }
+    
+    #footer .social ul li a {
+        width: 32px;
+    }
+    
+    /* turns off flex display */
     #flexwrapper, #schedule, #info {
-        display: inherit;       /* turns off flex display */
+        display: inherit;  
     }
     
-    #day {
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
+    /* hide events other than today */
+    #schedule #day:not(.today) {
+        display: none;
     }
     
-    #day, #section {
+    /* stretch elements across the page */
+    #day, #section, #about p {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+    }
+    
+    #about {
+        padding: 2em;
+    }
+    
+    #about #flexwrapper {
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    #about p {
+        margin: 0;
+        padding: 1.5em;
+        box-sizing: border-box;
+    }
+    
+    #about p:first-child {
+        margin: 0;
+        margin-bottom: 1em;
     }
     
     #section:first-child {
@@ -551,8 +618,13 @@ visibility:hidden;
 --------------------- */
 @media all and (max-width : 500px) {
     
+    /* reset margin and padding for content */
+    #content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
     /* mobile navigation */
-
     .toggle + a, .menu { 
         display: none; 
         visibility: none;
@@ -561,14 +633,14 @@ visibility:hidden;
     .toggle {
         display: block;
         background-color: #7f0000;
-        padding: 0 20px;
+        padding: 0 15px;
         color: #FFF;
-        font-size: 20px;
-        line-height: 60px;
+        font-size: 15px;
+        line-height: 45px;
         text-decoration: none;
         border: none;
-        width: 20px;
-        margin: 20px;
+        width: 15px;
+        margin: 15px;
         transition: all 0.25s ease-out;
     }
 
@@ -580,14 +652,13 @@ visibility:hidden;
     [id^=drop]:checked + ul { 
         display: block; 
     }
-
+    
     nav { 
         margin: 0;
         padding: 0;
         height: auto;
         position: relative;
         padding-top: 1px;
-        --overflow: auto;
 
     }
     
@@ -599,6 +670,7 @@ visibility:hidden;
     }
     
     #logo img {
+        width: 150px !important;
         float: none;
         position: absolute;
         margin: auto;
@@ -608,27 +680,33 @@ visibility:hidden;
         bottom: 10;
     }
     
-    
     nav a.active { 
         border:none;
     }
     
     nav ul {
         margin: 0;
-        margin-top: 5.5em;
+        margin-top: 6em;
         margin-bottom: 1em;
         padding: 0;
+        width: 80%;
+        margin-left:auto;
+        margin-right:auto;
     }
     
     nav ul li {
         display: block;
         background: #7f0000;
-        margin: 0 20px;
-        padding: 1em 0em;
+        margin: 0;
+        padding: 0;
+        border-right: none;
     }
     
     nav ul a {
+        margin: 0.5em 1em;
+        padding: 1em 0em;
         color: #fff;
+        text-align: left;
     }
     
     nav ul a:hover {
@@ -636,26 +714,55 @@ visibility:hidden;
     }
     
     nav ul li ul {
-        position: static;
-        margin-top: 0px;
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-        
-    }
-
-    nav ul li ul li {
         margin: 0;
         padding: 0;
+        position: static;
+        margin-top: 0px;
+        width:100%;
+    }
+    
+        
+    nav ul li ul a {
+        margin: 0.5em 0em;
+        padding: 1em;
+        padding-left: 3em;
+        color: #7f0000;
+    }
+    
+    nav li ul li a {
+        width:auto; 
+    }
+    
+    nav li ul li a:hover {
+        margin: 0;
+        font-weight: 700;
+    }
+
+
+    nav ul li ul li {
         width: 100%;
         display: block;
         float: none;
-        text-align: right;
+        background-color: #fff;
+        color: #7f0000;
     }
     
-    /* brings content back up for nonsticky nav */
-    #content {
-        margin-top: 0px; 
+    nav li ul {
+        --display: block; --testing
+    }
+    
+    /* move social links to footer */
+    nav .social {
+        display: none;
+    }
+    
+    #footer .social {
+        display: inherit;
+        margin-bottom: 1.5em;
+    }
+    
+    #footer .social ul li {
+        display: inline-block;
     }
     
     /* turn off flex display */
@@ -665,13 +772,18 @@ visibility:hidden;
     
     /* reduce spotlight size */
     #spotlight {
-        padding-bottom: 0em;
+        padding-bottom: 1em;
     }
     
     /* make spotlight links vertical */
     #spotlight li {
         display: block;
         padding: 1.5em;
+    }
+    
+    /* hide events other than today */
+    #schedule #day:not(.today) {
+        display: none;
     }
     
     /* stretch elements across the page */
@@ -681,10 +793,28 @@ visibility:hidden;
         margin-right: auto;
     }
     
-    #about p:first-child {
-        margin: 0;
+    #about {
+        position: relative;
+        padding: 2em;
     }
     
+    #about #flexwrapper {
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    #about p {
+        margin: 0;
+        padding: 1.5em;
+        box-sizing: border-box;
+    }
+    
+    #about p:first-child {
+        margin: 0;
+        margin-bottom: 1em;
+    }
+
     /* fix spacing in info section */
     #section:first-child {
         margin-bottom: 2em;
@@ -712,3 +842,24 @@ visibility:hidden;
     }
     
 }
+
+/* ---------------- Global Classes --------------- */
+.clear {
+clear:both;
+line-height:0;
+height:0;
+font-size:0;
+}
+.clearfix:after {
+content:" "; 
+display:block; 
+height:0;
+font-size:0; 
+clear:both; 
+visibility:hidden;
+}
+.clearfix {display:inline-block;}
+/* mac hide \*/
+* html .clearfix {height:1%;}
+.clearfix {display:block;}
+/* End hide */

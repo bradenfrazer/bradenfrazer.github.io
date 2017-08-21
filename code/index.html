@@ -7,24 +7,16 @@
     <title>Old Main Brewery</title>
     <meta name="description" content="Old Main Brewery">
     <meta name="author" content="Becker Munson Industries, LLC">
+    <meta name="viewport" content="width=device-width" />
     <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One|Permanent+Marker|Yellowtail|Raleway:200,300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
     
 <body>
-    <div id="header">
-    </div>
 
-    <div id="social">
-        <ul>
-            <li><a href="#facebook"><img src="images/facebook-icon-preview-200x200.png" alt="Facebook"></a></li>
-            <li><a href="#twitter"><img src="images/facebook-icon-preview-200x200.png" alt="Facebook"></a></li>
-            <li><a href="#instagram"><img src="images/facebook-icon-preview-200x200.png" alt="Facebook"></a></li>
-        </ul>
-    </div>
-
-    <nav>
-        <div id="logo"><a href="index.html"><img src="images/OMB_logo.png"/></a></div>
+    <nav class="large">
+        <div id="logo"><a id="brand" href="index.html"><img src="images/OMB_logo.png"/></a></div>
         <label for="drop" class="toggle">☰</label>
         <input type="checkbox" id="drop" />
         <ul class="menu">
@@ -56,14 +48,22 @@
                 </ul>
             </li>
             <li><a href="/contact-us/">Contact</a></li>
-        </ul>
+        </ul> 
+        
+        <div class="social">
+            <ul>
+                <li><a href="#facebook"><img src="images/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#twitter"><img src="images/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#instagram"><img src="images/instagram.png" alt="Instagram"></a></li>
+            </ul>
+        </div>
+        
     </nav>
 
     <div id="content">
         <div id="spotlight">
-            <img src="/images/cans.JPG">
+            <img src="../images/cans.JPG">
             <br>
-            <div id="spacer"></div>
             <ul>
                 <li><a href="/about-the-brewery/">Our Story</a></li>
                 <li><a href="/our-brews/">Our Beer</a></li>
@@ -74,16 +74,16 @@
         <div id="events">
             <h3>This Week At Old Main Brewery: 10/3 - 10/10</h3>
             <div id="schedule">
-                <div id="day">
-                    <h5 class="hilite">Today</h5>
-                    <h2 class="hilite">Brew of the Day Specials:</h2>
-                    <h6 class="hilite">Wrecking Brew IPA</h6>
-                    <p class="hilite">$2 pints</p>
-                    <p class="hilite">$6 pitchers</p>
-                    <p class="hilite">1/2 off flights</p>
+                <div id="day" class="today">
+                    <h5>Today</h5>
+                    <h2>Brew of the Day Specials:</h2>
+                    <h6>Wrecking Brew IPA</h6>
+                    <p>$2 pints</p>
+                    <p>$6 pitchers</p>
+                    <p>1/2 off flights</p>
                     <br>
-                    <h2 class="hilite">Events:</h2>
-                    <p class="hilite">• 42 Tournament</p>
+                    <h2>Events:</h2>
+                    <p>• 42 Tournament</p>
                 </div>
                 <div id="day">
                     <h5>Thursday</h5>
@@ -149,7 +149,15 @@
                     <input type="submit" value="Submit" id= "submit">
             </form>
         </div>
+        
     <div id="footer">
+        <div class="social">
+            <ul>
+                <li><a href="#facebook"><img src="images/facebook.png" alt="Facebook"></a></li>
+                <li><a href="#twitter"><img src="images/twitter.png" alt="Twitter"></a></li>
+                <li><a href="#instagram"><img src="images/instagram.png" alt="Instagram"></a></li>
+            </ul>
+        </div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="/about-the-brewery/">About Us</a></li>
