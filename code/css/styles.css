@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
 Stylesheet for Old Main Brewery
 
-Updated: 08/15/2017
+Updated: 08/21/2017
 Author: Braden Frazer
 ------------------------------------------------------- 
 : CSS Selectors & Attributes : 
@@ -21,7 +21,8 @@ Resets
 Defaults
 Typography
 Forms
-Layout
+Layouts
+--Main Template
 Links
 Menus
 Global Classes
@@ -38,6 +39,7 @@ img {
     border: 0; /* kills Gecko bug when img's are placed inside links */
     vertical-align: bottom; /* set vertical align to bottom for IE */
 }
+
 /* ------------------- Defaults ------------------- */
 html {
     height: 100%; 
@@ -51,6 +53,7 @@ body {
     background: #FDFDFD;
     color: #333;
 }
+
 /* ------------------ Typography ------------------- */
 h1, h2, h3, h4, h5, h6, p {
     margin: 0 0 1em;
@@ -104,53 +107,54 @@ h5 {
     font-family: 'Permanent Marker', cursive;
     text-transform: uppercase;
     text-decoration: underline;
-
-     
 }
 
 h6 {
     font-family: 'Rubik Mono One', sans-serif;
-    --outline: 1px solid #fff;
     font-size: 1.25em;
     letter-spacing: 0.2em;
 }
 
 /* -------------------- Forms ---------------------- */
 fieldset {
-    border:none;
+    border: none;
 }
+
 form :focus {
-    outline:0; /* removes Safari's blue border */
+    outline: 0; /* removes Safari's blue border */
 }  
+
 input, select, textarea {
     font-size:1em;
     font-family:Raleway, Helvetica, sans-serif;
 }
 
 label {
-    cursor:pointer;
-    vertical-align:middle;
+    cursor: pointer;
+    vertical-align: middle;
 }
 
 input {
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 textarea { 
-    overflow:auto; /* removes scrollbar from IE when none is needed */
+    overflow: auto; /* removes scrollbar from IE when none is needed */
 }
 
 /* -------------------- Layout --------------------- */
 #content {
     margin: 0px auto;
-    margin-top:80px; /* brings content down for sticky nav layout */
-    min-height:100%; /* height 100% in all modern browsers */
+    margin-top: 80px; /* brings content down for sticky nav layout */
+    min-height: 100%; /* height 100% in all modern browsers */
 }
 
 #flexwrapper {
     display: flex;  /* sets flex display */
 }
 
+
+/* -------------------- Main Template  --------------------- */
 /* ---------------Social
 --------------------- */
 .social {
@@ -215,8 +219,8 @@ textarea {
 --------------------- */
 #events {
     text-align: center;
-    min-height:100%;
-    background:linear-gradient(0deg,rgba(0,0,0,0.85),rgba(0,0,0,0.85)),url("../images/coloredpaisleyBG.png");
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(0,0,0,0.85),rgba(0,0,0,0.85)),url("../images/coloredpaisleyBG.png");
     background-size: 400px;
     padding: 3em;
     color: #fff;
@@ -263,17 +267,17 @@ textarea {
 --------------------- */
 #about {
     text-align: center;
-    min-height:100%;
-    background:linear-gradient(0deg,rgba(195,172,124,0.6),rgba(195,172,124,0.6)),url("../images/buildings/OMphoto.jpg");
-    background-size:cover;
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(195,172,124,0.6),rgba(195,172,124,0.6)),url("../images/buildings/OMphoto.jpg");
+    background-size: cover;
     padding: 3em;
     color: #fff;
 }
 
 #about p {
-    background-color:rgba(34,81,103,0.5);
+    background-color: rgba(34,81,103,0.5);
     padding: 1em;
-    text-align:left;
+    text-align: left;
 }
 
 #about p:first-child {
@@ -289,8 +293,8 @@ textarea {
 #info {
     display: flex;
     text-align: center;
-    min-height:100%;
-    background:linear-gradient(0deg,rgba(34,81,103,0.6),rgba(34,81,103,0.6)),url("../images/paisleyBG.png");
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(34,81,103,0.6),rgba(34,81,103,0.6)),url("../images/paisleyBG.png");
     background-size: 700px;
     padding: 3em;
     color: #fff;
@@ -317,9 +321,9 @@ textarea {
 --------------------- */
 #brewsletter {
     text-align: center;
-    min-height:100%;
-    background:linear-gradient(0deg,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),url("../images/buildings/OMfire.jpg");
-    background-size:cover;
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),url("../images/buildings/OMfire.jpg");
+    background-size: cover;
     padding: 3em 0em;
     color: #225167;
 }
@@ -346,23 +350,26 @@ textarea {
 }
 
 #email ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    #909;
-}
-#email :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    #909;
-    opacity:  1;
-}
-#email ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    #909;
-    opacity:  1;
-}
-#email :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:    #909;
-}
-#email ::-ms-input-placeholder { /* Microsoft Edge */
-    color:    #909;
+    color: #909;
 }
 
+#email :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #909;
+    opacity:  1;
+}
+
+#email ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #909;
+    opacity:  1;
+}
+
+#email :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #909;
+}
+
+#email ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #909;
+}
 
 #submit {
     border: 0;
@@ -393,13 +400,11 @@ a {
 }
 
 a:visited {
-    --color:#999;
 }
 
 a:hover, a:focus, a:active {
     text-decoration:none;
     color: #c3ac7c;
-    /* add-custom:outline-rule-here; */
 }
 
 /* --------------------- Menus -------------------- */
@@ -415,7 +420,6 @@ nav {
     width: 100%;
     height: 80px;
     transition: 0.25s;
-    
 }
 
 #logo img {
@@ -432,7 +436,7 @@ nav {
 	content:url("../images/houseIcon.png");
 }
 
-.toggle, [id^=drop] {
+.toggle, [id^=drop] {       /* toggle for mobile nav hamburger button */
     display: none;
 }
 
@@ -542,9 +546,8 @@ nav .social {
     font-weight: 400;
 }
 
-/* hide social in footer on desktop view */
 #footer .social {
-    display: none;
+    display: none;      /* hide social in footer on desktop view */
 }
 
 /* ------------------- Media Queries ------------------- */
@@ -553,9 +556,6 @@ nav .social {
 /* -----------Tablets
 --------------------- */
 @media screen and (min-Width: 501px) and  (max-Width: 768px) {
-    nav li {
-        --display: block;
-    }
     
     /* move social links to footer */
     nav .social {
@@ -571,7 +571,7 @@ nav .social {
         width: 32px;
     }
     
-    /* turns off flex display */
+    /* turn off flex display */
     #flexwrapper, #schedule, #info {
         display: inherit;  
     }
@@ -746,11 +746,7 @@ nav .social {
         background-color: #fff;
         color: #7f0000;
     }
-    
-    nav li ul {
-        --display: block; --testing
-    }
-    
+  
     /* move social links to footer */
     nav .social {
         display: none;
@@ -840,23 +836,22 @@ nav .social {
         display: block;
         border-right: none;
     }
-    
 }
 
 /* ---------------- Global Classes --------------- */
 .clear {
-clear:both;
-line-height:0;
-height:0;
-font-size:0;
+    clear: both;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
 }
 .clearfix:after {
-content:" "; 
-display:block; 
-height:0;
-font-size:0; 
-clear:both; 
-visibility:hidden;
+    content: " "; 
+    display: block; 
+    height: 0;
+    font-size: 0; 
+    clear: both; 
+    visibility: hidden;
 }
 .clearfix {display:inline-block;}
 /* mac hide \*/
