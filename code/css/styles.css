@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
 Stylesheet for Old Main Brewery
 
-Updated: 08/21/2017
+Updated: 08/24/2017
 Author: Braden Frazer
 ------------------------------------------------------- 
 : CSS Selectors & Attributes : 
@@ -20,9 +20,15 @@ color: #7f0000; rgba(127,0,0,1) --- maroon
 Resets
 Defaults
 Typography
+Animations
 Forms
 Layouts
+--Home Template
+--Navigation Template
 --Main Template
+--Product Template
+--Contact Template
+--Events Template
 Links
 Menus
 Global Classes
@@ -48,15 +54,21 @@ html {
 }
 
 body {
-    height: 100%; /* helps make height 100% */
+    --height: 100%; /* helps make height 100% */
     font: 100%/1.5 Raleway, Helvetica, sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
     background: #FDFDFD;
     color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 /* ------------------ Typography ------------------- */
 h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Raleway', sans-serif;
     margin: 0 0 1em;
+    padding: 0 0;
+    letter-spacing: 0.05em;
 }
 
 p, ul, ol {
@@ -74,46 +86,89 @@ ul {
 
 h1 {
     font-size:1.6em;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 0.05em;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 h2 {
     font-size:1.25em;
-    font-family: 'Raleway', sans-serif;
-    letter-spacing: 0.05em;
     font-weight: 400;
 
 }
 
 h3 {
-    font-size:2em;
-    font-family: 'Yellowtail', cursive;
-    letter-spacing: 0.2em;
-    font-weight: 100;
+    font-size:1.2em;
+    font-weight: 300;
 }
 
 h4 {
-    font-size:2em;
-    font-family: 'Rubik Mono One', sans-serif;
-    letter-spacing: 0.2em;
-    margin: 0;
-    padding: 0;
+    font-size:1.1em;
+    font-weight: 200;
 }
 
 h5 {
-    font-size: 1.75em;
-    font-family: 'Permanent Marker', cursive;
-    text-transform: uppercase;
-    text-decoration: underline;
+    font-size: 1em;
+    font-weight:200;
 }
 
 h6 {
-    font-family: 'Rubik Mono One', sans-serif;
-    font-size: 1.25em;
-    letter-spacing: 0.2em;
+    font-size: 1em;
+    font-weight: 100;
 }
+
+/* -------------------- Animations ---------------------- */
+
+.slideanim {
+    visibility:hidden;
+    visibility:visible\9;/*For old IE browsers IE6-8 */
+}
+.slideanim.slide {                  
+    visibility: visible;                  
+    animation: slide 1s;
+}
+
+.item:nth-of-type(odd) .slideanim.slide {                
+    animation-name: slideleft;
+}
+
+.slideanim::after {
+    /* useful when its child elements are float:left; */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    } 
+}
+
+@keyframes slideleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadein {
+    from { 
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to { 
+        opacity: 1;
+    }
+}
+
 
 /* -------------------- Forms ---------------------- */
 fieldset {
@@ -144,17 +199,17 @@ textarea {
 
 /* -------------------- Layout --------------------- */
 #content {
-    margin: 0px auto;
+    --margin: 0px auto;
     margin-top: 80px; /* brings content down for sticky nav layout */
     min-height: 100%; /* height 100% in all modern browsers */
+    flex: 1;
 }
 
 #flexwrapper {
     display: flex;  /* sets flex display */
 }
 
-
-/* -------------------- Main Template  --------------------- */
+/* -------------------- Home Template  --------------------- */
 /* ---------------Social
 --------------------- */
 .social {
@@ -226,11 +281,34 @@ textarea {
     color: #fff;
 }
 
+#events h1 {
+    font-size: 2em;
+    font-family: 'Yellowtail', cursive;
+    letter-spacing: 0.25em;
+    text-decoration: underline;
+}
+
 #events h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 0.2em;
+    margin:0;
+}
+
+#events h3 {
     text-transform: uppercase;
     font-weight: 700;
     outline: 1px solid #fff;
     letter-spacing: 0.2em;
+}
+
+#events h4 {
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+#events p {
+    margin: 0;
 }
 
 #events a {
@@ -247,6 +325,13 @@ textarea {
     background-color: #7f0000;
 }
 
+#events hr {
+    margin-bottom: 1em;
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
 #schedule {
     display: flex;
 }
@@ -254,12 +339,20 @@ textarea {
 #day {
     width: 33%;
     margin: 0 2em;
-    margin-bottom: 2em;
+    margin-bottom: 5em;
 }
 
-.today h2, .today h5, .today h6, .today p  {
+.today h2, .today h3, .today h4, .today p  {
     color: #c3ac7c;
     outline-color: #c3ac7c !important;
+}
+
+.today hr {
+    background-image: linear-gradient(to right, rgba(195,172,124, 0), rgba(195,172,124, 0.75), rgba(195,172,124, 0)) !important;
+}
+
+#specials {
+    min-height: 15em;       /* not perfect but works in many cases to keep "events" titles lined up */
 }
 
 
@@ -274,10 +367,24 @@ textarea {
     color: #fff;
 }
 
+#about h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 2em;
+    letter-spacing: 0.25em;
+    margin:0;
+}
+
+#about h2 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 1.75em;
+    letter-spacing: 0.25em;
+}
+
 #about p {
     background-color: rgba(34,81,103,0.5);
     padding: 1em;
     text-align: left;
+    letter-spacing: 0;
 }
 
 #about p:first-child {
@@ -300,8 +407,9 @@ textarea {
     color: #fff;
 }
 
-#info h1 {
+#info h1, #info p {
     margin: 0;
+    padding: 0;
 }
 
 #info a {
@@ -346,7 +454,6 @@ textarea {
 #email:focus {  
     outline: 3px solid #225167;
     font-weight: 600;
-    
 }
 
 #email ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -376,26 +483,277 @@ textarea {
     color: #fff;
     background-color: #225167;
     font-weight: 600;
-
 }
 
-#submit:focus { outline:0 !important; }
-
-/* ------------Footer
---------------------- */
-#footer {
-    clear:both;
+#submit:focus { 
+    outline:0 !important; 
 }
 
-#left {
-    float:left;
+
+/* ----------------Navigation Template--------------------- */
+#navigation {
 }
+
+#title {
+    background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../images/beer-tap.jpg");
+    padding-top: 2em;
+    background-size: cover;
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 75px;
+    text-align: center;
+}
+
+#title::after{      /* used to make triangle underneath title image */
+    content: '';
+    left: 42%;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid #fff;
+    clear: both;
+}
+
+#title h1 {
+    color: #fff;
+    outline: 5px solid #fff;
+    font-weight: 700;
+    font-size: 2.5em;
+    width: auto;
+    text-transform: uppercase;
+    display: table;
+    margin: 1em auto;
+    padding: 0.25em 0.5em;
+    letter-spacing: 0.25em;
+}
+
+.item {
+    border-bottom: 5px dashed rgba(127,0,0,1);
+    color: #7f0000;
+    padding: 0em 5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item:last-child {
+    border: none;
+}
+
+.item h2, .item span, .item p {
+    margin: 3em 0em;
+}
+
+.item span {
+    color: #000;
+    font-weight:600;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.item h2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+}
+    
+.item p {
+    color: #000;
+    font-weight: 400;
+}
+
+.item a {
+    border: 3px solid #7f0000;
+    color: #7f0000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    background-color: #fff;
+}
+
+.item a:hover {
+    background-color: #7f0000;
+    color: white;
+}
+
+.item img {
+    max-width:100%;
+}
+
+.item .imagebox {
+    flex: 1 0 0;
+}
+
+.item .infobox {
+    flex: 2 0 0;
+    padding: 2em 0em;
+}
+
+.item:nth-of-type(odd) .imagebox {
+     order: 1;
+}
+
+.item:nth-of-type(even) .imagebox {
+    order: 2;
+}
+
+.item:nth-of-type(odd) :not(img) {
+    text-align:right;
+}
+
+.item:nth-of-type(even) :not(img) {
+    text-align:left;
+}
+
+.item:nth-of-type(odd) .infobox {
+    order: 2;
+}
+
+.item:nth-of-type(even) .infobox {
+    order: 1;
+}
+
+/* animations for item slides on scroll from left */
+.item:nth-of-type(odd) .slideanim.slide {                
+    animation-name: slideleft;
+}
+
+/* -------------------Main Template------------------------ */
+
+#main {
+    display: flex; 
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 2em;
+    animation: fadein 2s;
+    min-height: 60vh;       /* hacky-would like to fix so it stretches entire container*/
+}
+
+#main .infobox {
+    flex: 3 0 0;
+    order: 2;
+    align-self: center;
+    margin: 2em;
+}
+
+#main .infobox h1 {
+    font-size: 1.75em;
+    font-family: 'Rubik Mono One', sans-serif;
+    margin: 0;
+}
+
+#main .infobox h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #7f0000;
+    font-family: 'Yellowtail', cursive;
+    margin-bottom: 2em;
+}
+
+#main .infobox p {
+    margin: 1em;
+    text-align: justify;
+    font-weight: 300;
+}
+
+#main .infobox a {
+    text-align: left;
+    font-weight: 500;
+    color: #c3ac7c;
+}
+
+#main .infobox a:hover {
+    color: #dad6c5;
+}
+
+#main .imagebox {
+    flex: 2 0 0;
+    order: 2;
+    align-self: center;
+    margin: 2em;
+}
+
+#main .imagebox img {
+    max-width: 100%;
+}
+
+/* ------------------Product Template---------------------- */
+
+#product {
+    display: flex; 
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    animation: fadein 2s;
+    min-height: 76vh;       /* hacky-would like to fix so it stretches entire container*/
+}
+
+#product .linkbox {
+    flex: 2 0 0;
+    order: 1;
+    align-self: center;
+}
+
+#product .linkbox a {
+    border: 3px solid #7f0000;
+    color: #7f0000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    background-color: #fff;
+}
+
+#product .linkbox a:hover {
+    background-color: #7f0000;
+    color: white;
+}
+
+#product .infobox {
+    flex: 3 0 0;
+    order: 2;
+    align-self: center;
+}
+
+#product .infobox h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 1.5em;
+    color: #7f0000;
+}
+
+#product .infobox span {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+#product .infobox p {
+    margin-top: 3em;
+    color: #7f0000;
+    text-align: justify;
+    font-weight: 300;
+}
+
+#product .imagebox {
+    flex: 3 0 0;
+    order: 3;
+    align-self: center;
+}
+
+#product .imagebox img {
+    max-width: 100%;
+}
+
+/* ------------------Contact Template---------------------- */
+/* ------------------Events Template----------------------- */
 
 /* ------------------- Links ---------------------- */
 a {
-    text-decoration:none;
-    color:#7f0000;
-    outline:0; /* removes dotted border */
+    text-decoration: none;
+    color: #7f0000;
+    outline: 0; /* removes dotted border */
     transition: 0.25s ease;
 }
 
@@ -423,7 +781,7 @@ nav {
 }
 
 #logo img {
-    width: 150px;
+    width: 184px;
     float: left;
     transition: 0.25s;
 }
@@ -514,6 +872,8 @@ nav .social {
     padding: 1em;
     background-image: url("../images/paisleyBG.png");
     background-size: 500px;
+    clear: both;
+    overflow: hidden;
 }
 
 #footer ul {
@@ -581,6 +941,10 @@ nav .social {
         display: none;
     }
     
+    #specials {
+        min-height: auto;
+    }
+    
     /* stretch elements across the page */
     #day, #section, #about p {
         width: 100%;
@@ -612,6 +976,23 @@ nav .social {
     #section:first-child {
         margin-bottom: 2em;
     }
+    
+    /* ---main template specific fixes--- */
+    #main {
+        display: inherit;
+        padding: 0em;
+    }
+    
+    /* ---product template specific fixes--- */
+    #product {
+        display: inherit;
+        padding: 2em;
+    }
+    
+    #product .linkbox {
+        margin-top: 3em;
+        margin-bottom: 1em;
+    }
 }
 
 /* -----------Phones
@@ -623,6 +1004,21 @@ nav .social {
         margin: 0 !important;
         padding: 0 !important;
     }
+    
+    /* reduce font sizes */
+    p { font-size:0.85em; }
+
+    h1 { font-size:1.25em; }
+
+    h2 { font-size:1.25em; }
+
+    h3 { font-size:1.0em; }
+
+    h4 { font-size:1.0em; }
+
+    h5 { font-size: 0.9em; }
+
+    h6 { font-size: 0.9em; }
     
     /* mobile navigation */
     .toggle + a, .menu { 
@@ -718,9 +1114,8 @@ nav .social {
         padding: 0;
         position: static;
         margin-top: 0px;
-        width:100%;
+        width: 100%;
     }
-    
         
     nav ul li ul a {
         margin: 0.5em 0em;
@@ -737,7 +1132,6 @@ nav .social {
         margin: 0;
         font-weight: 700;
     }
-
 
     nav ul li ul li {
         width: 100%;
@@ -762,10 +1156,11 @@ nav .social {
     }
     
     /* turn off flex display */
-    #flexwrapper, #schedule, #info {
+    #flexwrapper, #schedule, #info, #navigation .item {
         display: inherit;       
     }
     
+    /* ---home template specific fixes--- */
     /* reduce spotlight size */
     #spotlight {
         padding-bottom: 1em;
@@ -780,6 +1175,14 @@ nav .social {
     /* hide events other than today */
     #schedule #day:not(.today) {
         display: none;
+    }
+    
+    #events h1 {
+        font-size: 1.75em;
+    }
+    
+    #specials {
+        min-height: auto;
     }
     
     /* stretch elements across the page */
@@ -800,6 +1203,14 @@ nav .social {
         margin: 0 auto;
     }
     
+    #about h1 {
+        font-size: 1.75em;
+    }
+    
+    #about h2 {
+        font-size: 1.5em;
+    }
+    
     #about p {
         margin: 0;
         padding: 1.5em;
@@ -816,20 +1227,57 @@ nav .social {
         margin-bottom: 2em;
     }
     
-    /* reduce font sizes */
-    p { font-size:0.85em; }
-
-    h1 { font-size:1.25em; }
-
-    h2 { font-size:1em; }
-
-    h3 { font-size:1.75em; }
-
-    h4 { font-size:1.75em; }
-
-    h5 { font-size: 1.5em; }
-
-    h6 { font-size: 0.9em; }
+    /* ---navigation template specific fixes--- */
+    .item:nth-of-type(even) :not(img), .item:nth-of-type(odd) :not(img) {
+        text-align:center;
+    }
+    
+    #navigation .item {
+        padding: 0em 2em;
+    }
+    
+    #navigation h1 {
+        font-size: 1.5em;
+        line-height: 1.5em;
+        margin-top: 2em;
+    }
+    
+    #navigation h2 {
+        font-size: 1.2em;
+    }
+    
+    /* ---main template specific fixes--- */
+    #main {
+        display: inherit;
+        padding: 0em;
+    }
+    
+    #main .infobox h1 {
+        font-size: 1.5em;
+    }
+    
+    #main .infobox h2 {
+        font-size: 1.25em;
+    }
+    
+    /* ---product template specific fixes--- */
+    #product {
+        display: inherit;
+        padding: 2em;
+    }
+    
+    #product .linkbox {
+        margin-top: 3em;
+        margin-bottom: 1em;
+    }
+    
+    #product .infobox h1 {
+        font-size: 1.25em;
+    }
+    
+    #product .infobox span {
+        font-size: 1em;
+    }
     
     /* make footer links vertical */
     #footer li {
