@@ -411,7 +411,7 @@ p {
 }
 
 #column1 {
-    --background: aliceblue;
+    
 }
 
 /* Timeline
@@ -445,7 +445,7 @@ p {
 }
 
 .timeline-date {
-    width: 70px;
+    width: 75px;
     float: left;
     margin-top: 20px;
     text-align: right;
@@ -465,7 +465,7 @@ p {
     height: 12px;
     background: #63A69F;
     position: absolute;
-    left: 96px;
+    left: 101px;
     top: 10px;
     border-radius: 100%;
 }
