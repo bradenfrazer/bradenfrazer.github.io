@@ -348,6 +348,11 @@ p {
  
 }
 
+#content h4 {
+    border: none;
+    padding:0;
+}
+
 /*resume embedded pdf*/
 #pdf {
     position:relative;
