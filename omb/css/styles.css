@@ -1,0 +1,1437 @@
+/* ----------------------------------------------------
+Stylesheet for Old Main Brewery
+
+Updated: 09/17/2017
+Author: Braden Frazer
+------------------------------------------------------- 
+: CSS Selectors & Attributes : 
+font-family: 'Rubik Mono One', sans-serif;  --- heading font 
+font-family: 'Raleway', sans-serif;  --- body text font 
+font-family: 'Yellowtail', cursive;  --- chalkboard title font 
+font-family: 'Permanent Marker', cursive;  --- chalkboard heading font 
+
+color: #7f0000; rgba(255,255,255,1)  --- white
+color: #dad6c5; rgba(218,214,197,1) --- offwhite
+color: #c3ac7c; rgba(195,172,124,1) --- yellow
+color: #225167; rgba(34,81,103,1) --- blue
+color: #7f0000; rgba(127,0,0,1) --- maroon
+
+: Table Of Contents :
+Resets
+Defaults
+Typography
+Animations
+Forms
+Layouts
+--Home Template
+--Navigation Template
+--Main Template
+--Product Template
+--Contact Template
+--Events Template
+Links
+Menus
+Global Classes
+Media Queries
+---------------------------------------------------- */
+
+/* -------------------- Resets --------------------- */
+body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0; /* kills Gecko bug when img's are placed inside links */
+    vertical-align: bottom; /* set vertical align to bottom for IE */
+}
+
+/* ------------------- Defaults ------------------- */
+html {
+    height: 100%; 
+    overflow: auto; /* triggers 100% height in Opera 9.5 */
+    overflow-y: scroll; /* creates a horizontal scrollbar, for a more consistent look & feel */
+}
+
+body {
+    --height: 100%; /* helps make height 100% */
+    font: 100%/1.5 Raleway, Helvetica, sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
+    background: #FDFDFD;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+/* ------------------ Typography ------------------- */
+h1, h2, h3, h4, h5, h6, p {
+    font-family: 'Raleway', sans-serif;
+    margin: 0 0 1em;
+    padding: 0 0;
+    letter-spacing: 0.05em;
+}
+
+p, ul, ol {
+    font-size: 1em;
+    font-weight: 200;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style:none;
+}
+
+h1 {
+    font-size:1.6em;
+    font-weight: 600;
+}
+
+h2 {
+    font-size:1.25em;
+    font-weight: 400;
+
+}
+
+h3 {
+    font-size:1.2em;
+    font-weight: 300;
+}
+
+h4 {
+    font-size:1.1em;
+    font-weight: 200;
+}
+
+h5 {
+    font-size: 1em;
+    font-weight:200;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: 100;
+}
+
+/* -------------------- Animations ---------------------- */
+
+.slideanim {
+    visibility:hidden;
+    visibility:visible\9;/*For old IE browsers IE6-8 */
+}
+.slideanim.slide {                  
+    visibility: visible;                  
+    animation: slide 1s;
+}
+
+.item:nth-of-type(odd) .slideanim.slide {                
+    animation-name: slideleft;
+}
+
+.slideanim::after {
+    /* useful when its child elements are float:left; */
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+        transform: translateX(50%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    } 
+}
+
+@keyframes slideleft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    } 
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadein {
+    from { 
+        opacity: 0;
+        transform: translateY(-2em);
+    }
+    to { 
+        opacity: 1;
+    }
+}
+
+
+/* -------------------- Forms ---------------------- */
+fieldset {
+    border: none;
+}
+
+form :focus {
+    outline: 0; /* removes Safari's blue border */
+}  
+
+input, select, textarea {
+    font-size:1em;
+    font-family:Raleway, Helvetica, sans-serif;
+}
+
+label {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+input {
+    vertical-align: middle;
+}
+
+textarea { 
+    overflow: auto; /* removes scrollbar from IE when none is needed */
+}
+
+/* -------------------- Layouts --------------------- */
+#content {
+    --margin: 0px auto;
+    margin-top: 80px; /* brings content down for sticky nav layout */
+    min-height: 100%; /* height 100% in all modern browsers */
+    flex: 1;
+}
+
+#flexwrapper {
+    display: flex;  /* sets flex display */
+}
+
+/* -------------------- Home Template  --------------------- */
+/* ---------------Social
+--------------------- */
+.social {
+    margin: 0;
+    padding: 0;
+}
+
+.social ul {
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.social ul li {
+    display: inline-block; 
+    border-right: none !important;
+    width: auto;
+    padding: 0em 0.25em;
+}
+
+.social ul li a {
+    width: auto;
+}
+
+.social ul li a img {
+    width: 32px;
+}
+
+/* ---------Spotlight
+--------------------- */
+#spotlight {
+    text-align: center;
+    padding: 3em 0em;
+}
+
+#spotlight img {
+    width: 100%;
+}
+
+#spotlight li {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+}
+
+#spotlight a {
+    border: 3px solid #7f0000;
+    color: #7f0000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    margin: 1em;
+    background-color: #fff;
+    margin-top: 10em;
+}
+
+#spotlight a:hover {
+    background-color: #7f0000;
+    color: white;
+}
+
+/* ------------Events
+--------------------- */
+#events {
+    text-align: center;
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(0,0,0,0.85),rgba(0,0,0,0.85)),url("../images/coloredpaisleyBG.png");
+    background-size: 400px;
+    padding: 3em;
+    color: #fff;
+}
+
+#events h1 {
+    font-size: 2em;
+    font-family: 'Yellowtail', cursive;
+    letter-spacing: 0.25em;
+    text-decoration: underline;
+}
+
+#events h2 {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-family: 'Permanent Marker', cursive;
+    letter-spacing: 0.2em;
+    margin:0;
+}
+
+#events h3 {
+    text-transform: uppercase;
+    font-weight: 700;
+    outline: 1px solid #fff;
+    letter-spacing: 0.2em;
+}
+
+#events h4 {
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+#events p {
+    margin: 0;
+}
+
+#events a {
+    border: 3px solid #fff;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    margin: 1em;
+    background-color: #225167;
+}
+
+#events a:hover {
+    background-color: #7f0000;
+}
+
+#events hr {
+    margin-bottom: 1em;
+    border: 0;
+    height: 3px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+}
+
+#schedule {
+    display: flex;
+}
+
+#day {
+    width: 33%;
+    margin: 0 2em;
+    margin-bottom: 5em;
+}
+
+.today h2, .today h3, .today h4, .today p  {
+    color: #c3ac7c;
+    outline-color: #c3ac7c !important;
+}
+
+.today hr {
+    background-image: linear-gradient(to right, rgba(195,172,124, 0), rgba(195,172,124, 0.75), rgba(195,172,124, 0)) !important;
+}
+
+#specials {
+    min-height: 15em;       /* not perfect but works in many cases to keep "events" titles lined up */
+}
+
+
+/* -------------About
+--------------------- */
+#about {
+    text-align: center;
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(195,172,124,0.6),rgba(195,172,124,0.6)),url("../images/buildings/OMphoto.jpg");
+    background-size: cover;
+    padding: 3em;
+    color: #fff;
+}
+
+#about h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 2em;
+    letter-spacing: 0.25em;
+    margin:0;
+}
+
+#about h2 {
+    font-family: 'Yellowtail', cursive;
+    font-size: 1.75em;
+    letter-spacing: 0.25em;
+}
+
+#about p {
+    background-color: rgba(34,81,103,0.5);
+    padding: 1em;
+    text-align: left;
+    letter-spacing: 0;
+}
+
+#about p:first-child {
+    margin-left: 10em;
+}
+
+#about p:last-child {
+    margin-right: 10em;
+}
+
+/* --------------Info
+--------------------- */
+#info {
+    display: flex;
+    text-align: center;
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(34,81,103,0.6),rgba(34,81,103,0.6)),url("../images/paisleyBG.png");
+    background-size: 700px;
+    padding: 3em;
+    color: #fff;
+}
+
+#info h1, #info p {
+    margin: 0;
+    padding: 0;
+}
+
+#info a {
+    color: #dad6c5;
+    font-weight: 600;
+}
+
+#info a:hover {
+    color: #fff;
+}
+
+#section {
+    width: 50%;
+}
+
+/* -------Brewsletter
+--------------------- */
+#brewsletter {
+    text-align: center;
+    min-height: 100%;
+    background: linear-gradient(0deg,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),url("../images/buildings/OMfire.jpg");
+    background-size: cover;
+    padding: 3em 0em;
+    color: #225167;
+}
+
+#brewsletter h1 {
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
+#email {
+    margin-bottom: 1em;
+    color: #000;
+    font-weight: 300;
+    border: 0;
+    padding: 1em;
+    text-align: center;
+    transition: 0.25s ease;
+    box-sizing: border-box;
+}
+
+#email:focus {  
+    outline: 3px solid #225167;
+    font-weight: 600;
+}
+
+#email ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #909;
+}
+
+#email :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #909;
+    opacity:  1;
+}
+
+#email ::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #909;
+    opacity:  1;
+}
+
+#email :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #909;
+}
+
+#email ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #909;
+}
+
+#submit {
+    color: #fff;
+    background-color: #225167;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0.15em;
+}
+
+#submit:focus { 
+    outline:0 !important; 
+}
+
+#submit:hover {
+    background-color: #c3ac7c;
+}
+
+
+/* ----------------Navigation Template--------------------- */
+
+#title {        /* used in contact template too */
+    background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../images/beer-tap.jpg");
+    padding-top: 2em;
+    background-size: cover;
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 75px;
+    text-align: center;
+}
+
+#title::after{      /* used to make triangle underneath title image */
+    content: '';
+    left: 42%;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid #fff;
+    clear: both;
+}
+
+#title h1 {
+    color: #fff;
+    outline: 5px solid #fff;
+    font-weight: 700;
+    font-size: 2.5em;
+    width: auto;
+    text-transform: uppercase;
+    display: table;
+    margin: 1em auto;
+    padding: 0.25em 0.5em;
+    letter-spacing: 0.25em;
+}
+
+.item {
+    border-bottom: 5px dashed rgba(127,0,0,1);
+    color: #7f0000;
+    padding: 0em 5em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.item:last-child {
+    border: none;
+}
+
+.item h2, .item span, .item p {
+    margin: 3em 0em;
+}
+
+.item span {
+    color: #000;
+    font-weight:600;
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.item h2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 1.5em;
+    margin: 0;
+}
+    
+.item p {
+    color: #000;
+    font-weight: 400;
+}
+
+.item a {
+    border: 3px solid #7f0000;
+    color: #7f0000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    background-color: #fff;
+}
+
+.item a:hover {
+    background-color: #7f0000;
+    color: white;
+}
+
+.item img {
+    max-width:100%;
+}
+
+.item .imagebox {
+    flex: 1 0 0;
+}
+
+.item .infobox {
+    flex: 2 0 0;
+    padding: 2em 0em;
+}
+
+.item:nth-of-type(odd) .imagebox {
+     order: 1;
+}
+
+.item:nth-of-type(even) .imagebox {
+    order: 2;
+}
+
+.item:nth-of-type(odd) :not(img) {
+    text-align: right;
+}
+
+.item:nth-of-type(even) :not(img) {
+    text-align: left;
+}
+
+.item:nth-of-type(odd) .infobox {
+    order: 2;
+}
+
+.item:nth-of-type(even) .infobox {
+    order: 1;
+}
+
+/* animations for item slides on scroll from left */
+.item:nth-of-type(odd) .slideanim.slide {                
+    animation-name: slideleft;
+}
+
+/* -------------------Main Template------------------------ */
+
+#main {
+    display: flex; 
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 2em;
+    animation: fadein 2s;
+    min-height: 60vh;       /* hacky-would like to fix so it stretches entire container*/
+}
+
+#main .infobox {
+    flex: 3 0 0;
+    order: 2;
+    align-self: center;
+    margin: 2em;
+}
+
+#main .infobox h1 {
+    font-size: 1.75em;
+    font-family: 'Rubik Mono One', sans-serif;
+    margin: 0;
+}
+
+#main .infobox h2 {
+    font-size: 1.5em;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #7f0000;
+    font-family: 'Yellowtail', cursive;
+    margin-bottom: 2em;
+}
+
+#main .infobox p {
+    margin: 1em;
+    text-align: justify;
+    font-weight: 300;
+}
+
+#main .infobox a {
+    text-align: left;
+    font-weight: 500;
+    color: #c3ac7c;
+}
+
+#main .infobox a:hover {
+    color: #dad6c5;
+}
+
+#main .imagebox {
+    flex: 2 0 0;
+    order: 2;
+    align-self: center;
+    margin: 2em;
+}
+
+#main .imagebox img {
+    max-width: 100%;
+}
+
+/* ------------------Product Template---------------------- */
+
+#product {
+    display: flex; 
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    animation: fadein 2s;
+    min-height: 76vh;       /* hacky-would like to fix so it stretches entire container*/
+}
+
+#product .linkbox {
+    flex: 2 0 0;
+    order: 1;
+    align-self: center;
+}
+
+#product .linkbox a {
+    border: 3px solid #7f0000;
+    color: #7f0000;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 0.75em;
+    background-color: #fff;
+}
+
+#product .linkbox a:hover {
+    background-color: #7f0000;
+    color: white;
+}
+
+#product .infobox {
+    flex: 3 0 0;
+    order: 2;
+    align-self: center;
+}
+
+#product .infobox h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-size: 1.5em;
+    color: #7f0000;
+}
+
+#product .infobox span {
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+#product .infobox p {
+    margin-top: 3em;
+    color: #7f0000;
+    text-align: justify;
+    font-weight: 300;
+}
+
+#product .imagebox {
+    flex: 3 0 0;
+    order: 3;
+    align-self: center;
+}
+
+#product .imagebox img {
+    max-width: 100%;
+}
+
+/* ------------------Contact Template---------------------- */
+
+.contacttitle #title {
+    background: linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../images/beer-glasses.jpg");
+    padding-top: 2em;
+    background-size: cover;
+    margin-bottom: 40px;
+    font-weight: 600;
+    line-height: 75px;
+    text-align: center;
+}
+
+#contact {
+    display: flex; 
+    justify-content: center;
+    text-align: center;
+    animation: fadein 2s;
+    min-height: 76vh;       /* hacky-would like to fix so it stretches entire container*/
+    padding: 3em;
+}
+
+#contact .infobox {
+    flex: 3 0 0;
+    order: 1;
+    align-self: center;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    background-color: #dad6c5;
+    padding: 2em;
+    margin: 0em 2em;
+}
+
+#contact .infobox a {
+    color: #225167;
+    font-weight: 500;
+}
+
+#contact .infobox a:hover {
+    color: #c3ac7c;
+}
+
+#contact h2 {
+    font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Yellowtail', cursive;
+    font-size: 1.75em;
+    color: #7f0000;
+    margin-top: 2em;
+}
+
+#contact h2:first-child{
+    margin-top: 0;
+}
+
+#contact .infobox p, #contact label {
+    font-weight: 400;
+}
+
+#contact .contactbox {
+    flex: 3 0 0;
+    order: 2;
+    align-self: center;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    background-color: #dad6c5;
+    padding: 2em;
+    margin: 0em 2em;
+}
+
+.contactbox label {
+    text-align: left;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+#contact input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 1em; /* Some padding */  
+    border: 3px solid #c3ac7c; /* Yellow border */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+#contact .infobox input[type=text] {
+    text-align: center;
+}
+
+/* Style the submit button with a specific background color etc */
+#contact input[type=submit] {
+    background-color: #7f0000;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 100;
+    letter-spacing: 0.15em;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+#contact input[type=submit]:hover {
+    background-color: #c3ac7c;
+}
+
+
+/* ------------------Events Template----------------------- */
+
+/* ------------------- Links ---------------------- */
+a {
+    text-decoration: none;
+    color: #7f0000;
+    outline: 0; /* removes dotted border */
+    transition: 0.25s ease;
+}
+
+a:hover, a:focus, a:active {
+    text-decoration:none;
+    color: #c3ac7c;
+}
+
+/* --------------------- Menus -------------------- */
+/* Main Menu */
+nav {
+    border-bottom: 3px solid #7f0000;
+    background-color: #fff;
+    background-image: url("../images/paisleyBG.png");
+    background-size: 500px;
+    padding: 0em 2em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    transition: 0.25s;
+}
+
+#logo img {
+    width: 184px;
+    float: left;
+    transition: 0.25s;
+}
+
+#logo img .largebrand{
+	content:url("../images/OMB_logo.png");
+}
+
+#logo img .smallbrand{
+	content:url("../images/houseIcon.png");
+}
+
+.toggle, [id^=drop] {       /* toggle for mobile nav hamburger button */
+    display: none;
+}
+
+nav ul {
+    margin-top: 30px;
+}
+
+nav li {
+    line-height: 40px;
+    text-align:left;
+    display: inline-block;
+    border-right: 1px solid #7f0000;
+}
+
+nav li:last-child {
+    border-right: none;
+}
+
+nav > ul > li {
+    text-align: center;
+}
+
+nav > ul > li > a {
+    padding-left: 0;
+}
+
+nav li ul {
+    position: absolute;
+    display: none;
+    background-color: rgba(255,255,255,0.9);
+    margin: 0 1em;
+}
+
+nav li:hover ul {
+    display: block;
+}
+
+nav li ul li {
+    display: block;
+    border-right: none;
+}
+
+nav li ul li a {
+    padding: 0.5em 1em;
+    width: inherit;
+    transition: 0.25s ease;  
+}
+
+nav li ul li a:hover {
+    color: #7f0000;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    width: 7em;
+    letter-spacing: 2px;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+nav .social {
+    position: absolute;
+    top: 1.25em;
+    right: 6em;
+    margin-bottom: 1em;
+}
+
+/* Footer Menu */
+#footer {
+    border-top: 3px solid #7f0000;
+    padding: 1em;
+    background-image: url("../images/paisleyBG.png");
+    background-size: 500px;
+    clear: both;
+    overflow: hidden;
+}
+
+#footer ul {
+    text-align: center;
+    margin-bottom: 0.25em;
+    line-height: normal;
+}
+
+#footer li {
+    border-right: 1px solid #7f0000;
+    display: inline-block;
+}
+
+#footer li:last-child {
+    border-right: none;
+}
+
+#footer a {
+    text-decoration:none;
+    font-size: 14px;
+    padding-left: 1em;
+    padding-right: 1em;
+    font-weight: 500;
+}
+
+#footer p {
+    margin-top: 2em;
+    text-align:center;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#footer .social {
+    display: none;      /* hide social in footer on desktop view */
+}
+
+/* ------------------- Media Queries ------------------- */
+
+
+/* -----------Tablets
+--------------------- */
+@media screen and (min-Width: 501px) and  (max-Width: 768px) {
+    
+    /* move social links to footer */
+    nav .social {
+        display: none;
+    }
+    
+    #footer .social {
+        display: inherit;
+        margin-bottom: 1.5em;
+    }
+    
+    #footer .social ul li a {
+        width: 32px;
+    }
+    
+    /* turn off flex display */
+    #flexwrapper, #schedule, #info {
+        display: inherit;  
+    }
+    
+    /* hide events other than today */
+    #schedule #day:not(.today) {
+        display: none;
+    }
+    
+    #specials {
+        min-height: auto;
+    }
+    
+    /* stretch elements across the page */
+    #day, #section, #about p {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #about {
+        padding: 2em;
+    }
+    
+    #about #flexwrapper {
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    #about p {
+        margin: 0;
+        padding: 1.5em;
+        box-sizing: border-box;
+    }
+    
+    #about p:first-child {
+        margin: 0;
+        margin-bottom: 1em;
+    }
+    
+    #section:first-child {
+        margin-bottom: 2em;
+    }
+    
+    /* ---main template specific fixes--- */
+    #main {
+        display: inherit;       /* turn off flex */
+        padding: 0em;
+    }
+    
+    /* ---product template specific fixes--- */
+    #product {
+        display: inherit;       /* turn off flex */
+        padding: 2em;
+    }
+    
+    #product .linkbox {
+        margin-top: 3em;
+        margin-bottom: 1em;
+    }
+    
+    /* ---contact template specific fixes--- */
+    #contact {
+        display: inherit;       /* turn off flex */
+        padding-top: 0;
+    }
+    
+    #contact .infobox {
+        margin-bottom: 3em; 
+    }
+}
+
+/* -----------Phones
+--------------------- */
+@media all and (max-width : 500px) {
+    
+    /* reset margin and padding for content */
+    #content {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* reduce font sizes */
+    p { font-size:0.85em; }
+
+    h1 { font-size:1.25em; }
+
+    h2 { font-size:1.25em; }
+
+    h3 { font-size:1.0em; }
+
+    h4 { font-size:1.0em; }
+
+    h5 { font-size: 0.9em; }
+
+    h6 { font-size: 0.9em; }
+    
+    /* mobile navigation */
+    .toggle + a, .menu { 
+        display: none; 
+        visibility: none;
+    }
+
+    .toggle {
+        display: block;
+        background-color: #7f0000;
+        padding: 0 15px;
+        color: #FFF;
+        font-size: 15px;
+        line-height: 45px;
+        text-decoration: none;
+        border: none;
+        width: 15px;
+        margin: 15px;
+        transition: all 0.25s ease-out;
+    }
+
+    .toggle:hover { 
+        background-color: #c3ac7c; 
+        transition: all 0.25s ease-in;
+    }
+
+    [id^=drop]:checked + ul { 
+        display: block; 
+    }
+    
+    nav { 
+        margin: 0;
+        padding: 0;
+        height: auto;
+        position: relative;
+        padding-top: 1px;
+    }
+    
+    #logo {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: center;
+    }
+    
+    #logo img {
+        width: 150px !important;
+        float: none;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 10;
+    }
+    
+    nav a.active { 
+        border:none;
+    }
+    
+    nav ul {
+        margin: 0;
+        margin-top: 6em;
+        margin-bottom: 1em;
+        padding: 0;
+        width: 80%;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    
+    nav ul li {
+        display: block;
+        background: #7f0000;
+        margin: 0;
+        padding: 0;
+        border-right: none;
+    }
+    
+    nav ul a {
+        margin: 0.5em 1em;
+        padding: 1em 0em;
+        color: #fff;
+        text-align: left;
+    }
+    
+    nav ul a:hover {
+        color: #fff;
+    }
+    
+    nav ul li ul {
+        margin: 0;
+        padding: 0;
+        position: static;
+        margin-top: 0px;
+        width: 100%;
+    }
+        
+    nav ul li ul a {
+        margin: 0.5em 0em;
+        padding: 1em;
+        padding-left: 3em;
+        color: #7f0000;
+    }
+    
+    nav li ul li a {
+        width:auto; 
+    }
+    
+    nav li ul li a:hover {
+        margin: 0;
+        font-weight: 700;
+    }
+
+    nav ul li ul li {
+        width: 100%;
+        display: block;
+        float: none;
+        background-color: #fff;
+        color: #7f0000;
+    }
+  
+    /* move social links to footer */
+    nav .social {
+        display: none;
+    }
+    
+    #footer .social {
+        display: inherit;
+        margin-bottom: 1.5em;
+    }
+    
+    #footer .social ul li {
+        display: inline-block;
+    }
+    
+    /* turn off flex display */
+    #flexwrapper, #schedule, #info, #navigation .item {
+        display: inherit;       
+    }
+    
+    /* ---home template specific fixes--- */
+    /* reduce spotlight size */
+    #spotlight {
+        padding-bottom: 1em;
+    }
+    
+    /* make spotlight links vertical */
+    #spotlight li {
+        display: block;
+        padding: 1.5em;
+    }
+    
+    /* hide events other than today */
+    #schedule #day:not(.today) {
+        display: none;
+    }
+    
+    #events h1 {
+        font-size: 1.75em;
+    }
+    
+    #specials {
+        min-height: auto;
+    }
+    
+    /* stretch elements across the page */
+    #day, #section, #about p {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    #about {
+        position: relative;
+        padding: 2em;
+    }
+    
+    #about #flexwrapper {
+        padding: 0;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    #about h1 {
+        font-size: 1.75em;
+    }
+    
+    #about h2 {
+        font-size: 1.5em;
+    }
+    
+    #about p {
+        margin: 0;
+        padding: 1.5em;
+        box-sizing: border-box;
+    }
+    
+    #about p:first-child {
+        margin: 0;
+        margin-bottom: 1em;
+    }
+
+    /* fix spacing in info section */
+    #section:first-child {
+        margin-bottom: 2em;
+    }
+    
+    /* ---navigation template specific fixes--- */
+    .item:nth-of-type(even) :not(img), .item:nth-of-type(odd) :not(img) {
+        text-align:center;
+    }
+    
+    #navigation .item {
+        padding: 0em 2em;
+    }
+    
+    #title h1 {             /* applies to contact template too */
+        font-size: 1.5em;
+        line-height: 1.5em;
+        margin-top: 2em;
+    }
+    
+    #navigation h2 {
+        font-size: 1.2em;
+    }
+    
+    /* ---main template specific fixes--- */
+    #main {
+        display: inherit;       /* turn off flex */
+        padding: 0em;
+    }
+    
+    #main .infobox h1 {
+        font-size: 1.5em;
+    }
+    
+    #main .infobox h2 {
+        font-size: 1.25em;
+    }
+    
+    /* ---product template specific fixes--- */
+    #product {
+        display: inherit;       /* turn off flex */
+        padding: 2em;
+    }
+    
+    #product .linkbox {
+        margin-top: 3em;
+        margin-bottom: 1em;
+    }
+    
+    #product .infobox h1 {
+        font-size: 1.25em;
+    }
+    
+    #product .infobox span {
+        font-size: 1em;
+    }
+    
+    /* ---contact template specific fixes--- */
+    #contact {
+        display: inherit;       /* turn off flex */
+        padding: 0;
+    }
+    
+    #contact .infobox, #contact .contactbox {
+        margin-bottom: 3em; 
+    }
+    
+    /* make footer links vertical */
+    #footer li {
+        display: block;
+        border-right: none;
+    }
+}
+
+/* ---------------- Global Classes --------------- */
+.clear {
+    clear: both;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+}
+
+.clearfix:after {
+    content: " "; 
+    display: block; 
+    height: 0;
+    font-size: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix { display: inline-block; }
+/* mac hide \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* End hide */
