@@ -382,7 +382,6 @@ p {
     padding-top: 1em;
 }
 
-
 #column3 table {
     margin-left: auto;
     margin-right: auto;
@@ -393,7 +392,6 @@ p {
     padding: 2px 12px;
     border: 1px solid #cccccc;
     display:table-cell;
-    
     vertical-align: middle;
     transition: 0.5s linear;
 }
@@ -411,11 +409,15 @@ p {
 }
 
 #column3 .social {
-    width:20px;
+    width: 20px;
 }
 
-#column1 {
-    
+#resumecolumn1 {
+    flex: 4;
+}
+
+#resumecolumn2 {
+    flex: 1;
 }
 
 /* Timeline
@@ -449,7 +451,7 @@ p {
 }
 
 .timeline-date {
-    width: 75px;
+    width: 125px;
     float: left;
     margin-top: 20px;
     text-align: right;
@@ -457,10 +459,10 @@ p {
 }
 
 .timeline-content {
-    width: 61%;
+    width: 67%;
     float: left;
     border-left: 3px #cccccc solid;
-    padding-left: 30px;
+    padding-left: 25px;
 }
 
 .timeline-content:before {
@@ -469,7 +471,7 @@ p {
     height: 12px;
     background: #63A69F;
     position: absolute;
-    left: 101px;
+    left: 151px;
     top: 10px;
     border-radius: 100%;
 }
@@ -609,12 +611,10 @@ p {
     background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
     background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
     background-image: linear-gradient(top, #eeeeee, #cccccc);
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-bottom: 1px solid #bbb;
     border-radius: 3px;
     color: #333;
-    font: bold 11px/1 "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-    padding: 8px 0;
     text-align: center;
     text-shadow: 0 1px 0 #eee;
     width: 150px; 
@@ -629,14 +629,14 @@ p {
     background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
     background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
     background-image: linear-gradient(top, #dddddd, #bbbbbb);
-    border: 1px solid #bbb;
+    border: 2px solid #bbb;
     border-bottom: 1px solid #999;
     cursor: pointer;
     text-shadow: 0 1px 0 #ddd; 
 }
 
 .button:active {
-    border: 1px solid #aaa;
+    border: 2px solid #aaa;
     border-bottom: 1px solid #888;
     -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
       box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
@@ -645,7 +645,7 @@ p {
 .button a {
     color: #232323;
     font-family: "Open Sans";
-    font-size: 125%;
+    font-weight: 600;
 }
 
 
