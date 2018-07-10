@@ -23,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   word-wrap: break-word !important;
-  font-family: 'PT Mono', sans-serif;
+  font-family: 'PT Mono', monospace;
 }
 
 /* Navigation
@@ -192,7 +192,7 @@ h1, h2, h3, h4 {
 h1 {
     text-align: center;
     font-size: 21px;
-    font-family: 'PT Mono', sans-serif;
+    font-family: 'PT Mono', monospace;
     text-transform: uppercase;
 }
 
@@ -352,6 +352,8 @@ p {
     padding:0;
 }
 
+
+
 /*resume embedded pdf*/
 #pdf {
     position:relative;
@@ -370,46 +372,66 @@ p {
 
 #flexcontainer {
     display: flex;
+    justify-content: space-between;
     margin-top: 1em;
 }
 
-#column1, #column2, #column3 {
-    flex: 1;
-    margin: 0 1em;
+.column img {
+    width: 100%;
 }
 
-#flexcontainer img {
-    padding-top: 1em;
+.column-third {
+    flex: 0 0 32%;
 }
 
-#column3 table {
-    margin-left: auto;
-    margin-right: auto;
-    border-spacing: 15px;
+.column-twothird {
+    flex: 0 0 64%;
 }
 
-#column3 td {
-    padding: 2px 12px;
-    border: 1px solid #cccccc;
-    display:table-cell;
-    vertical-align: middle;
+.column-half {
+    flex: 0 0 48%;
+}
+
+.homepage #flexcontainer .column {
+    text-align: center;
+}
+
+.homepage h3 {
+    border-top: none;
+}
+
+.homepage #flexcontainer {
+    border-top: 4px #000 double;
+}
+
+.aboutpage #flexcontainer {
+    align-items: center;
+}
+
+.aboutpage p {
+    text-align: left;
+}
+
+.socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-item {
+    display: inline-block;
+    margin: 0em 0.5em;
+}
+
+.socials img{
+    max-width: 30px;
+    padding: 0.5em;
+    border: 1px solid white;
     transition: 0.5s linear;
 }
 
-#column3 td:hover {
-    border: 1px solid #232323;
-    box-shadow: 0px 0px 10px #888888;
-}
-
-#column1 a {
-   text-align: center;
-    display: block;
-    margin: 0 auto;
-    font-size: 11pt;
-}
-
-#column3 .social {
-    width: 20px;
+.socials img:hover{
+    border: 1px solid #000;
 }
 
 #resumecolumn1 {
@@ -476,49 +498,88 @@ p {
     border-radius: 100%;
 }
 
+/* Work Page
+--------------------------------------------- */
+
+.workpage .column p {
+    text-align: center;
+}
+
+.work-item {
+    position: relative;
+    text-align: center;
+    height: 200px;
+}
+
+.work-item h4 {
+    font-family: 'PT Mono', monospace;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 1.25rem;
+  transform: translate(-50%, -50%);
+    padding: 0.25em !important;
+    border: 3px solid #fff !important;
+}
+
+.work-item .work-item-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(65%);
+    transition: 0.25s linear;
+}
+
+.work-item:hover .work-item-image {
+    filter: brightness(40%);
+}
+
+.work-item-image img {
+    padding: 0;
+}
 
 /* Gallery
 --------------------------------------------- */
-#gallery {
-    max-width: 975px;
-    margin: 2em auto;
+.gallery {
+    max-width: 890px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-between;
 }
 
-
-#gallery h2 {
+.gallery h2 {
     text-align: center;
     border: none;
     margin:0;
     text-transform: none;
-    font-weight:500;
+    font-weight: 500;
     font-family: "Open Sans";
 }
 
-#gallery p {
+.gallery p {
     margin: 0;
-    padding: 1em 2em;
     text-align: center;
     font-weight: 100;
     font-style:italic;
 }
 
-#gallery table {
-    margin-left: auto;
-    margin-right: auto;
-    border-spacing: 20px;
-}
-
-#gallery td {
-    width: 33%;
-}
-
 #card {
+    flex: 0 0 calc(32% - 1em);
     background: #fff;
     transition: 0.5s ease;
+    padding: 0.5em;
+    margin-bottom: 1em;
 }
 
 #card:hover {
-    box-shadow: 0px 0px 10px #888888;
+    box-shadow: 0 0 1em #888888;
     transition: 0.5s ease;
 }
 
@@ -539,6 +600,20 @@ p {
     width: 100%;
     height: 100%;
     top: 0;
+}
+
+.photogallery #card {
+    flex: 0 0 calc(24% - 1em);
+    padding: 0em;
+    margin-bottom: 0;
+}
+
+.videogallery #card, .webgallery #card {
+    flex: 0 0 calc(48% - 1em);
+}
+
+.videogallery-spotlight #card, .webgallery-spotlight #card {
+    flex: 0 0 calc(100% - 1em);
 }
     
 /* Animated about image
@@ -1000,8 +1075,8 @@ input.placeholder-text, textarea.placeholder-text  {
     display:none;
   }
 
-    #gallery td {
-        width: 100%;
+    .gallery #card {
+        flex: 0 0 calc(100% - 1em);
         margin-bottom: 1em;
     }
     
